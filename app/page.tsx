@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Phone, MessageCircle, Shield, CreditCard, Star, X } from "lucide-react"
 import { useState, useEffect } from "react"
+import Link from "next/link"
 
 export default function Home() {
   const [showPriceTable, setShowPriceTable] = useState(false)
@@ -28,43 +29,6 @@ export default function Home() {
     return () => clearInterval(timer)
   }, [])
 
-  useEffect(() => {
-    const script = document.createElement("script")
-    script.async = true
-    script.src = "https://embed.tawk.to/689d3236ddd4a0192670b55e/1i8qkqo8g"
-    script.charset = "UTF-8"
-    script.setAttribute("crossorigin", "*")
-
-    // Configure Tawk_API for Korean language and customization
-    window.Tawk_API = window.Tawk_API || {}
-    window.Tawk_LoadStart = new Date()
-
-    // Set Korean language
-    window.Tawk_API.customStyle = {
-      visibility: {
-        desktop: {
-          position: "br",
-          xOffset: 20,
-          yOffset: 20,
-        },
-        mobile: {
-          position: "br",
-          xOffset: 10,
-          yOffset: 10,
-        },
-      },
-    }
-
-    document.head.appendChild(script)
-
-    return () => {
-      const existingScript = document.querySelector('script[src*="tawk.to"]')
-      if (existingScript) {
-        document.head.removeChild(existingScript)
-      }
-    }
-  }, [])
-
   return (
     <div className="min-h-screen bg-slate-900">
       {/* Header */}
@@ -77,7 +41,7 @@ export default function Home() {
             </div>
 
             {/* Navigation */}
-            <nav className="hidden md:flex space-x-8 relative">
+            <nav className="hidden md:flex space-x-8 relative justify-center flex-1">
               <a href="#home" className="text-slate-300 hover:text-emerald-400 transition-colors">
                 홈
               </a>
@@ -133,12 +97,18 @@ export default function Home() {
                         {/* Seoul Districts */}
                         {activeRegion === "seoul" && (
                           <>
-                            <button className="text-left p-2 text-slate-300 hover:bg-emerald-900 hover:text-emerald-400 rounded transition-colors">
+                            <Link
+                              href="/gangnam"
+                              className="text-left p-2 text-slate-300 hover:bg-emerald-900 hover:text-emerald-400 rounded transition-colors block"
+                            >
                               강남구출장마사지
-                            </button>
-                            <button className="text-left p-2 text-slate-300 hover:bg-emerald-900 hover:text-emerald-400 rounded transition-colors">
+                            </Link>
+                            <Link
+                              href="/gangdong"
+                              className="text-left p-2 text-slate-300 hover:bg-emerald-900 hover:text-emerald-400 rounded transition-colors block"
+                            >
                               강동구출장마사지
-                            </button>
+                            </Link>
                             <button className="text-left p-2 text-slate-300 hover:bg-emerald-900 hover:text-emerald-400 rounded transition-colors">
                               강북구출장마사지
                             </button>
@@ -235,9 +205,12 @@ export default function Home() {
                             <button className="text-left p-2 text-slate-300 hover:bg-blue-900 hover:text-blue-400 rounded transition-colors">
                               군포시출장마사지
                             </button>
-                            <button className="text-left p-2 text-slate-300 hover:bg-blue-900 hover:text-blue-400 rounded transition-colors">
+                            <Link
+                              href="/gimpo"
+                              className="text-left p-2 text-slate-300 hover:bg-blue-900 hover:text-blue-400 rounded transition-colors block"
+                            >
                               김포시출장마사지
-                            </button>
+                            </Link>
                             <button className="text-left p-2 text-slate-300 hover:bg-blue-900 hover:text-blue-400 rounded transition-colors">
                               남양주시출장마사지
                             </button>
@@ -345,23 +318,6 @@ export default function Home() {
                             </button>
                           </>
                         )}
-                      </div>
-
-                      <div className="mt-4 pt-4 border-t border-slate-700">
-                        <div className="flex gap-2">
-                          <Button size="sm" className="bg-emerald-600 hover:bg-emerald-700 text-white flex-1" asChild>
-                            <a href="tel:010-2871-2457">
-                              <Phone className="h-4 w-4 mr-1" />
-                              전화상담
-                            </a>
-                          </Button>
-                          <Button size="sm" className="bg-yellow-500 text-slate-900 hover:bg-yellow-400 flex-1" asChild>
-                            <a href="https://open.kakao.com/o/s0ca9mMh" target="_blank" rel="noopener noreferrer">
-                              <MessageCircle className="h-4 w-4 mr-1" />
-                              카톡상담
-                            </a>
-                          </Button>
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -959,12 +915,6 @@ export default function Home() {
           </div>
         </div>
       </footer>
-      <div className="fixed bottom-6 right-6 z-50">
-        <div className="bg-emerald-600 rounded-lg p-4 shadow-lg max-w-xs">
-          <div className="text-white text-sm font-semibold">💬 실시간 상담</div>
-          <div className="text-white text-xs mt-1">Tawk.to 채팅으로 문의하세요</div>
-        </div>
-      </div>
     </div>
   )
 }
