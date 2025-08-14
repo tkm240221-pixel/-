@@ -2,12 +2,13 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import { Phone, MessageCircle, Clock, Users, Shield } from "lucide-react"
+import { Phone, MessageCircle, Clock, Users, Shield, Menu, X } from "lucide-react"
 
 export default function GeumcheonPage() {
   const [showPriceTable, setShowPriceTable] = useState(false)
   const [typewriterText, setTypewriterText] = useState("")
   const [showCursor, setShowCursor] = useState(true)
+  const [showMobileMenu, setShowMobileMenu] = useState(false)
 
   const fullText =
     "빠른 예약을 위해 전화 또는 문자로 상세주소 / 마사지 코스 말씀해주시면 빠른 예약 도와드리도록 하겠습니다 ^^"
@@ -53,7 +54,49 @@ export default function GeumcheonPage() {
                 문의
               </a>
             </nav>
+            <button
+              onClick={() => setShowMobileMenu(!showMobileMenu)}
+              className="md:hidden p-2 text-gray-700 hover:text-violet-600"
+            >
+              {showMobileMenu ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
           </div>
+          {showMobileMenu && (
+            <div className="md:hidden border-t border-violet-100 py-4">
+              <div className="flex flex-col space-y-4">
+                <Link
+                  href="/"
+                  className="text-gray-700 hover:text-violet-600 transition-colors px-4 py-2"
+                  onClick={() => setShowMobileMenu(false)}
+                >
+                  홈
+                </Link>
+                <button
+                  onClick={() => {
+                    setShowPriceTable(true)
+                    setShowMobileMenu(false)
+                  }}
+                  className="text-gray-700 hover:text-violet-600 transition-colors px-4 py-2 text-left"
+                >
+                  코스표
+                </button>
+                <Link
+                  href="/#regions"
+                  className="text-gray-700 hover:text-violet-600 transition-colors px-4 py-2"
+                  onClick={() => setShowMobileMenu(false)}
+                >
+                  지역별
+                </Link>
+                <a
+                  href="tel:010-2871-2457"
+                  className="text-gray-700 hover:text-violet-600 transition-colors px-4 py-2"
+                  onClick={() => setShowMobileMenu(false)}
+                >
+                  문의
+                </a>
+              </div>
+            </div>
+          )}
         </div>
       </header>
 
