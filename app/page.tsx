@@ -7,7 +7,7 @@ import { Phone, MessageCircle, Shield, CreditCard, Star, X } from "lucide-react"
 import { useState, useEffect } from "react"
 import Link from "next/link"
 
-export default function Home() {
+export default function HomePage() {
   const [showPriceTable, setShowPriceTable] = useState(false)
   const [showRegionalDropdown, setShowRegionalDropdown] = useState(false)
   const [activeRegion, setActiveRegion] = useState("seoul")
@@ -30,31 +30,31 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-slate-900">
+    <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="bg-slate-800 shadow-sm border-b border-slate-700 sticky top-0 z-50">
+      <header className="bg-white shadow-lg border-b border-violet-100 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16 text-left flex-row w-2/5">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <h1 className="text-2xl font-bold text-emerald-400">총알출장마사지</h1>
+              <h1 className="text-2xl font-bold text-violet-600">총알출장마사지</h1>
             </div>
 
             {/* Navigation */}
-            <nav className="hidden md:flex space-x-8 relative justify-center flex-1 font-normal text-xl text-slate-600 text-left">
-              <a href="#home" className="hover:text-emerald-400 transition-colors text-white">
+            <nav className="hidden md:flex space-x-8 relative justify-center flex-1 font-normal text-xl text-gray-600 text-left">
+              <a href="#home" className="hover:text-violet-600 transition-colors text-gray-700">
                 홈
               </a>
               <button
                 onClick={() => setShowPriceTable(true)}
-                className="hover:text-emerald-400 transition-colors0 text-white"
+                className="hover:text-violet-600 transition-colors text-gray-700"
               >
                 코스표
               </button>
               <div className="relative">
                 <button
                   onClick={() => setShowRegionalDropdown(!showRegionalDropdown)}
-                  className="hover:text-emerald-400 transition-colors flex items-center text-white"
+                  className="hover:text-violet-600 transition-colors flex items-center text-gray-700"
                 >
                   지역별
                   <svg className="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -64,13 +64,15 @@ export default function Home() {
 
                 {/* Regional Dropdown Menu */}
                 {showRegionalDropdown && (
-                  <div className="absolute top-full left-0 mt-2 w-96 bg-slate-800 border border-slate-700 rounded-lg shadow-xl z-50">
+                  <div className="absolute top-full left-0 mt-2 w-96 bg-white border border-violet-200 rounded-lg shadow-2xl z-50">
                     <div className="p-4">
-                      <div className="flex mb-4 bg-slate-700 rounded-lg p-1">
+                      <div className="flex mb-4 bg-violet-50 rounded-lg p-1">
                         <button
                           onClick={() => setActiveRegion("seoul")}
                           className={`flex-1 py-2 px-3 rounded-md text-sm font-medium transition-colors ${
-                            activeRegion === "seoul" ? "bg-emerald-600 text-white" : "text-slate-300 hover:text-white"
+                            activeRegion === "seoul"
+                              ? "bg-violet-600 text-white"
+                              : "text-gray-600 hover:text-violet-600"
                           }`}
                         >
                           서울
@@ -78,7 +80,9 @@ export default function Home() {
                         <button
                           onClick={() => setActiveRegion("gyeonggi")}
                           className={`flex-1 py-2 px-3 rounded-md text-sm font-medium transition-colors ${
-                            activeRegion === "gyeonggi" ? "bg-blue-600 text-white" : "text-slate-300 hover:text-white"
+                            activeRegion === "gyeonggi"
+                              ? "bg-violet-500 text-white"
+                              : "text-gray-600 hover:text-violet-600"
                           }`}
                         >
                           경기
@@ -86,7 +90,9 @@ export default function Home() {
                         <button
                           onClick={() => setActiveRegion("incheon")}
                           className={`flex-1 py-2 px-3 rounded-md text-sm font-medium transition-colors ${
-                            activeRegion === "incheon" ? "bg-purple-600 text-white" : "text-slate-300 hover:text-white"
+                            activeRegion === "incheon"
+                              ? "bg-violet-400 text-white"
+                              : "text-gray-600 hover:text-violet-600"
                           }`}
                         >
                           인천
@@ -99,151 +105,176 @@ export default function Home() {
                           <>
                             <Link
                               href="/gangnam"
-                              className="text-left p-2 text-slate-300 hover:bg-emerald-900 hover:text-emerald-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               강남구출장마사지
                             </Link>
                             <Link
                               href="/gangdong"
-                              className="text-left p-2 text-slate-300 hover:bg-emerald-900 hover:text-emerald-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               강동구출장마사지
                             </Link>
                             <Link
                               href="/gangbuk"
-                              className="text-left p-2 text-slate-300 hover:bg-emerald-900 hover:text-emerald-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               강북구출장마사지
                             </Link>
                             <Link
                               href="/gangseo"
-                              className="text-left p-2 text-slate-300 hover:bg-emerald-900 hover:text-emerald-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               강서구출장마사지
                             </Link>
                             <Link
                               href="/gwanak"
-                              className="text-left p-2 text-slate-300 hover:bg-emerald-900 hover:text-emerald-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               관악구출장마사지
                             </Link>
                             <Link
                               href="/gwangjin"
-                              className="text-left p-2 text-slate-300 hover:bg-emerald-900 hover:text-emerald-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               광진구출장마사지
                             </Link>
                             <Link
                               href="/guro"
-                              className="text-left p-2 text-slate-300 hover:bg-emerald-900 hover:text-emerald-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               구로구출장마사지
                             </Link>
                             <Link
                               href="/geumcheon"
-                              className="text-left p-2 text-slate-300 hover:bg-emerald-900 hover:text-emerald-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               금천구출장마사지
                             </Link>
                             <Link
                               href="/nowon"
-                              className="text-left p-2 text-slate-300 hover:bg-emerald-900 hover:text-emerald-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               노원구출장마사지
                             </Link>
                             <Link
                               href="/dobong"
-                              className="text-left p-2 text-slate-300 hover:bg-emerald-900 hover:text-emerald-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               도봉구출장마사지
                             </Link>
                             <Link
                               href="/dongdaemun"
-                              className="text-left p-2 text-slate-300 hover:bg-emerald-900 hover:text-emerald-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               동대문구출장마사지
                             </Link>
                             <Link
                               href="/dongjak"
-                              className="text-left p-2 text-slate-300 hover:bg-emerald-900 hover:text-emerald-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               동작구출장마사지
                             </Link>
                             <Link
                               href="/mapo"
-                              className="text-left p-2 text-slate-300 hover:bg-emerald-900 hover:text-emerald-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               마포구출장마사지
                             </Link>
                             <Link
                               href="/seodaemun"
-                              className="text-left p-2 text-slate-300 hover:bg-emerald-900 hover:text-emerald-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               서대문구출장마사지
                             </Link>
                             <Link
                               href="/seocho"
-                              className="text-left p-2 text-slate-300 hover:bg-emerald-900 hover:text-emerald-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               서초구출장마사지
                             </Link>
                             <Link
                               href="/seongdong"
-                              className="text-left p-2 text-slate-300 hover:bg-emerald-900 hover:text-emerald-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               성동구출장마사지
                             </Link>
                             <Link
                               href="/seongbuk"
-                              className="text-left p-2 text-slate-300 hover:bg-emerald-900 hover:text-emerald-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               성북구출장마사지
                             </Link>
                             <Link
                               href="/songpa"
-                              className="text-left p-2 text-slate-300 hover:bg-emerald-900 hover:text-emerald-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               송파구출장마사지
                             </Link>
                             <Link
                               href="/yangcheon"
-                              className="text-left p-2 text-slate-300 hover:bg-emerald-900 hover:text-emerald-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               양천구출장마사지
                             </Link>
                             <Link
                               href="/yeongdeungpo"
-                              className="text-left p-2 text-slate-300 hover:bg-emerald-900 hover:text-emerald-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               영등포구출장마사지
                             </Link>
                             <Link
                               href="/yongsan"
-                              className="text-left p-2 text-slate-300 hover:bg-emerald-900 hover:text-emerald-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               용산구출장마사지
                             </Link>
                             <Link
                               href="/eunpyeong"
-                              className="text-left p-2 text-slate-300 hover:bg-emerald-900 hover:text-emerald-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               은평구출장마사지
                             </Link>
                             <Link
                               href="/jongno"
-                              className="text-left p-2 text-slate-300 hover:bg-emerald-900 hover:text-emerald-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               종로구출장마사지
                             </Link>
                             <Link
                               href="/jung"
-                              className="text-left p-2 text-slate-300 hover:bg-emerald-900 hover:text-emerald-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               중구출장마사지
                             </Link>
                             <Link
                               href="/jungnang"
-                              className="text-left p-2 text-slate-300 hover:bg-emerald-900 hover:text-emerald-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               중랑구출장마사지
                             </Link>
@@ -255,187 +286,218 @@ export default function Home() {
                           <>
                             <Link
                               href="/gapyeong"
-                              className="text-left p-2 text-slate-300 hover:bg-blue-900 hover:text-blue-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               가평군출장마사지
                             </Link>
                             <Link
                               href="/goyang"
-                              className="text-left p-2 text-slate-300 hover:bg-blue-900 hover:text-blue-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               고양시출장마사지
                             </Link>
                             <Link
                               href="/gwacheon"
-                              className="text-left p-2 text-slate-300 hover:bg-blue-900 hover:text-blue-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               과천시출장마사지
                             </Link>
                             <Link
                               href="/gwangmyeong"
-                              className="text-left p-2 text-slate-300 hover:bg-blue-900 hover:text-blue-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               광명시출장마사지
                             </Link>
                             <Link
                               href="/gwangju"
-                              className="text-left p-2 text-slate-300 hover:bg-blue-900 hover:text-blue-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               광주시출장마사지
                             </Link>
                             <Link
                               href="/guri"
-                              className="text-left p-2 text-slate-300 hover:bg-blue-900 hover:text-blue-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               구리시출장마사지
                             </Link>
                             <Link
                               href="/gunpo"
-                              className="text-left p-2 text-slate-300 hover:bg-blue-900 hover:text-blue-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               군포시출장마사지
                             </Link>
                             <Link
                               href="/gimpo"
-                              className="text-left p-2 text-slate-300 hover:bg-blue-900 hover:text-blue-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               김포시출장마사지
                             </Link>
                             <Link
                               href="/namyangju"
-                              className="text-left p-2 text-slate-300 hover:bg-blue-900 hover:text-blue-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               남양주시출장마사지
                             </Link>
                             <Link
                               href="/dongducheon"
-                              className="text-left p-2 text-slate-300 hover:bg-blue-900 hover:text-blue-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               동두천시출장마사지
                             </Link>
                             <Link
                               href="/bucheon"
-                              className="text-left p-2 text-slate-300 hover:bg-blue-900 hover:text-blue-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               부천시출장마사지
                             </Link>
                             <Link
                               href="/seongnam"
-                              className="text-left p-2 text-slate-300 hover:bg-blue-900 hover:text-blue-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               성남시출장마사지
                             </Link>
                             <Link
                               href="/suwon"
-                              className="text-left p-2 text-slate-300 hover:bg-blue-900 hover:text-blue-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               수원시출장마사지
                             </Link>
                             <Link
                               href="/siheung"
-                              className="text-left p-2 text-slate-300 hover:bg-blue-900 hover:text-blue-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               시흥시출장마사지
                             </Link>
                             <Link
                               href="/ansan"
-                              className="text-left p-2 text-slate-300 hover:bg-blue-900 hover:text-blue-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               안산시출장마사지
                             </Link>
                             <Link
                               href="/anseong"
-                              className="text-left p-2 text-slate-300 hover:bg-blue-900 hover:text-blue-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               안성시출장마사지
                             </Link>
                             <Link
                               href="/anyang"
-                              className="text-left p-2 text-slate-300 hover:bg-blue-900 hover:text-blue-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               안양시출장마사지
                             </Link>
                             <Link
                               href="/yangju"
-                              className="text-left p-2 text-slate-300 hover:bg-blue-900 hover:text-blue-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               양주시출장마사지
                             </Link>
                             <Link
                               href="/yangpyeong"
-                              className="text-left p-2 text-slate-300 hover:bg-blue-900 hover:text-blue-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               양평군출장마사지
                             </Link>
                             <Link
                               href="/yeoju"
-                              className="text-left p-2 text-slate-300 hover:bg-blue-900 hover:text-blue-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               여주시출장마사지
                             </Link>
                             <Link
                               href="/yeoncheon"
-                              className="text-left p-2 text-slate-300 hover:bg-blue-900 hover:text-blue-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               연천군출장마사지
                             </Link>
                             <Link
                               href="/osan"
-                              className="text-left p-2 text-slate-300 hover:bg-blue-900 hover:text-blue-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               오산시출장마사지
                             </Link>
                             <Link
                               href="/yongin"
-                              className="text-left p-2 text-slate-300 hover:bg-blue-900 hover:text-blue-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               용인시출장마사지
                             </Link>
                             <Link
                               href="/uiwang"
-                              className="text-left p-2 text-slate-300 hover:bg-blue-900 hover:text-blue-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               의왕시출장마사지
                             </Link>
                             <Link
                               href="/uijeongbu"
-                              className="text-left p-2 text-slate-300 hover:bg-blue-900 hover:text-blue-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               의정부시출장마사지
                             </Link>
                             <Link
                               href="/icheon"
-                              className="text-left p-2 text-slate-300 hover:bg-blue-900 hover:text-blue-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               이천시출장마사지
                             </Link>
                             <Link
                               href="/paju"
-                              className="text-left p-2 text-slate-300 hover:bg-blue-900 hover:text-blue-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               파주시출장마사지
                             </Link>
                             <Link
                               href="/pyeongtaek"
-                              className="text-left p-2 text-slate-300 hover:bg-blue-900 hover:text-blue-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               평택시출장마사지
                             </Link>
                             <Link
                               href="/pocheon"
-                              className="text-left p-2 text-slate-300 hover:bg-blue-900 hover:text-blue-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               포천시출장마사지
                             </Link>
                             <Link
                               href="/hanam"
-                              className="text-left p-2 text-slate-300 hover:bg-blue-900 hover:text-blue-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               하남시출장마사지
                             </Link>
                             <Link
                               href="/hwaseong"
-                              className="text-left p-2 text-slate-300 hover:bg-blue-900 hover:text-blue-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               화성시출장마사지
                             </Link>
@@ -447,61 +509,71 @@ export default function Home() {
                           <>
                             <Link
                               href="/gyeyang"
-                              className="text-left p-2 text-slate-300 hover:bg-purple-900 hover:text-purple-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               계양구출장마사지
                             </Link>
                             <Link
                               href="/namdong"
-                              className="text-left p-2 text-slate-300 hover:bg-purple-900 hover:text-purple-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               남동구출장마사지
                             </Link>
                             <Link
                               href="/dong-gu"
-                              className="text-left p-2 text-slate-300 hover:bg-purple-900 hover:text-purple-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               동구출장마사지
                             </Link>
                             <Link
                               href="/michuhol"
-                              className="text-left p-2 text-slate-300 hover:bg-purple-900 hover:text-purple-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               미추홀구출장마사지
                             </Link>
                             <Link
                               href="/bupyeong"
-                              className="text-left p-2 text-slate-300 hover:bg-purple-900 hover:text-purple-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               부평구출장마사지
                             </Link>
                             <Link
                               href="/seo-gu"
-                              className="text-left p-2 text-slate-300 hover:bg-purple-900 hover:text-purple-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               서구출장마사지
                             </Link>
                             <Link
                               href="/yeonsu"
-                              className="text-left p-2 text-slate-300 hover:bg-purple-900 hover:text-purple-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               연수구출장마사지
                             </Link>
                             <Link
                               href="/jung-gu"
-                              className="text-left p-2 text-slate-300 hover:bg-purple-900 hover:text-purple-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               중구출장마사지
                             </Link>
                             <Link
                               href="/ganghwa"
-                              className="text-left p-2 text-slate-300 hover:bg-purple-900 hover:text-purple-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               강화군출장마사지
                             </Link>
                             <Link
                               href="/ongjin"
-                              className="text-left p-2 text-slate-300 hover:bg-purple-900 hover:text-purple-400 rounded transition-colors block"
+                              className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                              onClick={() => setShowRegionalDropdown(false)}
                             >
                               옹진군출장마사지
                             </Link>
@@ -512,7 +584,7 @@ export default function Home() {
                   </div>
                 )}
               </div>
-              <a href="tel:010-2871-2457" className="hover:text-emerald-400 transition-colors text-blackr text-white">
+              <a href="tel:010-2871-2457" className="text-gray-600 hover:text-violet-600 transition-colors">
                 문의
               </a>
             </nav>
@@ -642,19 +714,19 @@ export default function Home() {
       )}
 
       {/* Reservation Guide Section */}
-      <section className="bg-emerald-900 py-8 border-b border-emerald-800">
+      <section className="bg-gradient-to-r from-violet-600 to-violet-700 py-8 border-b border-violet-500">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-2xl font-bold text-white mb-4">출장안마 예약문의 가이드</h2>
-            <p className="text-emerald-100 text-lg mb-6">365일 24시간 문의 & 예약 가능합니다</p>
+            <p className="text-violet-100 text-lg mb-6">365일 24시간 문의 & 예약 가능합니다</p>
 
-            <div className="bg-slate-800 rounded-lg p-6 mb-6 text-left max-w-4xl mx-auto">
-              <p className="mb-4 leading-relaxed text-center leading-7 font-bold text-lg text-red-400 min-h-[3.5rem]">
+            <div className="bg-white rounded-lg p-6 mb-6 text-left max-w-4xl mx-auto shadow-xl">
+              <p className="mb-4 leading-relaxed text-center leading-7 font-bold text-lg text-violet-600 min-h-[3.5rem]">
                 {typewriterText}
                 {typewriterText.length < fullText.length && <span className="animate-pulse">|</span>}
               </p>
-              <div className="bg-emerald-900 rounded-lg p-4 mb-4">
-                <p className="text-emerald-100 font-semibold text-center">
+              <div className="bg-violet-50 rounded-lg p-4 mb-4 border border-violet-200">
+                <p className="text-violet-700 font-semibold text-center">
                   (선입금, 예약금, 보증금 일절 요구하지 않습니다. 예약시 참고바랍니다.)
                 </p>
               </div>
@@ -663,7 +735,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
-                className="bg-white text-emerald-900 hover:bg-emerald-50 px-8 py-3 text-lg font-semibold"
+                className="bg-white text-violet-600 hover:bg-violet-50 px-8 py-3 text-lg font-semibold shadow-lg"
                 asChild
               >
                 <a href="tel:010-2871-2457">
@@ -673,7 +745,7 @@ export default function Home() {
               </Button>
               <Button
                 size="lg"
-                className="bg-yellow-500 text-slate-900 hover:bg-yellow-400 px-8 py-3 text-lg font-semibold"
+                className="bg-yellow-400 text-gray-800 hover:bg-yellow-300 px-8 py-3 text-lg font-semibold shadow-lg"
                 asChild
               >
                 <a href="https://open.kakao.com/o/s0ca9mMh" target="_blank" rel="noopener noreferrer">
@@ -687,73 +759,70 @@ export default function Home() {
       </section>
 
       {/* Main Banner */}
-      <section id="home" className="relative bg-gradient-to-br from-slate-800 to-slate-900 py-20">
+      <section id="home" className="relative bg-gradient-to-br from-violet-50 to-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <Badge className="mb-4 bg-emerald-900 text-emerald-300 hover:bg-emerald-900">24시간 운영</Badge>
-              <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+              <Badge className="mb-4 bg-violet-100 text-violet-600 hover:bg-violet-200">24시간 운영</Badge>
+              <h1 className="text-4xl lg:text-6xl font-bold text-gray-800 mb-6 leading-tight">
                 전 지역 30분 내 방문
-                <span className="text-emerald-400 block">프리미엄 마사지</span>
+                <span className="text-violet-600 block">프리미엄 마사지</span>
               </h1>
-              <p className="text-xl text-slate-300 mb-8">
+              <p className="text-xl text-gray-600 mb-8">
                 숙련된 전문 테라피스트가 직접 방문하여
                 <br />
                 최고의 힐링 서비스를 제공합니다
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                
-                
-              </div>
-              <div className="flex items-center gap-6 text-sm text-slate-400">
+              <div className="flex flex-col sm:flex-row gap-4 mb-8"></div>
+              <div className="flex items-center gap-6 text-sm text-gray-500">
                 <div className="flex items-center gap-2">
-                  <CreditCard className="h-4 w-4 text-emerald-400" />
+                  <CreditCard className="h-4 w-4 text-violet-600" />
                   카드 결제 가능
                 </div>
                 <div className="flex items-center gap-2">
-                  <Shield className="h-4 w-4 text-emerald-400" />
+                  <Shield className="h-4 w-4 text-violet-600" />
                   위생 인증
                 </div>
               </div>
             </div>
             <div className="relative">
-              <div className="bg-slate-800 rounded-lg p-6 shadow-2xl">
-                <h3 className="text-2xl font-bold text-white mb-6 text-center">마사지 코스 & 요금표</h3>
+              <div className="bg-white rounded-lg p-6 shadow-2xl">
+                <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">마사지 코스 & 요금표</h3>
 
                 {/* Thai Massage */}
                 <div className="mb-6">
-                  <h4 className="text-lg font-semibold text-emerald-400 mb-3">타이 마사지</h4>
+                  <h4 className="text-lg font-semibold text-violet-600 mb-3">타이 마사지</h4>
                   <div className="grid grid-cols-3 gap-2 text-sm">
-                    <div className="bg-slate-700 rounded p-3 text-center">
-                      <div className="text-white font-semibold">60분</div>
-                      <div className="text-emerald-400 font-bold">80,000원</div>
+                    <div className="bg-violet-50 rounded p-3 text-center">
+                      <div className="text-gray-700 font-semibold">60분</div>
+                      <div className="text-violet-600 font-bold">80,000원</div>
                     </div>
-                    <div className="bg-slate-700 rounded p-3 text-center">
-                      <div className="text-white font-semibold">90분</div>
-                      <div className="text-emerald-400 font-bold">100,000원</div>
+                    <div className="bg-violet-50 rounded p-3 text-center">
+                      <div className="text-gray-700 font-semibold">90분</div>
+                      <div className="text-violet-600 font-bold">100,000원</div>
                     </div>
-                    <div className="bg-slate-700 rounded p-3 text-center">
-                      <div className="text-white font-semibold">120분</div>
-                      <div className="text-emerald-400 font-bold">120,000원</div>
+                    <div className="bg-violet-50 rounded p-3 text-center">
+                      <div className="text-gray-700 font-semibold">120분</div>
+                      <div className="text-violet-600 font-bold">120,000원</div>
                     </div>
                   </div>
                 </div>
 
                 {/* Healing Swedish */}
                 <div className="mb-6">
-                  <h4 className="text-lg font-semibold text-emerald-400 mb-3">힐링스웨디시</h4>
+                  <h4 className="text-lg font-semibold text-violet-600 mb-3">힐링스웨디시</h4>
                   <div className="grid grid-cols-3 gap-2 text-sm">
-                    <div className="bg-slate-700 rounded p-3 text-center">
-                      <div className="text-white font-semibold">60분</div>
-                      <div className="text-emerald-400 font-bold">90,000원</div>
+                    <div className="bg-violet-50 rounded p-3 text-center">
+                      <div className="text-gray-700 font-semibold">60분</div>
+                      <div className="text-violet-600 font-bold">90,000원</div>
                     </div>
-                    <div className="bg-slate-700 rounded p-3 text-center">
-                      <div className="text-white font-semibold">90분</div>
-                      <div className="text-emerald-400 font-bold">110,000원</div>
+                    <div className="bg-violet-50 rounded p-3 text-center">
+                      <div className="text-gray-700 font-semibold">90분</div>
+                      <div className="text-violet-600 font-bold">110,000원</div>
                     </div>
-                    <div className="bg-slate-700 rounded p-3 text-center">
-                      <div className="text-white font-semibold">120분</div>
-                      <div className="text-emerald-400 font-bold">130,000원</div>
+                    <div className="bg-violet-50 rounded p-3 text-center">
+                      <div className="text-gray-700 font-semibold">120분</div>
+                      <div className="text-violet-600 font-bold">130,000원</div>
                     </div>
                   </div>
                 </div>
@@ -761,22 +830,22 @@ export default function Home() {
                 {/* VIP Package */}
                 <div className="mb-4">
                   <h4 className="text-lg font-semibold text-yellow-400 mb-2">VIP (타이 + 힐링 + 풋)</h4>
-                  <Badge className="mb-3 bg-yellow-900 text-yellow-300 text-xs">프리미엄 패키지</Badge>
+                  <Badge className="mb-3 bg-yellow-100 text-yellow-700 text-xs">프리미엄 패키지</Badge>
                   <div className="grid grid-cols-2 gap-2 text-sm">
-                    <div className="bg-gradient-to-br from-yellow-900 to-yellow-800 rounded p-3 text-center">
-                      <div className="text-white font-semibold">60분</div>
+                    <div className="bg-yellow-50 rounded p-3 text-center">
+                      <div className="text-gray-700 font-semibold">60분</div>
                       <div className="text-yellow-400 font-bold">100,000원</div>
                     </div>
-                    <div className="bg-gradient-to-br from-yellow-900 to-yellow-800 rounded p-3 text-center">
-                      <div className="text-white font-semibold">90분</div>
+                    <div className="bg-yellow-50 rounded p-3 text-center">
+                      <div className="text-gray-700 font-semibold">90분</div>
                       <div className="text-yellow-400 font-bold">130,000원</div>
                     </div>
-                    <div className="bg-gradient-to-br from-yellow-900 to-yellow-800 rounded p-3 text-center">
-                      <div className="text-white font-semibold">120분</div>
+                    <div className="bg-yellow-50 rounded p-3 text-center">
+                      <div className="text-gray-700 font-semibold">120분</div>
                       <div className="text-yellow-400 font-bold">160,000원</div>
                     </div>
-                    <div className="bg-gradient-to-br from-yellow-900 to-yellow-800 rounded p-3 text-center">
-                      <div className="text-white font-semibold">150분</div>
+                    <div className="bg-yellow-50 rounded p-3 text-center">
+                      <div className="text-gray-700 font-semibold">150분</div>
                       <div className="text-yellow-400 font-bold">200,000원</div>
                     </div>
                   </div>
@@ -784,7 +853,7 @@ export default function Home() {
 
                 <Button
                   size="sm"
-                  className="w-full bg-emerald-600 hover:bg-emerald-700 text-white mt-4"
+                  className="w-full bg-violet-600 hover:bg-violet-700 text-white mt-4"
                   onClick={() => setShowPriceTable(true)}
                 >
                   상세 요금표 보기
@@ -795,34 +864,34 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Service Introduction */}
-      <section id="services" className="py-20 bg-slate-800">
+      {/* Services Section */}
+      <section id="services" className="py-20 bg-violet-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">왜 총알출장마사지를 선택해야 할까요?</h2>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">왜 총알출장마사지를 선택해야 할까요?</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               고객의 편안함과 만족을 위해 최선을 다하는 프리미엄 홈케어 서비스
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="md:col-span-2">
-              <h3 className="text-2xl font-bold text-emerald-400 mb-4">총알출장마사지</h3>
-              <p className="text-slate-300 mb-6">
+              <h3 className="text-2xl font-bold text-violet-600 mb-4">총알출장마사지</h3>
+              <p className="text-gray-600 mb-6">
                 전문적이고 안전한 홈케어 마사지 서비스로
                 <br />
                 고객님의 건강과 힐링을 책임집니다.
               </p>
-              <div className="space-y-2 text-slate-300">
+              <div className="space-y-2 text-gray-600">
                 <p>24시간 상담: 전화상담</p>
               </div>
             </div>
 
             <div>
-              <h4 className="text-lg mb-4 font-semibold">빠른 링크</h4>
-              <ul className="space-y-2 text-slate-300">
+              <h4 className="text-lg mb-4 font-semibold text-gray-800">빠른 링크</h4>
+              <ul className="space-y-2 text-gray-600">
                 <li>
-                  <a href="#services" className="hover:text-emerald-400 transition-colors">
+                  <a href="#services" className="hover:text-violet-600 transition-colors">
                     서비스 안내
                   </a>
                 </li>
@@ -830,18 +899,18 @@ export default function Home() {
             </div>
 
             <div>
-              <h4 className="text-lg font-semibold mb-4">고객센터</h4>
+              <h4 className="text-lg font-semibold mb-4 text-gray-800">고객센터</h4>
               <div className="space-y-4"></div>
             </div>
           </div>
 
-          <div className="border-t border-slate-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-slate-400 text-sm">© 2024 총알출장마사지. All rights reserved.</p>
+          <div className="border-t border-violet-200 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+            <p className="text-gray-500 text-sm">© 2024 총알출장마사지. All rights reserved.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-slate-400 hover:text-emerald-400 text-sm transition-colors">
+              <a href="#" className="text-gray-500 hover:text-violet-600 text-sm transition-colors">
                 이용약관
               </a>
-              <a href="#" className="text-slate-400 hover:text-emerald-400 text-sm transition-colors">
+              <a href="#" className="text-gray-500 hover:text-violet-600 text-sm transition-colors">
                 개인정보 처리방침
               </a>
             </div>
@@ -1041,26 +1110,26 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer id="contact" className="bg-slate-950 text-white py-16">
+      <footer id="contact" className="bg-white text-gray-800 py-16 border-t border-violet-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div className="md:col-span-2">
-              <h3 className="text-2xl font-bold text-emerald-400 mb-4">총알출장마사지</h3>
-              <p className="text-slate-300 mb-6">
+              <h3 className="text-2xl font-bold text-violet-600 mb-4">총알출장마사지</h3>
+              <p className="text-gray-600 mb-6">
                 전문적이고 안전한 홈케어 마사지 서비스로
                 <br />
                 고객님의 건강과 힐링을 책임집니다.
               </p>
-              <div className="space-y-2 text-slate-300">
+              <div className="space-y-2 text-gray-600">
                 <p>24시간 상담: 전화상담</p>
               </div>
             </div>
 
             <div>
-              <h4 className="text-lg font-semibold mb-4">빠른 링크</h4>
-              <ul className="space-y-2 text-slate-300">
+              <h4 className="text-lg font-semibold mb-4 text-gray-800">빠른 링크</h4>
+              <ul className="space-y-2 text-gray-600">
                 <li>
-                  <a href="#services" className="hover:text-emerald-400 transition-colors">
+                  <a href="#services" className="hover:text-violet-600 transition-colors">
                     서비스 안내
                   </a>
                 </li>
@@ -1068,18 +1137,18 @@ export default function Home() {
             </div>
 
             <div>
-              <h4 className="text-lg font-semibold mb-4">고객센터</h4>
+              <h4 className="text-lg font-semibold mb-4 text-gray-800">고객센터</h4>
               <div className="space-y-4"></div>
             </div>
           </div>
 
-          <div className="border-t border-slate-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-slate-400 text-sm">© 2024 총알출장마사지. All rights reserved.</p>
+          <div className="border-t border-violet-200 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+            <p className="text-gray-500 text-sm">© 2024 총알출장마사지. All rights reserved.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-slate-400 hover:text-emerald-400 text-sm transition-colors">
+              <a href="#" className="text-gray-500 hover:text-violet-600 text-sm transition-colors">
                 이용약관
               </a>
-              <a href="#" className="text-slate-400 hover:text-emerald-400 text-sm transition-colors">
+              <a href="#" className="text-gray-500 hover:text-violet-600 text-sm transition-colors">
                 개인정보 처리방침
               </a>
             </div>
