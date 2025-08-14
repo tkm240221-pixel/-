@@ -626,13 +626,13 @@ export default function Home() {
                 <Button size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-white flex-1" asChild>
                   <a href="tel:010-2871-2457">
                     <Phone className="h-5 w-5 mr-2" />
-                    전화 예약
+                    전화상담
                   </a>
                 </Button>
                 <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-slate-900 flex-1" asChild>
                   <a href="https://open.kakao.com/o/s0ca9mMh" target="_blank" rel="noopener noreferrer">
                     <MessageCircle className="h-5 w-5 mr-2" />
-                    카톡 예약
+                    카톡상담
                   </a>
                 </Button>
               </div>
@@ -668,7 +668,7 @@ export default function Home() {
               >
                 <a href="tel:010-2871-2457">
                   <Phone className="h-5 w-5 mr-2" />
-                  010-2871-2457
+                  전화상담
                 </a>
               </Button>
               <Button
@@ -832,7 +832,7 @@ export default function Home() {
                 고객님의 건강과 힐링을 책임집니다.
               </p>
               <div className="space-y-2 text-slate-300">
-                <p>24시간 상담: 010-2871-2457</p>
+                <p>24시간 상담: 전화상담</p>
               </div>
             </div>
 
@@ -1070,7 +1070,7 @@ export default function Home() {
                 고객님의 건강과 힐링을 책임집니다.
               </p>
               <div className="space-y-2 text-slate-300">
-                <p>24시간 상담: 010-2871-2457</p>
+                <p>24시간 상담: 전화상담</p>
               </div>
             </div>
 

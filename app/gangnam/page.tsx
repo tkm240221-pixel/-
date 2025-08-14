@@ -55,7 +55,7 @@ export default function GangnamPage() {
               >
                 <a href="tel:010-2871-2457">
                   <Phone className="h-5 w-5 mr-2" />
-                  즉시 전화상담
+                  전화상담
                 </a>
               </Button>
               <Button
@@ -134,7 +134,7 @@ export default function GangnamPage() {
             >
               <a href="tel:010-2871-2457">
                 <Phone className="h-5 w-5 mr-2" />
-                010-2871-2457
+                전화상담
               </a>
             </Button>
             <Button
