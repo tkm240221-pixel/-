@@ -41,20 +41,20 @@ export default function Home() {
             </div>
 
             {/* Navigation */}
-            <nav className="hidden md:flex space-x-8 relative justify-center flex-1">
-              <a href="#home" className="text-slate-300 hover:text-emerald-400 transition-colors">
+            <nav className="hidden md:flex space-x-8 relative justify-center flex-1 text-left font-normal text-xl text-slate-600">
+              <a href="#home" className="hover:text-emerald-400 transition-colors text-white">
                 홈
               </a>
               <button
                 onClick={() => setShowPriceTable(true)}
-                className="text-slate-300 hover:text-emerald-400 transition-colors"
+                className="hover:text-emerald-400 transition-colors0 text-white"
               >
                 코스표
               </button>
               <div className="relative">
                 <button
                   onClick={() => setShowRegionalDropdown(!showRegionalDropdown)}
-                  className="text-slate-300 hover:text-emerald-400 transition-colors flex items-center"
+                  className="hover:text-emerald-400 transition-colors flex items-center text-white"
                 >
                   지역별
                   <svg className="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -512,7 +512,7 @@ export default function Home() {
                   </div>
                 )}
               </div>
-              <a href="tel:010-2871-2457" className="text-slate-300 hover:text-emerald-400 transition-colors">
+              <a href="tel:010-2871-2457" className="hover:text-emerald-400 transition-colors text-blackr text-white">
                 문의
               </a>
             </nav>
