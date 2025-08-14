@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge"
 import { Phone, MessageCircle, MapPin } from "lucide-react"
 import Link from "next/link"
 
-export default function GangdongPage() {
+export default function GwangjinMassage() {
   return (
     <div className="min-h-screen bg-slate-900">
       {/* Header */}
@@ -31,15 +31,15 @@ export default function GangdongPage() {
       <section className="relative bg-gradient-to-br from-slate-800 to-slate-900 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <Badge className="mb-4 bg-emerald-900 text-emerald-300">강동구 전문 서비스</Badge>
+            <Badge className="mb-4 bg-emerald-900 text-emerald-300">광진구 전문 서비스</Badge>
             <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6">
-              강동구 출장마사지
+              광진구 출장마사지
               <span className="text-emerald-400 block">24시간 방문 서비스</span>
             </h1>
             <p className="text-xl text-slate-300 mb-8 max-w-3xl mx-auto">
-              강동구 전 지역 30분 내 방문 가능한 프리미엄 출장마사지 서비스
+              광진구 전 지역 30분 내 방문 가능한 프리미엄 출장마사지 서비스
               <br />
-              천호동, 성내동, 길동, 둔촌동, 암사동, 고덕동 등 강동구 어디든 신속하게 방문합니다
+              자양동, 구의동, 광장동, 중곡동 등 광진구 어디든 신속하게 방문합니다
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <Button size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3" asChild>
@@ -62,26 +62,22 @@ export default function GangdongPage() {
       {/* Service Areas */}
       <section className="py-16 bg-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-white text-center mb-12">강동구 서비스 지역</h2>
+          <h2 className="text-3xl font-bold text-white text-center mb-12">광진구 서비스 지역</h2>
           <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4">
             {[
-              "천호1동",
-              "천호2동",
-              "천호3동",
-              "성내1동",
-              "성내2동",
-              "성내3동",
-              "길동",
-              "둔촌1동",
-              "둔촌2동",
-              "암사1동",
-              "암사2동",
-              "암사3동",
-              "고덕1동",
-              "고덕2동",
-              "상일동",
-              "명일1동",
-              "명일2동",
+              "중곡1동",
+              "중곡2동",
+              "중곡3동",
+              "중곡4동",
+              "능동",
+              "구의1동",
+              "구의2동",
+              "구의3동",
+              "광장동",
+              "자양1동",
+              "자양2동",
+              "자양3동",
+              "자양4동",
             ].map((area) => (
               <Card key={area} className="bg-slate-700 border-slate-600 hover:bg-slate-600 transition-colors">
                 <CardContent className="p-4 text-center">
@@ -97,7 +93,7 @@ export default function GangdongPage() {
       {/* Pricing */}
       <section className="py-16 bg-slate-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-white text-center mb-12">강동구 출장마사지 요금표</h2>
+          <h2 className="text-3xl font-bold text-white text-center mb-12">광진구 출장마사지 요금표</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="bg-slate-800 border-slate-700">
               <CardContent className="p-6">
@@ -163,7 +159,7 @@ export default function GangdongPage() {
       {/* Contact */}
       <section className="py-16 bg-emerald-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-8">강동구 출장마사지 예약</h2>
+          <h2 className="text-3xl font-bold text-white mb-8">광진구 출장마사지 예약</h2>
           <p className="text-emerald-100 text-lg mb-8">24시간 언제든지 연락주세요</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-white text-emerald-900 hover:bg-emerald-50 px-8 py-3" asChild>
