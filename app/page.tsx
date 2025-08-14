@@ -1692,187 +1692,187 @@ export default function HomePage() {
       </section>
 
       {/* Customer Reviews */}
-      <section className="py-20 bg-slate-800 overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-violet-50 to-purple-50 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">고객 후기</h2>
-            <p className="text-xl text-slate-300">실제 고객들의 생생한 후기를 확인해보세요</p>
+            <h2 className="text-3xl lg:text-4xl font-bold text-violet-900 mb-4">고객 후기</h2>
+            <p className="text-xl text-violet-700">실제 고객들의 생생한 후기를 확인해보세요</p>
           </div>
 
           <div className="relative">
             <div className="flex animate-scroll space-x-8">
               {/* First set of reviews */}
-              <Card className="p-6 bg-slate-700 border-slate-600 min-w-[350px] flex-shrink-0">
+              <Card className="p-6 bg-white border-violet-200 shadow-lg min-w-[350px] flex-shrink-0">
                 <CardContent className="pt-6">
                   <div className="flex items-center mb-4">
                     <img src="/happy-korean-customer.png" alt="Customer" className="w-12 h-12 rounded-full mr-4" />
                     <div>
-                      <h4 className="font-semibold text-white">김○○님</h4>
-                      <div className="flex text-yellow-400">
+                      <h4 className="font-semibold text-violet-900">김○○님</h4>
+                      <div className="flex text-amber-400">
                         {[...Array(5)].map((_, i) => (
                           <Star key={i} className="h-4 w-4 fill-current" />
                         ))}
                       </div>
                     </div>
                   </div>
-                  <p className="text-slate-300">
+                  <p className="text-violet-700">
                     "정말 전문적이고 친절하셨어요. 집에서 편안하게 받을 수 있어서 너무 좋았습니다. 다음에도 꼭
                     이용할게요!"
                   </p>
                 </CardContent>
               </Card>
 
-              <Card className="p-6 bg-slate-700 border-slate-600 min-w-[350px] flex-shrink-0">
+              <Card className="p-6 bg-white border-violet-200 shadow-lg min-w-[350px] flex-shrink-0">
                 <CardContent className="pt-6">
                   <div className="flex items-center mb-4">
                     <img src="/satisfied-korean-customer.png" alt="Customer" className="w-12 h-12 rounded-full mr-4" />
                     <div>
-                      <h4 className="font-semibold text-white">박○○님</h4>
-                      <div className="flex text-yellow-400">
+                      <h4 className="font-semibold text-violet-900">박○○님</h4>
+                      <div className="flex text-amber-400">
                         {[...Array(5)].map((_, i) => (
                           <Star key={i} className="h-4 w-4 fill-current" />
                         ))}
                       </div>
                     </div>
                   </div>
-                  <p className="text-slate-300">
+                  <p className="text-violet-700">
                     "늦은 시간에도 방문해주셔서 감사했어요. 마사지 실력도 정말 좋고 가격도 합리적이에요. 강력
                     추천합니다!"
                   </p>
                 </CardContent>
               </Card>
 
-              <Card className="p-6 bg-slate-700 border-slate-600 min-w-[350px] flex-shrink-0">
+              <Card className="p-6 bg-white border-violet-200 shadow-lg min-w-[350px] flex-shrink-0">
                 <CardContent className="pt-6">
                   <div className="flex items-center mb-4">
                     <img src="/happy-korean-customer.png" alt="Customer" className="w-12 h-12 rounded-full mr-4" />
                     <div>
-                      <h4 className="font-semibold text-white">이○○님</h4>
-                      <div className="flex text-yellow-400">
+                      <h4 className="font-semibold text-violet-900">이○○님</h4>
+                      <div className="flex text-amber-400">
                         {[...Array(5)].map((_, i) => (
                           <Star key={i} className="h-4 w-4 fill-current" />
                         ))}
                       </div>
                     </div>
                   </div>
-                  <p className="text-slate-300">
+                  <p className="text-violet-700">
                     "VIP 패키지 정말 만족스러웠어요. 피로가 완전히 풀렸고 서비스도 최고였습니다!"
                   </p>
                 </CardContent>
               </Card>
 
-              <Card className="p-6 bg-slate-700 border-slate-600 min-w-[350px] flex-shrink-0">
+              <Card className="p-6 bg-white border-violet-200 shadow-lg min-w-[350px] flex-shrink-0">
                 <CardContent className="pt-6">
                   <div className="flex items-center mb-4">
                     <img src="/satisfied-korean-customer.png" alt="Customer" className="w-12 h-12 rounded-full mr-4" />
                     <div>
-                      <h4 className="font-semibold text-white">최○○님</h4>
-                      <div className="flex text-yellow-400">
+                      <h4 className="font-semibold text-violet-900">최○○님</h4>
+                      <div className="flex text-amber-400">
                         {[...Array(5)].map((_, i) => (
                           <Star key={i} className="h-4 w-4 fill-current" />
                         ))}
                       </div>
                     </div>
                   </div>
-                  <p className="text-slate-300">
+                  <p className="text-violet-700">
                     "처음 이용해봤는데 정말 만족해요. 테라피스트분이 너무 전문적이시고 친절하셨습니다."
                   </p>
                 </CardContent>
               </Card>
 
-              <Card className="p-6 bg-slate-700 border-slate-600 min-w-[350px] flex-shrink-0">
+              <Card className="p-6 bg-white border-violet-200 shadow-lg min-w-[350px] flex-shrink-0">
                 <CardContent className="pt-6">
                   <div className="flex items-center mb-4">
                     <img src="/happy-korean-customer.png" alt="Customer" className="w-12 h-12 rounded-full mr-4" />
                     <div>
-                      <h4 className="font-semibold text-white">정○○님</h4>
-                      <div className="flex text-yellow-400">
+                      <h4 className="font-semibold text-violet-900">정○○님</h4>
+                      <div className="flex text-amber-400">
                         {[...Array(5)].map((_, i) => (
                           <Star key={i} className="h-4 w-4 fill-current" />
                         ))}
                       </div>
                     </div>
                   </div>
-                  <p className="text-slate-300">
+                  <p className="text-violet-700">
                     "24시간 서비스라서 야근 후에도 이용할 수 있어서 좋아요. 스트레스가 완전히 해소됐습니다!"
                   </p>
                 </CardContent>
               </Card>
 
-              <Card className="p-6 bg-slate-700 border-slate-600 min-w-[350px] flex-shrink-0">
+              <Card className="p-6 bg-white border-violet-200 shadow-lg min-w-[350px] flex-shrink-0">
                 <CardContent className="pt-6">
                   <div className="flex items-center mb-4">
                     <img src="/satisfied-korean-customer.png" alt="Customer" className="w-12 h-12 rounded-full mr-4" />
                     <div>
-                      <h4 className="font-semibold text-white">한○○님</h4>
-                      <div className="flex text-yellow-400">
+                      <h4 className="font-semibold text-violet-900">한○○님</h4>
+                      <div className="flex text-amber-400">
                         {[...Array(5)].map((_, i) => (
                           <Star key={i} className="h-4 w-4 fill-current" />
                         ))}
                       </div>
                     </div>
                   </div>
-                  <p className="text-slate-300">
+                  <p className="text-violet-700">
                     "힐링스웨디시 받았는데 정말 시원하고 개운해요. 가격도 합리적이고 서비스도 최고입니다!"
                   </p>
                 </CardContent>
               </Card>
 
               {/* Duplicate set for seamless loop */}
-              <Card className="p-6 bg-slate-700 border-slate-600 min-w-[350px] flex-shrink-0">
+              <Card className="p-6 bg-white border-violet-200 shadow-lg min-w-[350px] flex-shrink-0">
                 <CardContent className="pt-6">
                   <div className="flex items-center mb-4">
                     <img src="/happy-korean-customer.png" alt="Customer" className="w-12 h-12 rounded-full mr-4" />
                     <div>
-                      <h4 className="font-semibold text-white">김○○님</h4>
-                      <div className="flex text-yellow-400">
+                      <h4 className="font-semibold text-violet-900">김○○님</h4>
+                      <div className="flex text-amber-400">
                         {[...Array(5)].map((_, i) => (
                           <Star key={i} className="h-4 w-4 fill-current" />
                         ))}
                       </div>
                     </div>
                   </div>
-                  <p className="text-slate-300">
+                  <p className="text-violet-700">
                     "정말 전문적이고 친절하셨어요. 집에서 편안하게 받을 수 있어서 너무 좋았습니다. 다음에도 꼭
                     이용할게요!"
                   </p>
                 </CardContent>
               </Card>
 
-              <Card className="p-6 bg-slate-700 border-slate-600 min-w-[350px] flex-shrink-0">
+              <Card className="p-6 bg-white border-violet-200 shadow-lg min-w-[350px] flex-shrink-0">
                 <CardContent className="pt-6">
                   <div className="flex items-center mb-4">
                     <img src="/satisfied-korean-customer.png" alt="Customer" className="w-12 h-12 rounded-full mr-4" />
                     <div>
-                      <h4 className="font-semibold text-white">박○○님</h4>
-                      <div className="flex text-yellow-400">
+                      <h4 className="font-semibold text-violet-900">박○○님</h4>
+                      <div className="flex text-amber-400">
                         {[...Array(5)].map((_, i) => (
                           <Star key={i} className="h-4 w-4 fill-current" />
                         ))}
                       </div>
                     </div>
                   </div>
-                  <p className="text-slate-300">
+                  <p className="text-violet-700">
                     "늦은 시간에도 방문해주셔서 감사했어요. 마사지 실력도 정말 좋고 가격도 합리적이에요. 강력
                     추천합니다!"
                   </p>
                 </CardContent>
               </Card>
 
-              <Card className="p-6 bg-slate-700 border-slate-600 min-w-[350px] flex-shrink-0">
+              <Card className="p-6 bg-white border-violet-200 shadow-lg min-w-[350px] flex-shrink-0">
                 <CardContent className="pt-6">
                   <div className="flex items-center mb-4">
                     <img src="/happy-korean-customer.png" alt="Customer" className="w-12 h-12 rounded-full mr-4" />
                     <div>
-                      <h4 className="font-semibold text-white">이○○님</h4>
-                      <div className="flex text-yellow-400">
+                      <h4 className="font-semibold text-violet-900">이○○님</h4>
+                      <div className="flex text-amber-400">
                         {[...Array(5)].map((_, i) => (
                           <Star key={i} className="h-4 w-4 fill-current" />
                         ))}
                       </div>
                     </div>
                   </div>
-                  <p className="text-slate-300">
+                  <p className="text-violet-700">
                     "VIP 패키지 정말 만족스러웠어요. 피로가 완전히 풀렸고 서비스도 최고였습니다!"
                   </p>
                 </CardContent>
