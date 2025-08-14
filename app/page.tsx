@@ -34,14 +34,14 @@ export default function Home() {
       {/* Header */}
       <header className="bg-slate-800 shadow-sm border-b border-slate-700 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
+          <div className="flex justify-between items-center h-16 text-left flex-row w-2/5">
             {/* Logo */}
             <div className="flex-shrink-0">
               <h1 className="text-2xl font-bold text-emerald-400">총알출장마사지</h1>
             </div>
 
             {/* Navigation */}
-            <nav className="hidden md:flex space-x-8 relative justify-center flex-1 text-left font-normal text-xl text-slate-600">
+            <nav className="hidden md:flex space-x-8 relative justify-center flex-1 font-normal text-xl text-slate-600 text-left">
               <a href="#home" className="hover:text-emerald-400 transition-colors text-white">
                 홈
               </a>
@@ -702,26 +702,8 @@ export default function Home() {
                 최고의 힐링 서비스를 제공합니다
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Button
-                  size="lg"
-                  className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 text-lg font-semibold"
-                  asChild
-                >
-                  <a href="tel:010-2871-2457">
-                    <Phone className="h-5 w-5 mr-2" />
-                    전화상담
-                  </a>
-                </Button>
-                <Button
-                  size="lg"
-                  className="bg-yellow-500 text-slate-900 hover:bg-yellow-400 px-8 py-3 text-lg font-semibold"
-                  asChild
-                >
-                  <a href="https://open.kakao.com/o/s0ca9mMh" target="_blank" rel="noopener noreferrer">
-                    <MessageCircle className="h-5 w-5 mr-2" />
-                    카톡상담
-                  </a>
-                </Button>
+                
+                
               </div>
               <div className="flex items-center gap-6 text-sm text-slate-400">
                 <div className="flex items-center gap-2">
@@ -837,7 +819,7 @@ export default function Home() {
             </div>
 
             <div>
-              <h4 className="text-lg font-semibold mb-4">빠른 링크</h4>
+              <h4 className="text-lg mb-4 font-semibold">빠른 링크</h4>
               <ul className="space-y-2 text-slate-300">
                 <li>
                   <a href="#services" className="hover:text-emerald-400 transition-colors">
