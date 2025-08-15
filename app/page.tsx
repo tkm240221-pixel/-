@@ -4,8 +4,9 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Phone, MessageCircle, Shield, CreditCard, Star, X } from "lucide-react"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useCallback, useMemo } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import Head from "next/head"
 
 export default function HomePage() {
@@ -19,7 +20,7 @@ export default function HomePage() {
   const [showMobileRegionalDropdown, setShowMobileRegionalDropdown] = useState(false)
   const [activeMobileRegion, setActiveMobileRegion] = useState("seoul")
 
-  useEffect(() => {
+  const typewriterEffect = useCallback(() => {
     let index = 0
     const timer = setInterval(() => {
       if (index < fullText.length) {
@@ -29,9 +30,89 @@ export default function HomePage() {
         clearInterval(timer)
       }
     }, 50)
-
     return () => clearInterval(timer)
-  }, [])
+  }, [fullText])
+
+  useEffect(() => {
+    const cleanup = typewriterEffect()
+    return cleanup
+  }, [typewriterEffect])
+
+  const regionalData = useMemo(
+    () => ({
+      seoul: {
+        name: "서울",
+        districts: [
+          "강남구",
+          "강동구",
+          "강북구",
+          "강서구",
+          "관악구",
+          "광진구",
+          "구로구",
+          "금천구",
+          "노원구",
+          "도봉구",
+          "동대문구",
+          "동작구",
+          "마포구",
+          "서대문구",
+          "서초구",
+          "성동구",
+          "성북구",
+          "송파구",
+          "양천구",
+          "영등포구",
+          "용산구",
+          "은평구",
+          "종로구",
+          "중구",
+          "중랑구",
+        ],
+      },
+      gyeonggi: {
+        name: "경기",
+        districts: [
+          "가평군",
+          "고양시",
+          "과천시",
+          "광명시",
+          "광주시",
+          "구리시",
+          "군포시",
+          "김포시",
+          "남양주시",
+          "동두천시",
+          "부천시",
+          "성남시",
+          "수원시",
+          "시흥시",
+          "안산시",
+          "안성시",
+          "안양시",
+          "양주시",
+          "양평군",
+          "여주시",
+          "연천군",
+          "오산시",
+          "용인시",
+          "의왕시",
+          "의정부시",
+          "이천시",
+          "파주시",
+          "평택시",
+          "포천시",
+          "하남시",
+          "화성시",
+        ],
+      },
+      incheon: {
+        name: "인천",
+        districts: ["강화군", "계양구", "남동구", "동구", "미추홀구", "부평구", "서구", "연수구", "옹진군", "중구"],
+      },
+    }),
+    [],
+  )
 
   return (
     <>
@@ -1721,7 +1802,15 @@ export default function HomePage() {
                 <Card className="p-6 bg-white border-violet-200 shadow-lg min-w-[350px] flex-shrink-0">
                   <CardContent className="pt-6">
                     <div className="flex items-center mb-4">
-                      <img src="/happy-korean-customer.png" alt="Customer" className="w-12 h-12 rounded-full mr-4" />
+                      <Image
+                        src="/happy-korean-customer.png"
+                        alt="만족한 고객"
+                        width={48}
+                        height={48}
+                        className="rounded-full mr-4"
+                        loading="lazy"
+                        quality={85}
+                      />
                       <div>
                         <h4 className="font-semibold text-violet-900">김○○님</h4>
                         <div className="flex text-amber-400">
@@ -1741,10 +1830,14 @@ export default function HomePage() {
                 <Card className="p-6 bg-white border-violet-200 shadow-lg min-w-[350px] flex-shrink-0">
                   <CardContent className="pt-6">
                     <div className="flex items-center mb-4">
-                      <img
+                      <Image
                         src="/satisfied-korean-customer.png"
-                        alt="Customer"
-                        className="w-12 h-12 rounded-full mr-4"
+                        alt="만족한 고객"
+                        width={48}
+                        height={48}
+                        className="rounded-full mr-4"
+                        loading="lazy"
+                        quality={85}
                       />
                       <div>
                         <h4 className="font-semibold text-violet-900">박○○님</h4>
@@ -1756,8 +1849,7 @@ export default function HomePage() {
                       </div>
                     </div>
                     <p className="text-violet-700">
-                      "늦은 시간에도 방문해주셔서 감사했어요. 마사지 실력도 정말 좋고 가격도 합리적이에요. 강력
-                      추천합니다!"
+                      "스트레스가 많이 쌓여있었는데 한 번에 다 풀렸어요. 테라피스트분이 정말 실력이 좋으시네요!"
                     </p>
                   </CardContent>
                 </Card>
@@ -1765,7 +1857,15 @@ export default function HomePage() {
                 <Card className="p-6 bg-white border-violet-200 shadow-lg min-w-[350px] flex-shrink-0">
                   <CardContent className="pt-6">
                     <div className="flex items-center mb-4">
-                      <img src="/happy-korean-customer.png" alt="Customer" className="w-12 h-12 rounded-full mr-4" />
+                      <Image
+                        src="/korean-therapist-smiling.png"
+                        alt="만족한 고객"
+                        width={48}
+                        height={48}
+                        className="rounded-full mr-4"
+                        loading="lazy"
+                        quality={85}
+                      />
                       <div>
                         <h4 className="font-semibold text-violet-900">이○○님</h4>
                         <div className="flex text-amber-400">
@@ -1776,7 +1876,7 @@ export default function HomePage() {
                       </div>
                     </div>
                     <p className="text-violet-700">
-                      "VIP 패키지 정말 만족스러웠어요. 피로가 완전히 풀렸고 서비스도 최고였습니다!"
+                      "시간 약속도 정확하고 서비스도 정말 만족스러웠습니다. 다음에 또 예약할게요!"
                     </p>
                   </CardContent>
                 </Card>
@@ -1784,10 +1884,14 @@ export default function HomePage() {
                 <Card className="p-6 bg-white border-violet-200 shadow-lg min-w-[350px] flex-shrink-0">
                   <CardContent className="pt-6">
                     <div className="flex items-center mb-4">
-                      <img
+                      <Image
                         src="/satisfied-korean-customer.png"
-                        alt="Customer"
-                        className="w-12 h-12 rounded-full mr-4"
+                        alt="만족한 고객"
+                        width={48}
+                        height={48}
+                        className="rounded-full mr-4"
+                        loading="lazy"
+                        quality={85}
                       />
                       <div>
                         <h4 className="font-semibold text-violet-900">최○○님</h4>
@@ -1807,7 +1911,15 @@ export default function HomePage() {
                 <Card className="p-6 bg-white border-violet-200 shadow-lg min-w-[350px] flex-shrink-0">
                   <CardContent className="pt-6">
                     <div className="flex items-center mb-4">
-                      <img src="/happy-korean-customer.png" alt="Customer" className="w-12 h-12 rounded-full mr-4" />
+                      <Image
+                        src="/happy-korean-customer.png"
+                        alt="만족한 고객"
+                        className="w-12 h-12 rounded-full mr-4"
+                        width={48}
+                        height={48}
+                        loading="lazy"
+                        quality={85}
+                      />
                       <div>
                         <h4 className="font-semibold text-violet-900">정○○님</h4>
                         <div className="flex text-amber-400">
@@ -1826,10 +1938,14 @@ export default function HomePage() {
                 <Card className="p-6 bg-white border-violet-200 shadow-lg min-w-[350px] flex-shrink-0">
                   <CardContent className="pt-6">
                     <div className="flex items-center mb-4">
-                      <img
+                      <Image
                         src="/satisfied-korean-customer.png"
-                        alt="Customer"
-                        className="w-12 h-12 rounded-full mr-4"
+                        alt="만족한 고객"
+                        width={48}
+                        height={48}
+                        className="rounded-full mr-4"
+                        loading="lazy"
+                        quality={85}
                       />
                       <div>
                         <h4 className="font-semibold text-violet-900">한○○님</h4>
@@ -1850,7 +1966,15 @@ export default function HomePage() {
                 <Card className="p-6 bg-white border-violet-200 shadow-lg min-w-[350px] flex-shrink-0">
                   <CardContent className="pt-6">
                     <div className="flex items-center mb-4">
-                      <img src="/happy-korean-customer.png" alt="Customer" className="w-12 h-12 rounded-full mr-4" />
+                      <Image
+                        src="/happy-korean-customer.png"
+                        alt="만족한 고객"
+                        className="w-12 h-12 rounded-full mr-4"
+                        width={48}
+                        height={48}
+                        loading="lazy"
+                        quality={85}
+                      />
                       <div>
                         <h4 className="font-semibold text-violet-900">김○○님</h4>
                         <div className="flex text-amber-400">
@@ -1870,10 +1994,14 @@ export default function HomePage() {
                 <Card className="p-6 bg-white border-violet-200 shadow-lg min-w-[350px] flex-shrink-0">
                   <CardContent className="pt-6">
                     <div className="flex items-center mb-4">
-                      <img
+                      <Image
                         src="/satisfied-korean-customer.png"
-                        alt="Customer"
-                        className="w-12 h-12 rounded-full mr-4"
+                        alt="만족한 고객"
+                        width={48}
+                        height={48}
+                        className="rounded-full mr-4"
+                        loading="lazy"
+                        quality={85}
                       />
                       <div>
                         <h4 className="font-semibold text-violet-900">박○○님</h4>
@@ -1885,8 +2013,7 @@ export default function HomePage() {
                       </div>
                     </div>
                     <p className="text-violet-700">
-                      "늦은 시간에도 방문해주셔서 감사했어요. 마사지 실력도 정말 좋고 가격도 합리적이에요. 강력
-                      추천합니다!"
+                      "스트레스가 많이 쌓여있었는데 한 번에 다 풀렸어요. 테라피스트분이 정말 실력이 좋으시네요!"
                     </p>
                   </CardContent>
                 </Card>
@@ -1894,7 +2021,15 @@ export default function HomePage() {
                 <Card className="p-6 bg-white border-violet-200 shadow-lg min-w-[350px] flex-shrink-0">
                   <CardContent className="pt-6">
                     <div className="flex items-center mb-4">
-                      <img src="/happy-korean-customer.png" alt="Customer" className="w-12 h-12 rounded-full mr-4" />
+                      <Image
+                        src="/korean-therapist-smiling.png"
+                        alt="만족한 고객"
+                        width={48}
+                        height={48}
+                        className="rounded-full mr-4"
+                        loading="lazy"
+                        quality={85}
+                      />
                       <div>
                         <h4 className="font-semibold text-violet-900">이○○님</h4>
                         <div className="flex text-amber-400">
@@ -1905,7 +2040,7 @@ export default function HomePage() {
                       </div>
                     </div>
                     <p className="text-violet-700">
-                      "VIP 패키지 정말 만족스러웠어요. 피로가 완전히 풀렸고 서비스도 최고였습니다!"
+                      "시간 약속도 정확하고 서비스도 정말 만족스러웠습니다. 다음에 또 예약할게요!"
                     </p>
                   </CardContent>
                 </Card>
