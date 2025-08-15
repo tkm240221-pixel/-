@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import { Phone, MessageCircle, Clock, Shield, Award, Users } from "lucide-react"
 import Link from "next/link"
 
-export default function GapyeongMassage() {
+export default function PyeongtaekMassage() {
   const [showPriceTable, setShowPriceTable] = useState(false)
   const [currentText, setCurrentText] = useState("")
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -88,10 +88,10 @@ export default function GapyeongMassage() {
       {/* Main Banner */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">가평군 출장마사지</h2>
-          <p className="text-xl text-gray-600 mb-2">가평군 전 지역에서 믿을 수 있는 프리미엄 서비스</p>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">평택시 출장마사지</h2>
+          <p className="text-xl text-gray-600 mb-2">평택시 전 지역에서 믿을 수 있는 프리미엄 서비스</p>
           <p className="text-lg text-gray-500 mb-8">24시간 언제든지 편안한 힐링을 경험하세요</p>
-          <p className="text-sm text-gray-400">가평군 출장마사지 전문업체입니다</p>
+          <p className="text-sm text-gray-400">평택시 출장마사지 전문업체입니다</p>
         </div>
       </section>
 
@@ -177,7 +177,7 @@ export default function GapyeongMassage() {
       {/* Service Features */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4">
-          <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">가평군 출장마사지 서비스 특징</h3>
+          <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">평택시 출장마사지 서비스 특징</h3>
 
           <div className="grid md:grid-cols-4 gap-8">
             <div className="text-center">
@@ -218,14 +218,16 @@ export default function GapyeongMassage() {
       {/* Service Areas */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h3 className="text-3xl font-bold text-gray-900 mb-8">가평군 서비스 지역</h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-gray-700">
-            <div className="bg-white p-4 rounded-lg shadow">가평읍</div>
-            <div className="bg-white p-4 rounded-lg shadow">청평면</div>
-            <div className="bg-white p-4 rounded-lg shadow">상면</div>
-            <div className="bg-white p-4 rounded-lg shadow">하면</div>
-            <div className="bg-white p-4 rounded-lg shadow">북면</div>
-            <div className="bg-white p-4 rounded-lg shadow">조종면</div>
+          <h3 className="text-3xl font-bold text-gray-900 mb-8">평택시 서비스 지역</h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-gray-700">
+            <div className="bg-white p-4 rounded-lg shadow">평택동</div>
+            <div className="bg-white p-4 rounded-lg shadow">서정동</div>
+            <div className="bg-white p-4 rounded-lg shadow">비전동</div>
+            <div className="bg-white p-4 rounded-lg shadow">고덕동</div>
+            <div className="bg-white p-4 rounded-lg shadow">청북읍</div>
+            <div className="bg-white p-4 rounded-lg shadow">안중읍</div>
+            <div className="bg-white p-4 rounded-lg shadow">포승읍</div>
+            <div className="bg-white p-4 rounded-lg shadow">현덕면</div>
           </div>
         </div>
       </section>
@@ -233,16 +235,16 @@ export default function GapyeongMassage() {
       {/* Customer Reviews */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4">
-          <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">가평군 고객 후기</h3>
+          <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">평택시 고객 후기</h3>
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-violet-50 p-6 rounded-lg border border-violet-200">
               <div className="flex items-center mb-4">
                 <div className="flex text-amber-400">{"★".repeat(5)}</div>
-                <span className="ml-2 text-gray-600">가평읍 고객님</span>
+                <span className="ml-2 text-gray-600">평택동 고객님</span>
               </div>
               <p className="text-gray-700">
-                "가평읍에서 이용했는데 정말 만족스러웠어요. 테라피스트분이 매우 전문적이시고 친절하셨습니다. 24시간
+                "평택동에서 이용했는데 정말 만족스러웠어요. 테라피스트분이 매우 전문적이시고 친절하셨습니다. 24시간
                 서비스라서 늦은 시간에도 이용할 수 있어서 좋았어요."
               </p>
             </div>
@@ -250,21 +252,21 @@ export default function GapyeongMassage() {
             <div className="bg-purple-50 p-6 rounded-lg border border-purple-200">
               <div className="flex items-center mb-4">
                 <div className="flex text-amber-400">{"★".repeat(5)}</div>
-                <span className="ml-2 text-gray-600">청평면 고객님</span>
+                <span className="ml-2 text-gray-600">서정동 고객님</span>
               </div>
               <p className="text-gray-700">
                 "VIP 코스를 이용했는데 정말 최고였습니다. 타이마사지와 힐링스웨디시, 풋마사지까지 모든 게 완벽했어요.
-                청평면 지역 서비스도 빠르고 정확했습니다."
+                서정동 지역 서비스도 빠르고 정확했습니다."
               </p>
             </div>
 
             <div className="bg-amber-50 p-6 rounded-lg border border-amber-200">
               <div className="flex items-center mb-4">
                 <div className="flex text-amber-400">{"★".repeat(5)}</div>
-                <span className="ml-2 text-gray-600">상면 고객님</span>
+                <span className="ml-2 text-gray-600">안중읍 고객님</span>
               </div>
               <p className="text-gray-700">
-                "상면까지 출장 와주셔서 감사했습니다. 힐링스웨디시 90분 코스 받았는데 몸의 피로가 완전히 풀렸어요.
+                "안중읍까지 출장 와주셔서 감사했습니다. 힐링스웨디시 90분 코스 받았는데 몸의 피로가 완전히 풀렸어요.
                 다음에도 꼭 이용하겠습니다."
               </p>
             </div>
@@ -275,7 +277,7 @@ export default function GapyeongMassage() {
       {/* Footer */}
       <footer className="bg-violet-600 text-white py-8">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h3 className="text-2xl font-bold mb-4">가평군 출장마사지 예약</h3>
+          <h3 className="text-2xl font-bold mb-4">평택시 출장마사지 예약</h3>
           <p className="text-lg mb-6">24시간 언제든지 연락주세요</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
