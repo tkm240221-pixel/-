@@ -11,7 +11,7 @@ export default function AnyangPage() {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const reservationText =
-    "빠른 예약을 위해 전화로 상세 주소 / 마사지 코스 | (선입금, 예약금 일절 요구하지 않습니다. 예약시 참고바랍니다.)"
+    "빠른 예약을 위해 전화 또는 문자로 상세주소 / 마사지 코스 말씀해주시면 빠른 예약 도와드리도록 하겠습니다 ^^"
 
   useEffect(() => {
     if (currentIndex < reservationText.length) {
@@ -90,74 +90,67 @@ export default function AnyangPage() {
         </div>
       </section>
 
-      <section className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">마사지 코스 & 요금표</h2>
-          <div className="bg-white rounded-2xl shadow-lg border border-violet-100 overflow-hidden">
-            <div className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-200">
-              <div className="p-8 text-center">
-                <h3 className="text-xl font-bold text-violet-600 mb-6">타이 마사지</h3>
-                <div className="space-y-4">
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-600">60분</span>
-                    <span className="text-2xl font-bold text-gray-900">80,000원</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-600">90분</span>
-                    <span className="text-2xl font-bold text-gray-900">100,000원</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-600">120분</span>
-                    <span className="text-2xl font-bold text-gray-900">120,000원</span>
-                  </div>
+      <section className="py-16 bg-gradient-to-br from-violet-50 to-purple-50">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12 text-violet-800">마사지 코스 & 요금표</h2>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-violet-100">
+              <h3 className="text-xl font-bold mb-6 text-violet-700">타이 마사지</h3>
+              <div className="space-y-4">
+                <div className="flex justify-between items-center p-3 bg-violet-50 rounded-lg">
+                  <span className="font-medium">60분</span>
+                  <span className="font-bold text-violet-600">80,000원</span>
                 </div>
-              </div>
-              <div className="p-8 text-center bg-purple-50">
-                <h3 className="text-xl font-bold text-purple-600 mb-6">힐링스웨디시</h3>
-                <div className="space-y-4">
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-600">60분</span>
-                    <span className="text-2xl font-bold text-gray-900">90,000원</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-600">90분</span>
-                    <span className="text-2xl font-bold text-gray-900">110,000원</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-600">120분</span>
-                    <span className="text-2xl font-bold text-gray-900">130,000원</span>
-                  </div>
+                <div className="flex justify-between items-center p-3 bg-violet-50 rounded-lg">
+                  <span className="font-medium">90분</span>
+                  <span className="font-bold text-violet-600">100,000원</span>
                 </div>
-              </div>
-              <div className="p-8 text-center bg-gradient-to-br from-amber-50 to-amber-100">
-                <h3 className="text-xl font-bold text-amber-600 mb-6">VIP 패키지</h3>
-                <div className="space-y-4">
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-600">60분</span>
-                    <span className="text-2xl font-bold text-amber-600">100,000원</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-600">90분</span>
-                    <span className="text-2xl font-bold text-amber-600">130,000원</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-600">120분</span>
-                    <span className="text-2xl font-bold text-amber-600">160,000원</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-600">150분</span>
-                    <span className="text-2xl font-bold text-amber-600">200,000원</span>
-                  </div>
+                <div className="flex justify-between items-center p-3 bg-violet-50 rounded-lg">
+                  <span className="font-medium">120분</span>
+                  <span className="font-bold text-violet-600">120,000원</span>
                 </div>
               </div>
             </div>
-            <div className="p-8 bg-gray-50 text-center">
-              <button
-                onClick={() => setShowPriceTable(true)}
-                className="bg-violet-600 text-white hover:bg-violet-700 px-8 py-3 rounded-lg font-semibold transition-colors"
-              >
-                상세 요금표 보기
-              </button>
+
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-violet-100">
+              <h3 className="text-xl font-bold mb-6 text-violet-700">힐링스웨디시</h3>
+              <div className="space-y-4">
+                <div className="flex justify-between items-center p-3 bg-violet-50 rounded-lg">
+                  <span className="font-medium">60분</span>
+                  <span className="font-bold text-violet-600">90,000원</span>
+                </div>
+                <div className="flex justify-between items-center p-3 bg-violet-50 rounded-lg">
+                  <span className="font-medium">90분</span>
+                  <span className="font-bold text-violet-600">110,000원</span>
+                </div>
+                <div className="flex justify-between items-center p-3 bg-violet-50 rounded-lg">
+                  <span className="font-medium">120분</span>
+                  <span className="font-bold text-violet-600">130,000원</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-br from-amber-400 to-yellow-500 rounded-2xl p-8 shadow-lg text-white">
+              <h3 className="text-xl font-bold mb-6">VIP (타이 + 힐링 + 풋)</h3>
+              <div className="space-y-4">
+                <div className="flex justify-between items-center p-3 bg-white/20 rounded-lg">
+                  <span className="font-medium">60분</span>
+                  <span className="font-bold">100,000원</span>
+                </div>
+                <div className="flex justify-between items-center p-3 bg-white/20 rounded-lg">
+                  <span className="font-medium">90분</span>
+                  <span className="font-bold">130,000원</span>
+                </div>
+                <div className="flex justify-between items-center p-3 bg-white/20 rounded-lg">
+                  <span className="font-medium">120분</span>
+                  <span className="font-bold">160,000원</span>
+                </div>
+                <div className="flex justify-between items-center p-3 bg-white/20 rounded-lg">
+                  <span className="font-medium">150분</span>
+                  <span className="font-bold">200,000원</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
