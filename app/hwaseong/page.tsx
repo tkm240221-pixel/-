@@ -124,19 +124,15 @@ export default function HwaseongMassage() {
               <div className="space-y-3">
                 <div className="flex justify-between">
                   <span>60분</span>
-                  <span className="font-semibold">12만원</span>
+                  <span className="font-semibold">8만원</span>
                 </div>
                 <div className="flex justify-between">
                   <span>90분</span>
-                  <span className="font-semibold">15만원</span>
+                  <span className="font-semibold">10만원</span>
                 </div>
                 <div className="flex justify-between">
                   <span>120분</span>
-                  <span className="font-semibold">18만원</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>150분</span>
-                  <span className="font-semibold">22만원</span>
+                  <span className="font-semibold">12만원</span>
                 </div>
               </div>
             </div>
@@ -147,19 +143,15 @@ export default function HwaseongMassage() {
               <div className="space-y-3">
                 <div className="flex justify-between">
                   <span>60분</span>
-                  <span className="font-semibold">13만원</span>
+                  <span className="font-semibold">9만원</span>
                 </div>
                 <div className="flex justify-between">
                   <span>90분</span>
-                  <span className="font-semibold">16만원</span>
+                  <span className="font-semibold">11만원</span>
                 </div>
                 <div className="flex justify-between">
                   <span>120분</span>
-                  <span className="font-semibold">19만원</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>150분</span>
-                  <span className="font-semibold">23만원</span>
+                  <span className="font-semibold">13만원</span>
                 </div>
               </div>
             </div>
@@ -170,19 +162,19 @@ export default function HwaseongMassage() {
               <div className="space-y-3">
                 <div className="flex justify-between">
                   <span>60분</span>
-                  <span className="font-semibold">15만원</span>
+                  <span className="font-semibold">10만원</span>
                 </div>
                 <div className="flex justify-between">
                   <span>90분</span>
-                  <span className="font-semibold">18만원</span>
+                  <span className="font-semibold">13만원</span>
                 </div>
                 <div className="flex justify-between">
                   <span>120분</span>
-                  <span className="font-semibold">22만원</span>
+                  <span className="font-semibold">16만원</span>
                 </div>
                 <div className="flex justify-between">
                   <span>150분</span>
-                  <span className="font-semibold">26만원</span>
+                  <span className="font-semibold">20만원</span>
                 </div>
               </div>
             </div>
@@ -237,7 +229,7 @@ export default function HwaseongMassage() {
 
       {/* Service Areas */}
       <section className="py-16 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4">
+        <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">화성시 서비스 지역</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
@@ -355,19 +347,15 @@ export default function HwaseongMassage() {
                   <div className="space-y-2">
                     <div className="flex justify-between">
                       <span>60분</span>
-                      <span>12만원</span>
+                      <span>8만원</span>
                     </div>
                     <div className="flex justify-between">
                       <span>90분</span>
-                      <span>15만원</span>
+                      <span>10만원</span>
                     </div>
                     <div className="flex justify-between">
                       <span>120분</span>
-                      <span>18만원</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>150분</span>
-                      <span>22만원</span>
+                      <span>12만원</span>
                     </div>
                   </div>
                 </div>
@@ -377,19 +365,15 @@ export default function HwaseongMassage() {
                   <div className="space-y-2">
                     <div className="flex justify-between">
                       <span>60분</span>
-                      <span>13만원</span>
+                      <span>9만원</span>
                     </div>
                     <div className="flex justify-between">
                       <span>90분</span>
-                      <span>16만원</span>
+                      <span>11만원</span>
                     </div>
                     <div className="flex justify-between">
                       <span>120분</span>
-                      <span>19만원</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>150분</span>
-                      <span>23만원</span>
+                      <span>13만원</span>
                     </div>
                   </div>
                 </div>
@@ -399,19 +383,19 @@ export default function HwaseongMassage() {
                   <div className="space-y-2">
                     <div className="flex justify-between">
                       <span>60분</span>
-                      <span>15만원</span>
+                      <span>10만원</span>
                     </div>
                     <div className="flex justify-between">
                       <span>90분</span>
-                      <span>18만원</span>
+                      <span>13만원</span>
                     </div>
                     <div className="flex justify-between">
                       <span>120분</span>
-                      <span>22만원</span>
+                      <span>16만원</span>
                     </div>
                     <div className="flex justify-between">
                       <span>150분</span>
-                      <span>26만원</span>
+                      <span>20만원</span>
                     </div>
                   </div>
                 </div>
