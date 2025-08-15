@@ -59,7 +59,7 @@ export default function GwacheonPage() {
           <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
             <h2 className="text-2xl font-bold text-white mb-4">{displayText}</h2>
             <p className="text-violet-100 mb-6">
-              빠른 예약을 위해 아래 번호로 연락주시거나 카카오톡으로 문의해주세요.
+              빠른 예약을 위해 전화 또는 문자로 상세주소 / 마사지 코스 말씀해주시면 빠른 예약 도와드리도록 하겠습니다 ^^
               <br />
               과천시 전 지역 30분 내 도착 가능합니다.
             </p>
@@ -93,67 +93,67 @@ export default function GwacheonPage() {
         </div>
       </section>
 
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gradient-to-br from-violet-50 to-purple-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">마사지 코스 & 요금표</h2>
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="border-2 hover:border-violet-300 transition-colors">
+            <Card className="border-2 border-violet-100 hover:border-violet-300 transition-colors bg-white">
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold text-violet-600 mb-4 text-center">타이 마사지</h3>
                 <div className="space-y-3">
-                  <div className="flex justify-between items-center py-2 border-b border-gray-100">
-                    <span className="text-gray-600">60분</span>
-                    <span className="font-bold text-gray-900">80,000원</span>
+                  <div className="flex justify-between items-center py-3 px-4 bg-violet-50 rounded-lg">
+                    <span className="text-gray-700">60분</span>
+                    <span className="font-bold text-violet-600">80,000원</span>
                   </div>
-                  <div className="flex justify-between items-center py-2 border-b border-gray-100">
-                    <span className="text-gray-600">90분</span>
-                    <span className="font-bold text-gray-900">100,000원</span>
+                  <div className="flex justify-between items-center py-3 px-4 bg-violet-50 rounded-lg">
+                    <span className="text-gray-700">90분</span>
+                    <span className="font-bold text-violet-600">100,000원</span>
                   </div>
-                  <div className="flex justify-between items-center py-2">
-                    <span className="text-gray-600">120분</span>
-                    <span className="font-bold text-gray-900">120,000원</span>
+                  <div className="flex justify-between items-center py-3 px-4 bg-violet-50 rounded-lg">
+                    <span className="text-gray-700">120분</span>
+                    <span className="font-bold text-violet-600">120,000원</span>
                   </div>
                 </div>
               </CardContent>
             </Card>
-            <Card className="border-2 hover:border-purple-300 transition-colors">
+            <Card className="border-2 border-violet-100 hover:border-purple-300 transition-colors bg-white">
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold text-purple-600 mb-4 text-center">힐링스웨디시</h3>
                 <div className="space-y-3">
-                  <div className="flex justify-between items-center py-2 border-b border-gray-100">
-                    <span className="text-gray-600">60분</span>
-                    <span className="font-bold text-gray-900">90,000원</span>
+                  <div className="flex justify-between items-center py-3 px-4 bg-violet-50 rounded-lg">
+                    <span className="text-gray-700">60분</span>
+                    <span className="font-bold text-purple-600">90,000원</span>
                   </div>
-                  <div className="flex justify-between items-center py-2 border-b border-gray-100">
-                    <span className="text-gray-600">90분</span>
-                    <span className="font-bold text-gray-900">110,000원</span>
+                  <div className="flex justify-between items-center py-3 px-4 bg-violet-50 rounded-lg">
+                    <span className="text-gray-700">90분</span>
+                    <span className="font-bold text-purple-600">110,000원</span>
                   </div>
-                  <div className="flex justify-between items-center py-2">
-                    <span className="text-gray-600">120분</span>
-                    <span className="font-bold text-gray-900">130,000원</span>
+                  <div className="flex justify-between items-center py-3 px-4 bg-violet-50 rounded-lg">
+                    <span className="text-gray-700">120분</span>
+                    <span className="font-bold text-purple-600">130,000원</span>
                   </div>
                 </div>
               </CardContent>
             </Card>
-            <Card className="border-2 border-amber-300 bg-gradient-to-br from-amber-50 to-orange-50">
+            <Card className="border-2 border-violet-100 bg-gradient-to-br from-amber-400 to-yellow-500">
               <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-amber-600 mb-4 text-center">VIP (타이 + 힐링 + 풋)</h3>
+                <h3 className="text-xl font-bold text-white mb-4 text-center">VIP (타이 + 힐링 + 풋)</h3>
                 <div className="space-y-3">
-                  <div className="flex justify-between items-center py-2 border-b border-amber-100">
-                    <span className="text-gray-600">60분</span>
-                    <span className="font-bold text-amber-700">100,000원</span>
+                  <div className="flex justify-between items-center py-3 px-4 bg-white/20 backdrop-blur-sm rounded-lg">
+                    <span className="text-white">60분</span>
+                    <span className="font-bold text-white">100,000원</span>
                   </div>
-                  <div className="flex justify-between items-center py-2 border-b border-amber-100">
-                    <span className="text-gray-600">90분</span>
-                    <span className="font-bold text-amber-700">130,000원</span>
+                  <div className="flex justify-between items-center py-3 px-4 bg-white/20 backdrop-blur-sm rounded-lg">
+                    <span className="text-white">90분</span>
+                    <span className="font-bold text-white">130,000원</span>
                   </div>
-                  <div className="flex justify-between items-center py-2 border-b border-amber-100">
-                    <span className="text-gray-600">120분</span>
-                    <span className="font-bold text-amber-700">160,000원</span>
+                  <div className="flex justify-between items-center py-3 px-4 bg-white/20 backdrop-blur-sm rounded-lg">
+                    <span className="text-white">120분</span>
+                    <span className="font-bold text-white">160,000원</span>
                   </div>
-                  <div className="flex justify-between items-center py-2">
-                    <span className="text-gray-600">150분</span>
-                    <span className="font-bold text-amber-700">200,000원</span>
+                  <div className="flex justify-between items-center py-3 px-4 bg-white/20 backdrop-blur-sm rounded-lg">
+                    <span className="text-white">150분</span>
+                    <span className="font-bold text-white">200,000원</span>
                   </div>
                 </div>
               </CardContent>
