@@ -110,10 +110,6 @@ export default function AnyangPage() {
                     <span className="text-gray-600">120분</span>
                     <span className="text-2xl font-bold text-gray-900">120,000원</span>
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-600">150분</span>
-                    <span className="text-2xl font-bold text-gray-900">150,000원</span>
-                  </div>
                 </div>
               </div>
               <div className="p-8 text-center bg-purple-50">
@@ -130,10 +126,6 @@ export default function AnyangPage() {
                   <div className="flex justify-between items-center">
                     <span className="text-gray-600">120분</span>
                     <span className="text-2xl font-bold text-gray-900">130,000원</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-600">150분</span>
-                    <span className="text-2xl font-bold text-gray-900">160,000원</span>
                   </div>
                 </div>
               </div>
@@ -337,10 +329,6 @@ export default function AnyangPage() {
                       <span className="text-gray-600">120분</span>
                       <span className="text-gray-900 font-bold">120,000원</span>
                     </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">150분</span>
-                      <span className="text-gray-900 font-bold">150,000원</span>
-                    </div>
                   </div>
                 </div>
                 <div className="border border-purple-200 rounded-lg p-6">
@@ -357,10 +345,6 @@ export default function AnyangPage() {
                     <div className="flex justify-between">
                       <span className="text-gray-600">120분</span>
                       <span className="text-gray-900 font-bold">130,000원</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">150분</span>
-                      <span className="text-gray-900 font-bold">160,000원</span>
                     </div>
                   </div>
                 </div>

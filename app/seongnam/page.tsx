@@ -155,6 +155,10 @@ export default function SeongnamMassage() {
                     <span className="text-slate-300">120분</span>
                     <span className="text-yellow-400 font-bold">160,000원</span>
                   </div>
+                  <div className="flex justify-between">
+                    <span className="text-slate-300">150분</span>
+                    <span className="text-yellow-400 font-bold">200,000원</span>
+                  </div>
                 </div>
               </CardContent>
             </Card>

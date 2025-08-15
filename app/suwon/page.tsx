@@ -69,20 +69,97 @@ export default function SuwonPage() {
             </div>
 
             {/* Service Areas */}
-            <div className="bg-slate-800 rounded-lg p-6 max-w-4xl mx-auto">
-              <h3 className="text-xl font-bold text-white mb-4 flex items-center justify-center">
-                <MapPin className="h-5 w-5 mr-2 text-blue-400" />
-                수원시 서비스 지역
-              </h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
-                <div className="bg-slate-700 rounded p-3 text-center text-slate-300">영통구</div>
-                <div className="bg-slate-700 rounded p-3 text-center text-slate-300">팔달구</div>
-                <div className="bg-slate-700 rounded p-3 text-center text-slate-300">장안구</div>
-                <div className="bg-slate-700 rounded p-3 text-center text-slate-300">권선구</div>
-                <div className="bg-slate-700 rounded p-3 text-center text-slate-300">매탄동</div>
-                <div className="bg-slate-700 rounded p-3 text-center text-slate-300">원천동</div>
-                <div className="bg-slate-700 rounded p-3 text-center text-slate-300">인계동</div>
-                <div className="bg-slate-700 rounded p-3 text-center text-slate-300">화서동</div>
+            <section className="py-16 bg-slate-800">
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 className="text-3xl font-bold text-white text-center mb-12">수원시 서비스 지역</h2>
+                <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4">
+                  {[
+                    "영통구",
+                    "팔달구",
+                    "장안구",
+                    "권선구",
+                    "매탄동",
+                    "원천동",
+                    "인계동",
+                    "화서동",
+                    "영통동",
+                    "망포동",
+                    "광교동",
+                    "수원역",
+                  ].map((area) => (
+                    <div
+                      key={area}
+                      className="bg-slate-700 border border-slate-600 hover:bg-slate-600 transition-colors rounded-lg p-4 text-center"
+                    >
+                      <MapPin className="h-5 w-5 text-blue-400 mx-auto mb-2" />
+                      <span className="text-white font-medium">{area}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section className="py-16 bg-slate-900">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-white text-center mb-12">수원시 출장마사지 요금표</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-slate-800 border border-slate-700 rounded-lg p-6">
+              <h3 className="text-xl font-bold text-blue-400 mb-4">타이 마사지</h3>
+              <div className="space-y-3">
+                <div className="flex justify-between">
+                  <span className="text-slate-300">60분</span>
+                  <span className="text-white font-bold">80,000원</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-slate-300">90분</span>
+                  <span className="text-white font-bold">100,000원</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-slate-300">120분</span>
+                  <span className="text-white font-bold">120,000원</span>
+                </div>
+              </div>
+            </div>
+            <div className="bg-slate-800 border border-slate-700 rounded-lg p-6">
+              <h3 className="text-xl font-bold text-blue-400 mb-4">힐링스웨디시</h3>
+              <div className="space-y-3">
+                <div className="flex justify-between">
+                  <span className="text-slate-300">60분</span>
+                  <span className="text-white font-bold">90,000원</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-slate-300">90분</span>
+                  <span className="text-white font-bold">110,000원</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-slate-300">120분</span>
+                  <span className="text-white font-bold">130,000원</span>
+                </div>
+              </div>
+            </div>
+            <div className="bg-gradient-to-br from-yellow-900 to-yellow-800 border border-yellow-600 rounded-lg p-6">
+              <h3 className="text-xl font-bold text-yellow-400 mb-4">VIP 패키지</h3>
+              <div className="space-y-3">
+                <div className="flex justify-between">
+                  <span className="text-slate-300">60분</span>
+                  <span className="text-yellow-400 font-bold">100,000원</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-slate-300">90분</span>
+                  <span className="text-yellow-400 font-bold">130,000원</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-slate-300">120분</span>
+                  <span className="text-yellow-400 font-bold">160,000원</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-slate-300">150분</span>
+                  <span className="text-yellow-400 font-bold">200,000원</span>
+                </div>
               </div>
             </div>
           </div>
