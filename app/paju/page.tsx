@@ -122,19 +122,15 @@ export default function PajuMassage() {
               <div className="space-y-3">
                 <div className="flex justify-between items-center py-2 border-b border-gray-100">
                   <span className="text-gray-700">60분</span>
-                  <span className="font-semibold text-violet-600">12만원</span>
+                  <span className="font-semibold text-violet-600">8만원</span>
                 </div>
                 <div className="flex justify-between items-center py-2 border-b border-gray-100">
                   <span className="text-gray-700">90분</span>
-                  <span className="font-semibold text-violet-600">15만원</span>
-                </div>
-                <div className="flex justify-between items-center py-2 border-b border-gray-100">
-                  <span className="text-gray-700">120분</span>
-                  <span className="font-semibold text-violet-600">18만원</span>
+                  <span className="font-semibold text-violet-600">10만원</span>
                 </div>
                 <div className="flex justify-between items-center py-2">
-                  <span className="text-gray-700">150분</span>
-                  <span className="font-semibold text-violet-600">22만원</span>
+                  <span className="text-gray-700">120분</span>
+                  <span className="font-semibold text-violet-600">12만원</span>
                 </div>
               </div>
             </div>
@@ -148,19 +144,15 @@ export default function PajuMassage() {
               <div className="space-y-3">
                 <div className="flex justify-between items-center py-2 border-b border-gray-100">
                   <span className="text-gray-700">60분</span>
-                  <span className="font-semibold text-violet-600">13만원</span>
+                  <span className="font-semibold text-violet-600">9만원</span>
                 </div>
                 <div className="flex justify-between items-center py-2 border-b border-gray-100">
                   <span className="text-gray-700">90분</span>
-                  <span className="font-semibold text-violet-600">16만원</span>
-                </div>
-                <div className="flex justify-between items-center py-2 border-b border-gray-100">
-                  <span className="text-gray-700">120분</span>
-                  <span className="font-semibold text-violet-600">19만원</span>
+                  <span className="font-semibold text-violet-600">11만원</span>
                 </div>
                 <div className="flex justify-between items-center py-2">
-                  <span className="text-gray-700">150분</span>
-                  <span className="font-semibold text-violet-600">23만원</span>
+                  <span className="text-gray-700">120분</span>
+                  <span className="font-semibold text-violet-600">13만원</span>
                 </div>
               </div>
             </div>
@@ -174,19 +166,19 @@ export default function PajuMassage() {
               <div className="space-y-3">
                 <div className="flex justify-between items-center py-2 border-b border-amber-100">
                   <span className="text-gray-700">60분</span>
-                  <span className="font-semibold text-amber-600">15만원</span>
+                  <span className="font-semibold text-amber-600">10만원</span>
                 </div>
                 <div className="flex justify-between items-center py-2 border-b border-amber-100">
                   <span className="text-gray-700">90분</span>
-                  <span className="font-semibold text-amber-600">18만원</span>
+                  <span className="font-semibold text-amber-600">13만원</span>
                 </div>
                 <div className="flex justify-between items-center py-2 border-b border-amber-100">
                   <span className="text-gray-700">120분</span>
-                  <span className="font-semibold text-amber-600">22만원</span>
+                  <span className="font-semibold text-amber-600">16만원</span>
                 </div>
                 <div className="flex justify-between items-center py-2">
                   <span className="text-gray-700">150분</span>
-                  <span className="font-semibold text-amber-600">26만원</span>
+                  <span className="font-semibold text-amber-600">20만원</span>
                 </div>
               </div>
             </div>
@@ -350,19 +342,15 @@ export default function PajuMassage() {
                   <div className="space-y-2">
                     <div className="flex justify-between py-2 border-b">
                       <span>60분</span>
-                      <span className="font-semibold">12만원</span>
+                      <span className="font-semibold">8만원</span>
                     </div>
                     <div className="flex justify-between py-2 border-b">
                       <span>90분</span>
-                      <span className="font-semibold">15만원</span>
-                    </div>
-                    <div className="flex justify-between py-2 border-b">
-                      <span>120분</span>
-                      <span className="font-semibold">18만원</span>
+                      <span className="font-semibold">10만원</span>
                     </div>
                     <div className="flex justify-between py-2">
-                      <span>150분</span>
-                      <span className="font-semibold">22만원</span>
+                      <span>120분</span>
+                      <span className="font-semibold">12만원</span>
                     </div>
                   </div>
                 </div>
@@ -371,19 +359,15 @@ export default function PajuMassage() {
                   <div className="space-y-2">
                     <div className="flex justify-between py-2 border-b">
                       <span>60분</span>
-                      <span className="font-semibold">13만원</span>
+                      <span className="font-semibold">9만원</span>
                     </div>
                     <div className="flex justify-between py-2 border-b">
                       <span>90분</span>
-                      <span className="font-semibold">16만원</span>
-                    </div>
-                    <div className="flex justify-between py-2 border-b">
-                      <span>120분</span>
-                      <span className="font-semibold">19만원</span>
+                      <span className="font-semibold">11만원</span>
                     </div>
                     <div className="flex justify-between py-2">
-                      <span>150분</span>
-                      <span className="font-semibold">23만원</span>
+                      <span>120분</span>
+                      <span className="font-semibold">13만원</span>
                     </div>
                   </div>
                 </div>
@@ -392,19 +376,19 @@ export default function PajuMassage() {
                   <div className="space-y-2">
                     <div className="flex justify-between py-2 border-b">
                       <span>60분</span>
-                      <span className="font-semibold">15만원</span>
+                      <span className="font-semibold">10만원</span>
                     </div>
                     <div className="flex justify-between py-2 border-b">
                       <span>90분</span>
-                      <span className="font-semibold">18만원</span>
+                      <span className="font-semibold">13만원</span>
                     </div>
                     <div className="flex justify-between py-2 border-b">
                       <span>120분</span>
-                      <span className="font-semibold">22만원</span>
+                      <span className="font-semibold">16만원</span>
                     </div>
                     <div className="flex justify-between py-2">
                       <span>150분</span>
-                      <span className="font-semibold">26만원</span>
+                      <span className="font-semibold">20만원</span>
                     </div>
                   </div>
                 </div>
