@@ -110,6 +110,9 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/new-apple-touch-icon.png" />
         <link rel="manifest" href="/new-manifest.json" />
 
+        <link rel="alternate" type="application/rss+xml" title="총알출장마사지 RSS Feed" href="/rss.xml" />
+        <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
