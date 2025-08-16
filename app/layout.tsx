@@ -1,6 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Work_Sans, Open_Sans } from "next/font/google"
+import DynamicSEO from "@/components/dynamic-seo"
 import "./globals.css"
 
 const workSans = Work_Sans({
@@ -20,11 +21,10 @@ const openSans = Open_Sans({
 })
 
 export const metadata: Metadata = {
-  title: "총알출장마사지 - 서울 경기 인천 24시간 전문 출장마사지",
+  title: "총알출장마사지 | 전국 출장안마 | 24시 연중무휴",
   description:
     "서울 경기 인천 전 지역 24시간 출장마사지 서비스. 30분 내 방문, 숙련된 전문 테라피스트, 타이마사지 스웨디시 힐링마사지 전문. 안전하고 깨끗한 프리미엄 홈케어 서비스.",
-  keywords:
-    "출장마사지, 서울출장마사지, 경기출장마사지, 인천출장마사지, 24시간마사지, 홈케어마사지, 타이마사지, 스웨디시, 힐링마사지, 전문테라피스트",
+  keywords: "출장마사지, 전국출장마사지, 24시간마사지, 홈케어마사지, 타이마사지, 스웨디시, 힐링마사지, 전문테라피스트",
   authors: [{ name: "총알출장마사지" }],
   creator: "총알출장마사지",
   publisher: "총알출장마사지",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     locale: "ko_KR",
     url: "https://총알출장마사지.com",
     siteName: "총알출장마사지",
-    title: "총알출장마사지 - 서울 경기 인천 24시간 전문 출장마사지",
+    title: "총알출장마사지 | 전국 출장안마 | 24시 연중무휴",
     description:
       "서울 경기 인천 전 지역 24시간 출장마사지 서비스. 30분 내 방문, 전문 테라피스트의 프리미엄 홈케어 마사지.",
     images: [
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "총알출장마사지 - 서울 경기 인천 24시간 전문 출장마사지",
+    title: "총알출장마사지 | 전국 출장안마 | 24시 연중무휴",
     description:
       "서울 경기 인천 전 지역 24시간 출장마사지 서비스. 30분 내 방문, 전문 테라피스트의 프리미엄 홈케어 마사지.",
     images: ["/og-image.jpg"],
@@ -398,7 +398,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="safe-top safe-bottom safe-left safe-right touch-manipulation">{children}</body>
+      <body className="safe-top safe-bottom safe-left safe-right touch-manipulation">
+        <DynamicSEO />
+        {children}
+      </body>
     </html>
   )
 }
