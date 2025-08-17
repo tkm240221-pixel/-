@@ -1630,21 +1630,7 @@ export default function HomePage() {
   return (
     <div>
       {/* 배너 섹션 */}
-     <section className="banner">
-  <div className="banner-content">
-    <h2>출장안마 예약문의 가이드</h2>
-    <p>365일 24시간 문의 & 예약 가능합니다</p>
-  </div>
-</section>
-
-      {/* 기존 다른 섹션 */}
-      <section className="content">
-        <h3>마사지 코스 & 요금표</h3>
-        {/* ... */}
-      </section>
-    </div>
-  );
-}
+    <section className="banner"></section>
 
         {/* Main Banner */}
         <section id="home" className="relative bg-gradient-to-br from-violet-50 to-white py-20">
