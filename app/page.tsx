@@ -112,32 +112,65 @@ export default function HomePage() {
       },
     }),
     [],
-  )
+"use client";
 
+import Head from "next/head";
+
+export default function Home() {
   return (
     <>
       <Head>
-        <title>총알출장마사지 - 서울 경기 인천 24시간 전문 출장마사지 | 30분 내 방문</title>
+        <title>
+          총알출장마사지 - 서울 경기 인천 24시간 전문 출장마사지 | 30분 내 방문
+        </title>
         <meta
           name="description"
-          content="서울 경기 인천 전 지역 24시간 출장마사지 서비스. 30분 내 방문, 숙련된 전문 테라피스트의 타이마사지, 스웨디시, 힐링마사지. 안전하고 깨끗한 프리미엄 홈케어 서비스를 경험하세요."
-        />
-        <meta
-          name="keywords"
-          content="출장마사지, 서울출장마사지, 경기출장마사지, 인천출장마사지, 24시간마사지, 홈케어마사지, 타이마사지, 스웨디시, 힐링마사지, 강남출장마사지, 강서출장마사지, 수원출장마사지"
+          content="서울 경기 인천 전지역 30분 내 방문하는 총알출장마사지. 24시간 프리미엄 출장마사지 서비스."
         />
         <link rel="canonical" href="https://총알출장마사지.com" />
       </Head>
+
       <div className="min-h-screen bg-white">
         {/* Header */}
         <header className="bg-white shadow-lg border-b border-violet-100 sticky top-0 z-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16">
-              {/* Logo */}
-              <div className="flex-shrink-0">
-                <h1 className="text-2xl font-bold text-violet-600">총알출장마사지</h1>
-              </div>
+              <h1 className="text-2xl font-bold text-violet-600">
+                총알출장마사지
+              </h1>
+            </div>
+          </div>
+        </header>
 
+        {/* Hero 배너 (이미지 전체 화면) */}
+        <section className="banner"></section>
+
+        {/* Main Banner */}
+        <section
+          id="home"
+          className="relative bg-gradient-to-br from-violet-50 to-white py-20"
+        >
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-4xl lg:text-6xl font-bold text-gray-800 mb-6 leading-tight">
+                  전 지역 30분 내 방문{" "}
+                  <span className="text-violet-600 block">프리미엄 마사지</span>
+                </h2>
+                <p className="text-xl text-gray-600 mb-8">
+                  숙련된 전문 테라피스트가 직접 방문하여 <br />
+                  최고의 힐링 서비스를 제공합니다
+                </p>
+              </div>
+              {/* 우측 이미지나 추가 콘텐츠 영역 */}
+              <div></div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </>
+  );
+}
               {/* Desktop Navigation */}
               <nav className="hidden md:flex space-x-8 relative justify-center flex-1 font-normal text-xl text-gray-600">
                 <a href="#home" className="hover:text-violet-600 transition-colors text-gray-700">
