@@ -1629,7 +1629,7 @@ export default function HomePage() {
    <section className="banner">
   {/* 왼쪽: 이미지 */}
   <div className="banner-left">
-    <img src="/AI 비키니.png" alt="프리미엄 마사지" className="banner-img" />
+    <img src="/AI.biki.png" alt="프리미엄 마사지" className="banner-img" />
   </div>
 
   {/* 오른쪽: 텍스트 + 버튼 */}
