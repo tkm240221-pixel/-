@@ -1626,18 +1626,8 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="banner">
-  <div className="banner-left">
-    <Image
-      src="/AI 비키니.png"
-      alt="프리미엄 마사지"
-      width={350}
-      height={450}
-      className="banner-img"
-    />
-  </div>
-
-  <div className="banner-right">
+     <section className="banner">
+  <div className="banner-content">
     <h2>출장안마 예약문의 가이드</h2>
     <p>365일 24시간 문의 & 예약 가능합니다</p>
     <div className="banner-buttons">
