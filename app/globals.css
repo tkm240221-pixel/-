@@ -256,3 +256,81 @@
 .structured-data {
   display: none;
 }
+
+/* ============================= */
+/* Banner Section Styles         */
+/* ============================= */
+
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 20px;
+  background: linear-gradient(90deg, #7b2ff7, #f107a3);
+  color: white;
+  gap: 20px;
+}
+
+.banner-left {
+  flex: 1;
+  text-align: center;
+}
+
+.banner-img {
+  border-radius: 16px;
+  object-fit: contain;
+  max-width: 100%;
+  height: auto;
+}
+
+.banner-right {
+  flex: 1;
+  padding-left: 40px;
+}
+
+.banner-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  background: white;
+  color: #7b2ff7;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn-kakao {
+  background: #ffe812;
+  color: #3a1d1d;
+}
+
+.btn-kakao:hover {
+  opacity: 0.9;
+}
+
+/* ✅ 반응형 (모바일) */
+@media (max-width: 768px) {
+  .banner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .banner-right {
+    padding-left: 0;
+    margin-top: 20px;
+  }
+
+  .banner-buttons {
+    justify-content: center;
+  }
+}
