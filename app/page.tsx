@@ -1626,16 +1626,25 @@ export default function HomePage() {
           </div>
         </section>
 
-   <section className="banner">
+   export default function Home() {
+  return (
+    <div>
+      {/* 배너 섹션 */}
+     <section className="banner">
   <div className="banner-content">
     <h2>출장안마 예약문의 가이드</h2>
     <p>365일 24시간 문의 & 예약 가능합니다</p>
-    <div className="banner-buttons">
-      <a href="tel:010-2871-2457" className="btn">전화상담</a>
-      <a href="https://open.kakao.com/o/s0ca9mMh" className="btn btn-kakao">카카오톡 상담</a>
-    </div>
   </div>
 </section>
+
+      {/* 기존 다른 섹션 */}
+      <section className="content">
+        <h3>마사지 코스 & 요금표</h3>
+        {/* ... */}
+      </section>
+    </div>
+  );
+}
 
         {/* Main Banner */}
         <section id="home" className="relative bg-gradient-to-br from-violet-50 to-white py-20">
