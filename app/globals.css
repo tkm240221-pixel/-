@@ -271,12 +271,12 @@
       rgba(123, 47, 247, 0.95),
       rgba(123, 47, 247, 0.85)
     ),
-    url("/AI.biki.png") no-repeat left center; /* 좌측에 이미지 */
-  background-size: auto 100%; /* 세로에 맞춰서 이미지 크기 조정 */
-  background-color: #7b2ff7; /* 이미지 안 뜰 때 대비 */
+    url("/AI.biki.png") no-repeat left center;
+  background-size: contain; /* 🔥 비율 유지 */
+  background-color: #7b2ff7;
   color: white;
   gap: 20px;
-  min-height: 400px; /* 배너 높이 강제 (조절 가능) */
+  min-height: 400px;
 }
 
 .banner-content {
