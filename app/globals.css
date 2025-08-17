@@ -256,22 +256,3 @@
 .structured-data {
   display: none;
 }
-
-/* 배너: 화면 전체 높이에 이미지 표시 */
-.banner {
-  position: relative;
-  width: 100%;
-  height: 100vh; /* 화면 전체 높이 */
-  background: url("/AI.biki.png") no-repeat center center;
-  background-size: cover; /* 화면 꽉 채우기 */
-}
-
-.banner-content {
-  max-width: 600px;
-  padding: 50px;
-  text-align: left;
-  color: #4a148c; /* 보라색 텍스트 */
-  background: rgba(255, 255, 255, 0.8); /* 가독성을 위한 반투명 흰 배경 */
-  border-radius: 12px;
-  margin-right: 5%; /* 오른쪽 여백 */
-}
