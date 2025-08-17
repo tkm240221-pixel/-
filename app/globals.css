@@ -257,61 +257,27 @@
   display: none;
 }
 
-/* ============================= */
-/* Banner Section Styles         */
-/* ============================= */
-
+/* 배너 스타일 */
 .banner {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* 화면 전체 높이 */
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 40px 20px;
-  background: linear-gradient(
-      90deg,
-      rgba(123, 47, 247, 0.95),
-      rgba(123, 47, 247, 0.85)
-    ),
-    url("/AI.biki.png") no-repeat left center;
-  background-size: contain; /* 🔥 비율 유지 */
-  background-color: #7b2ff7;
-  color: white;
-  gap: 20px;
-  min-height: 400px;
+  justify-content: flex-end; /* 텍스트는 오른쪽 */
+  background-color: #fff; /* 배경 흰색 */
+  background-image: url("/AI.biki.png"); /* public 폴더 이미지 */
+  background-size: cover; /* 화면 꽉 채움 */
+  background-position: left center; /* 왼쪽 배치 */
+  background-repeat: no-repeat;
 }
 
 .banner-content {
-  flex: 1;
-  text-align: right; /* 오른쪽 정렬 */
-  padding-right: 40px;
-}
-
-.banner-buttons {
-  margin-top: 20px;
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-}
-
-.btn {
-  background: white;
-  color: #7b2ff7;
-  padding: 12px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: all 0.2s ease-in-out;
-}
-
-.btn:hover {
-  opacity: 0.9;
-}
-
-.btn-kakao {
-  background: #ffe812;
-  color: #3a1d1d;
-}
-
-.btn-kakao:hover {
-  opacity: 0.9;
+  max-width: 600px;
+  padding: 50px;
+  text-align: left;
+  color: #4a148c; /* 보라색 텍스트 */
+  background: rgba(255, 255, 255, 0.8); /* 가독성을 위한 반투명 흰 배경 */
+  border-radius: 12px;
+  margin-right: 5%; /* 오른쪽 여백 */
 }
