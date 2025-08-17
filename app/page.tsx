@@ -1626,11 +1626,16 @@ export default function HomePage() {
           </div>
         </section>
 
-    <section className="banner">
-  <div className="banner-content">
+   <section className="banner">
+  {/* 왼쪽: 이미지 */}
+  <div className="banner-left">
+    <img src="/AI 비키니.png" alt="프리미엄 마사지" className="banner-img" />
+  </div>
+
+  {/* 오른쪽: 텍스트 + 버튼 */}
+  <div className="banner-right">
     <h2>출장안마 예약문의 가이드</h2>
     <p>365일 24시간 문의 & 예약 가능합니다</p>
-
     <div className="banner-buttons">
       <a href="tel:010-2871-2457" className="btn">전화상담</a>
       <a href="https://open.kakao.com/o/s0ca9mMh" className="btn btn-kakao">카카오톡 상담</a>
