@@ -264,35 +264,38 @@
 .banner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 40px 20px;
-  background: linear-gradient(90deg, #7b2ff7, #f107a3);
+  justify-content: flex-end; /* 👉 텍스트를 오른쪽에 배치 */
+  padding: 80px 40px;
+  background: linear-gradient(90deg, rgba(123,47,247,0.85), rgba(241,7,163,0.85)),
+              url("/AI 비키니.png") no-repeat left center / cover;
   color: white;
   gap: 20px;
+  border-radius: 12px;
+  min-height: 400px; /* ✅ 배너 높이 보장 */
 }
 
-.banner-left {
+.banner-content {
   flex: 1;
-  text-align: center;
+  text-align: right; /* 👉 텍스트 오른쪽 정렬 */
+  max-width: 600px;
 }
 
-.banner-img {
-  border-radius: 16px;
-  object-fit: contain;
-  max-width: 100%;
-  height: auto;
+.banner-content h2 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 16px;
 }
 
-.banner-right {
-  flex: 1;
-  padding-left: 40px;
+.banner-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
 }
 
 .banner-buttons {
   margin-top: 20px;
   display: flex;
   gap: 12px;
-  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .btn {
@@ -323,11 +326,11 @@
   .banner {
     flex-direction: column;
     text-align: center;
+    justify-content: center;
   }
 
-  .banner-right {
-    padding-left: 0;
-    margin-top: 20px;
+  .banner-content {
+    text-align: center;
   }
 
   .banner-buttons {
