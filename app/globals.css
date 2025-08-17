@@ -257,29 +257,30 @@
   display: none;
 }
 
-/* ============================= */
-/* Banner Section Styles         */
-/* ============================= */
-
 .banner {
   display: flex;
   align-items: center;
-  justify-content: flex-end; /* 오른쪽에 텍스트 정렬 */
+  justify-content: center;
   padding: 40px 20px;
-  min-height: 400px;
-
-  background: 
-    linear-gradient(90deg, rgba(123, 47, 247, 0.7), rgba(241, 7, 163, 0.7)),
-    url("/AI.biki.png") no-repeat left center / cover;
-
+  background: linear-gradient(90deg, #7b2ff7, #f107a3);
   color: white;
   gap: 20px;
-  border-radius: 12px;
 }
 
-.banner-content {
-  max-width: 600px;
-  text-align: right;
+.banner-left {
+  flex: 1;
+  text-align: center;
+}
+
+.banner-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 16px;
+}
+
+.banner-right {
+  flex: 1;
+  padding-left: 40px;
 }
 
 .banner-buttons {
@@ -289,46 +290,13 @@
   flex-wrap: wrap;
 }
 
-.btn {
-  background: white;
-  color: #7b2ff7;
-  padding: 12px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: all 0.2s ease-in-out;
-}
-
-.btn:hover {
-  opacity: 0.9;
-}
-
-.btn-kakao {
-  background: #ffe812;
-  color: #3a1d1d;
-}
-
-.btn-kakao:hover {
-  opacity: 0.9;
-}
-
-/* ✅ 반응형 (모바일) */
 @media (max-width: 768px) {
   .banner {
     flex-direction: column;
-    justify-content: center;
     text-align: center;
-    background: 
-      linear-gradient(90deg, rgba(123, 47, 247, 0.7), rgba(241, 7, 163, 0.7)),
-      url("/AI.biki.png") no-repeat center center / cover;
   }
-
-  .banner-content {
-    text-align: center;
-    max-width: 100%;
-  }
-
-  .banner-buttons {
-    justify-content: center;
+  .banner-right {
+    padding-left: 0;
+    margin-top: 20px;
   }
 }
