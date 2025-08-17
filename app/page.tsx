@@ -1629,8 +1629,8 @@ export default function HomePage() {
    export default function Home() {
   return (
     <div>
-      {/* 배너 섹션 */}
-    <section className="banner"></section>
+      {/* 배너 섹션 (이미지 풀스크린) */}
+      <section className="banner"></section>
 
         {/* Main Banner */}
         <section id="home" className="relative bg-gradient-to-br from-violet-50 to-white py-20">
