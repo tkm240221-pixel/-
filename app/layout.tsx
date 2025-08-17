@@ -105,8 +105,8 @@ export default function RootLayout({
         <link rel="preload" as="image" href="/korean-therapist-smiling.png" />
 
         {/* Favicon and app icons */}
-        <link rel="icon" href="/new-favicon.ico" sizes="any" />
-        <link rel="icon" href="/new-icon.svg" type="image/svg+xml" />
+       <link rel="icon" href="/pngtree-vector-bullet-fired-png-image_1231962.jpg" type="image/jpeg" />
+
         <link rel="apple-touch-icon" href="/new-apple-touch-icon.png" />
         <link rel="manifest" href="/new-manifest.json" />
 
