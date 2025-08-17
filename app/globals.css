@@ -257,7 +257,7 @@
   display: none;
 }
 
-/* 배너 스타일 */
+/* 배너: 화면 전체 높이에 이미지 표시 */
 .banner {
   position: relative;
   width: 100%;
