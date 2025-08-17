@@ -105,10 +105,7 @@ export default function RootLayout({
         <link rel="preload" as="image" href="/korean-therapist-smiling.png" />
 
         {/* Favicon and app icons */}
-        <link rel="icon" href="/new-favicon.ico" sizes="any" />
-        <link rel="icon" href="/new-icon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/new-apple-touch-icon.png" />
-        <link rel="manifest" href="/new-manifest.json" />
+        <link rel="icon" href="/lion.png" type="image/png" />
 
         <link rel="alternate" type="application/rss+xml" title="총알출장마사지 RSS Feed" href="/rss.xml" />
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
