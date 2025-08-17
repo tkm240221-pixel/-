@@ -257,46 +257,107 @@
   display: none;
 }
 
+/* ============================= */
+/* Banner Section Styles         */
+/* ============================= */
+
 .banner {
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 40px 20px;
-  background: linear-gradient(90deg, #7b2ff7, #f107a3);
-  color: white;
-  gap: 20px;
+  justify-content: flex-end; /* 👉 텍스트 오른쪽 */
+  padding: 60px 40px;
+  min-height: 500px;
+
+  /* ✅ 보라 → 흰색 그라데이션 + 배경 이미지 */
+  background: 
+    linear-gradient(90deg, rgba(123,47,247,0.85), rgba(255,255,255,0.9)),
+    url("/AI.biki.png") center/cover no-repeat;
+
+  color: #fff; /* 👉 텍스트는 흰색 유지 */
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
 }
 
-.banner-left {
-  flex: 1;
-  text-align: center;
+.banner-content {
+  max-width: 600px;
+  text-align: right;
+  z-index: 2; /* 배경 위로 */
 }
 
-.banner-img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 16px;
+.banner-content h2 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  line-height: 1.3;
 }
 
-.banner-right {
-  flex: 1;
-  padding-left: 40px;
+.banner-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
 }
 
 .banner-buttons {
   margin-top: 20px;
   display: flex;
   gap: 12px;
-  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
+.btn {
+  background: white;
+  color: #7b2ff7;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+.btn-kakao {
+  background: #ffe812;
+  color: #3a1d1d;
+}
+
+.btn-kakao:hover {
+  opacity: 0.9;
+}
+
+/* ✅ 반응형 (모바일) */
 @media (max-width: 768px) {
   .banner {
     flex-direction: column;
     text-align: center;
+    justify-content: center;
+    padding: 40px 20px;
+
+    /* 모바일에서는 세로 보라 → 흰색 */
+    background: 
+      linear-gradient(180deg, rgba(123,47,247,0.85), rgba(255,255,255,0.9)),
+      url("/AI.biki.png") center/cover no-repeat;
   }
-  .banner-right {
-    padding-left: 0;
-    margin-top: 20px;
+
+  .banner-content {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .banner-buttons {
+    justify-content: center;
+  }
+
+  .banner-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .banner-content p {
+    font-size: 1rem;
   }
 }
+
