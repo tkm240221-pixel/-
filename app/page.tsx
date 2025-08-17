@@ -1626,6 +1626,27 @@ export default function HomePage() {
           </div>
         </section>
 
+        <section className="banner">
+  <div className="banner-left">
+    <Image
+      src="/AI 비키니.png"
+      alt="프리미엄 마사지"
+      width={350}
+      height={450}
+      className="banner-img"
+    />
+  </div>
+
+  <div className="banner-right">
+    <h2>출장안마 예약문의 가이드</h2>
+    <p>365일 24시간 문의 & 예약 가능합니다</p>
+    <div className="banner-buttons">
+      <a href="tel:010-2871-2457" className="btn">전화상담</a>
+      <a href="https://open.kakao.com/o/s0ca9mMh" className="btn btn-kakao">카카오톡 상담</a>
+    </div>
+  </div>
+</section>
+
         {/* Main Banner */}
         <section id="home" className="relative bg-gradient-to-br from-violet-50 to-white py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
