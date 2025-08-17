@@ -264,55 +264,42 @@
 .banner {
   display: flex;
   align-items: center;
-  justify-content: flex-end; /* 👉 텍스트 오른쪽 */
-  padding: 100px 60px;       /* 👉 더 여백 줘서 예시 느낌 */
-  background: linear-gradient(90deg, rgba(123,47,247,0.75), rgba(241,7,163,0.75)),
-              url("/AI 비키니.png") no-repeat left center / cover;
+  justify-content: flex-end; /* 오른쪽에 텍스트 정렬 */
+  padding: 40px 20px;
+  min-height: 400px;
+
+  background: 
+    linear-gradient(90deg, rgba(123, 47, 247, 0.7), rgba(241, 7, 163, 0.7)),
+    url("/AI.biki.png") no-repeat left center / cover;
+
   color: white;
+  gap: 20px;
   border-radius: 12px;
-  min-height: 500px; /* ✅ 예시처럼 배너 크게 */
-  position: relative;
 }
 
 .banner-content {
-  flex: 1;
-  text-align: right; /* 👉 텍스트 오른쪽 정렬 */
   max-width: 600px;
-}
-
-.banner-content h2 {
-  font-size: 2.8rem; /* 더 크게 */
-  font-weight: 800;
-  margin-bottom: 20px;
-  line-height: 1.3;
-}
-
-.banner-content p {
-  font-size: 1.3rem;
-  margin-bottom: 24px;
+  text-align: right;
 }
 
 .banner-buttons {
-  margin-top: 24px;
+  margin-top: 20px;
   display: flex;
-  gap: 16px;
-  justify-content: flex-end;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .btn {
   background: white;
   color: #7b2ff7;
-  padding: 14px 28px;
+  padding: 12px 20px;
   border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
-  font-size: 1rem;
   transition: all 0.2s ease-in-out;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
 .btn:hover {
-  transform: translateY(-2px);
   opacity: 0.9;
 }
 
@@ -329,24 +316,19 @@
 @media (max-width: 768px) {
   .banner {
     flex-direction: column;
-    text-align: center;
     justify-content: center;
-    padding: 60px 20px;
+    text-align: center;
+    background: 
+      linear-gradient(90deg, rgba(123, 47, 247, 0.7), rgba(241, 7, 163, 0.7)),
+      url("/ai-bikini.png") no-repeat center center / cover;
   }
 
   .banner-content {
     text-align: center;
+    max-width: 100%;
   }
 
   .banner-buttons {
     justify-content: center;
-  }
-
-  .banner-content h2 {
-    font-size: 2rem;
-  }
-
-  .banner-content p {
-    font-size: 1rem;
   }
 }
