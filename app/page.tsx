@@ -1,4 +1,6 @@
 "use client"
+import RegionLinks from "@/components/RegionLinks"
+import FooterRegions from "@/components/FooterRegions"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
