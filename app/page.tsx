@@ -198,7 +198,7 @@ export default function HomePage() {
                             인천
                           </button>
                         </div>
-
+<RegionLinks />
                         <div className="grid grid-cols-2 gap-2 text-xs max-h-60 overflow-y-auto">
                           {/* Seoul Districts */}
                           {activeRegion === "seoul" && (
@@ -687,6 +687,7 @@ export default function HomePage() {
                 <a href="tel:010-2871-2457" className="text-gray-600 hover:text-violet-600 transition-colors">
                   문의
                 </a>
+                <FooterRegions />
               </nav>
 
               <div className="md:hidden">
