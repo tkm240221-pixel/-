@@ -286,7 +286,7 @@ export default function SuwonClientPage() {
       </section>
 
       {/* Regional Links */}
-      <RegionalLinks currentRegion="수원시" />
+      <RegionalLinks currentRegion="suwon" regionType="gyeonggi" />
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">

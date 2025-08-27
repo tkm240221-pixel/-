@@ -94,8 +94,9 @@ export default function RegionalLinks({ currentRegion, regionType }: RegionalLin
     }
   }
 
-  const regions = getRegions().filter((region) => region.slug !== currentRegion)
+  const regions = getRegions().filter((region) => region.slug !== currentRegion) || []
   const nearbyRegions = regions.slice(0, 6) // Show 6 nearby regions
+  const remainingRegions = regions.slice(6) || []
 
   return (
     <section className="py-12 bg-gray-50">
@@ -119,23 +120,25 @@ export default function RegionalLinks({ currentRegion, regionType }: RegionalLin
           ))}
         </div>
 
-        <div className="mt-8 text-center">
-          <p className="text-sm text-gray-600 mb-4">
-            {regionType === "seoul" && "서울 전 지역 24시간 출장마사지 서비스 이용 가능"}
-            {regionType === "gyeonggi" && "경기 전 지역 24시간 출장마사지 서비스 이용 가능"}
-            {regionType === "incheon" && "인천 전 지역 24시간 출장마사지 서비스 이용 가능"}
-          </p>
-          <div className="flex flex-wrap justify-center gap-2 text-xs">
-            {regions.slice(6).map((region, index) => (
-              <span key={region.slug}>
-                <Link href={`/${region.slug}`} className="text-violet-600 hover:text-violet-800 hover:underline">
-                  {region.title}
-                </Link>
-                {index < regions.slice(6).length - 1 && <span className="text-gray-400 ml-2">|</span>}
-              </span>
-            ))}
+        {remainingRegions.length > 0 && (
+          <div className="mt-8 text-center">
+            <p className="text-sm text-gray-600 mb-4">
+              {regionType === "seoul" && "서울 전 지역 24시간 출장마사지 서비스 이용 가능"}
+              {regionType === "gyeonggi" && "경기 전 지역 24시간 출장마사지 서비스 이용 가능"}
+              {regionType === "incheon" && "인천 전 지역 24시간 출장마사지 서비스 이용 가능"}
+            </p>
+            <div className="flex flex-wrap justify-center gap-2 text-xs">
+              {remainingRegions.map((region, index) => (
+                <span key={region.slug}>
+                  <Link href={`/${region.slug}`} className="text-violet-600 hover:text-violet-800 hover:underline">
+                    {region.title}
+                  </Link>
+                  {index < remainingRegions.length - 1 && <span className="text-gray-400 ml-2">|</span>}
+                </span>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   )
