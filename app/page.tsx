@@ -682,6 +682,9 @@ export default function HomePage() {
                     </div>
                   )}
                 </div>
+                <Link href="/blog" className="hover:text-violet-600 transition-colors text-gray-700">
+                  블로그
+                </Link>
                 <a href="tel:010-2871-2457" className="text-gray-600 hover:text-violet-600 transition-colors">
                   문의
                 </a>
@@ -1450,6 +1453,13 @@ export default function HomePage() {
                       </div>
                     )}
                   </div>
+                  <Link
+                    href="/blog"
+                    className="block px-4 py-2 text-gray-700 hover:text-violet-600 hover:bg-violet-50 transition-colors"
+                    onClick={() => setShowMobileMenu(false)}
+                  >
+                    블로그
+                  </Link>
                   <a
                     href="tel:010-2871-2457"
                     className="block px-4 py-2 text-gray-700 hover:text-violet-600 hover:bg-violet-50 transition-colors"
