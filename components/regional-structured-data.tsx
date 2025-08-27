@@ -11,7 +11,7 @@ interface RegionalStructuredDataProps {
 export default function RegionalStructuredData({
   regionName,
   regionNameKorean,
-  serviceAreas,
+  serviceAreas = [], // Added default empty array to prevent undefined map error
   coordinates,
 }: RegionalStructuredDataProps) {
   const structuredData = {
@@ -52,7 +52,7 @@ export default function RegionalStructuredData({
       },
       geoRadius: "15000",
     },
-    areaServed: serviceAreas.map((area) => ({
+    areaServed: (serviceAreas || []).map((area) => ({
       "@type": "Place",
       name: area,
     })),
