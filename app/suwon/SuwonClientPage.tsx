@@ -102,60 +102,63 @@ export default function SuwonClientPage() {
 
       {/* Pricing Section */}
       <section className="py-16 bg-gradient-to-br from-violet-50 to-purple-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">마사지 코스 & 요금표</h2>
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12 text-violet-800">마사지 코스 & 요금표</h2>
+
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white border border-violet-100 rounded-lg p-6 shadow-sm">
-              <h3 className="text-xl font-bold text-violet-600 mb-4">타이 마사지</h3>
-              <div className="space-y-3">
-                <div className="flex justify-between items-center bg-violet-50 rounded p-2">
-                  <span className="text-gray-700">60분</span>
-                  <span className="text-violet-600 font-bold">80,000원</span>
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-violet-100">
+              <h3 className="text-xl font-bold mb-6 text-violet-700">타이 마사지</h3>
+              <div className="space-y-4">
+                <div className="flex justify-between items-center p-3 bg-violet-50 rounded-lg">
+                  <span className="font-medium">60분</span>
+                  <span className="font-bold text-violet-600">80,000원</span>
                 </div>
-                <div className="flex justify-between items-center bg-violet-50 rounded p-2">
-                  <span className="text-gray-700">90분</span>
-                  <span className="text-violet-600 font-bold">100,000원</span>
+                <div className="flex justify-between items-center p-3 bg-violet-50 rounded-lg">
+                  <span className="font-medium">90분</span>
+                  <span className="font-bold text-violet-600">100,000원</span>
                 </div>
-                <div className="flex justify-between items-center bg-violet-50 rounded p-2">
-                  <span className="text-gray-700">120분</span>
-                  <span className="text-violet-600 font-bold">120,000원</span>
-                </div>
-              </div>
-            </div>
-            <div className="bg-white border border-violet-100 rounded-lg p-6 shadow-sm">
-              <h3 className="text-xl font-bold text-purple-600 mb-4">힐링스웨디시</h3>
-              <div className="space-y-3">
-                <div className="flex justify-between items-center bg-purple-50 rounded p-2">
-                  <span className="text-gray-700">60분</span>
-                  <span className="text-purple-600 font-bold">90,000원</span>
-                </div>
-                <div className="flex justify-between items-center bg-purple-50 rounded p-2">
-                  <span className="text-gray-700">90분</span>
-                  <span className="text-purple-600 font-bold">110,000원</span>
-                </div>
-                <div className="flex justify-between items-center bg-purple-50 rounded p-2">
-                  <span className="text-gray-700">120분</span>
-                  <span className="text-purple-600 font-bold">130,000원</span>
+                <div className="flex justify-between items-center p-3 bg-violet-50 rounded-lg">
+                  <span className="font-medium">120분</span>
+                  <span className="font-bold text-violet-600">120,000원</span>
                 </div>
               </div>
             </div>
-            <div className="bg-gradient-to-br from-amber-400 to-yellow-500 text-white rounded-lg p-6 shadow-sm">
-              <h3 className="text-xl font-bold mb-4">VIP 패키지</h3>
-              <div className="space-y-3">
-                <div className="flex justify-between items-center bg-white/20 rounded p-2">
-                  <span>60분</span>
+
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-violet-100">
+              <h3 className="text-xl font-bold mb-6 text-violet-700">힐링스웨디시</h3>
+              <div className="space-y-4">
+                <div className="flex justify-between items-center p-3 bg-violet-50 rounded-lg">
+                  <span className="font-medium">60분</span>
+                  <span className="font-bold text-violet-600">90,000원</span>
+                </div>
+                <div className="flex justify-between items-center p-3 bg-violet-50 rounded-lg">
+                  <span className="font-medium">90분</span>
+                  <span className="font-bold text-violet-600">110,000원</span>
+                </div>
+                <div className="flex justify-between items-center p-3 bg-violet-50 rounded-lg">
+                  <span className="font-medium">120분</span>
+                  <span className="font-bold text-violet-600">130,000원</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-br from-amber-400 to-yellow-500 rounded-2xl p-8 shadow-lg text-white">
+              <h3 className="text-xl font-bold mb-6">VIP (타이 + 힐링 + 풋)</h3>
+              <div className="space-y-4">
+                <div className="flex justify-between items-center p-3 bg-white/20 rounded-lg">
+                  <span className="font-medium">60분</span>
                   <span className="font-bold">100,000원</span>
                 </div>
-                <div className="flex justify-between items-center bg-white/20 rounded p-2">
-                  <span>90분</span>
+                <div className="flex justify-between items-center p-3 bg-white/20 rounded-lg">
+                  <span className="font-medium">90분</span>
                   <span className="font-bold">130,000원</span>
                 </div>
-                <div className="flex justify-between items-center bg-white/20 rounded p-2">
-                  <span>120분</span>
+                <div className="flex justify-between items-center p-3 bg-white/20 rounded-lg">
+                  <span className="font-medium">120분</span>
                   <span className="font-bold">160,000원</span>
                 </div>
-                <div className="flex justify-between items-center bg-white/20 rounded p-2">
-                  <span>150분</span>
+                <div className="flex justify-between items-center p-3 bg-white/20 rounded-lg">
+                  <span className="font-medium">150분</span>
                   <span className="font-bold">200,000원</span>
                 </div>
               </div>

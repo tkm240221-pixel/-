@@ -98,10 +98,22 @@ export default function GwanakClientPage() {
               {/* 타이 마사지 */}
               <div className="bg-white rounded-xl shadow-lg p-6 border-2 border-violet-100 hover:border-violet-300 transition-colors">
                 <div className="text-center">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">타이 마사지</h3>
-                  <div className="text-3xl font-bold text-violet-600 mb-4">90,000원</div>
-                  <div className="text-gray-600 mb-4">90분</div>
-                  <ul className="text-left space-y-2 text-gray-700">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">타이 마사지</h3>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-600">60분</span>
+                      <span className="text-lg font-bold text-violet-600">80,000원</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-600">90분</span>
+                      <span className="text-lg font-bold text-violet-600">100,000원</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-600">120분</span>
+                      <span className="text-lg font-bold text-violet-600">120,000원</span>
+                    </div>
+                  </div>
+                  <ul className="text-left space-y-2 text-gray-700 mt-4">
                     <li>• 전신 타이 마사지</li>
                     <li>• 스트레칭 포함</li>
                     <li>• 근육 이완 효과</li>
@@ -116,10 +128,22 @@ export default function GwanakClientPage() {
                   <span className="bg-violet-600 text-white px-4 py-1 rounded-full text-sm font-semibold">인기</span>
                 </div>
                 <div className="text-center">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">힐링스웨디시</h3>
-                  <div className="text-3xl font-bold text-violet-600 mb-4">100,000원</div>
-                  <div className="text-gray-600 mb-4">100분</div>
-                  <ul className="text-left space-y-2 text-gray-700">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">힐링스웨디시</h3>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-600">60분</span>
+                      <span className="text-lg font-bold text-violet-600">90,000원</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-600">90분</span>
+                      <span className="text-lg font-bold text-violet-600">110,000원</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-600">120분</span>
+                      <span className="text-lg font-bold text-violet-600">130,000원</span>
+                    </div>
+                  </div>
+                  <ul className="text-left space-y-2 text-gray-700 mt-4">
                     <li>• 전신 스웨디시</li>
                     <li>• 아로마 오일 사용</li>
                     <li>• 깊은 이완 효과</li>
@@ -129,12 +153,28 @@ export default function GwanakClientPage() {
               </div>
 
               {/* VIP 패키지 */}
-              <div className="bg-white rounded-xl shadow-lg p-6 border-2 border-purple-100 hover:border-purple-300 transition-colors">
+              <div className="bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl shadow-lg p-6 text-white">
                 <div className="text-center">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">VIP 패키지</h3>
-                  <div className="text-3xl font-bold text-purple-600 mb-4">130,000원</div>
-                  <div className="text-gray-600 mb-4">120분</div>
-                  <ul className="text-left space-y-2 text-gray-700">
+                  <h3 className="text-xl font-bold mb-4">VIP (타이 + 힐링 + 풋)</h3>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center">
+                      <span className="text-yellow-100">60분</span>
+                      <span className="text-lg font-bold text-white">100,000원</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-yellow-100">90분</span>
+                      <span className="text-lg font-bold text-white">130,000원</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-yellow-100">120분</span>
+                      <span className="text-lg font-bold text-white">160,000원</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-yellow-100">150분</span>
+                      <span className="text-lg font-bold text-white">200,000원</span>
+                    </div>
+                  </div>
+                  <ul className="text-left space-y-2 text-yellow-100 mt-4">
                     <li>• 프리미엄 코스</li>
                     <li>• 전신 케어</li>
                     <li>• 고급 아로마 오일</li>
@@ -349,22 +389,62 @@ export default function GwanakClientPage() {
                   </thead>
                   <tbody>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-3 font-medium">타이 마사지</td>
-                      <td className="border border-gray-300 px-4 py-3">90분</td>
-                      <td className="border border-gray-300 px-4 py-3 text-violet-600 font-semibold">90,000원</td>
-                      <td className="border border-gray-300 px-4 py-3">전신 타이 마사지 + 스트레칭</td>
-                    </tr>
-                    <tr className="bg-gray-50">
-                      <td className="border border-gray-300 px-4 py-3 font-medium">힐링스웨디시</td>
-                      <td className="border border-gray-300 px-4 py-3">100분</td>
-                      <td className="border border-gray-300 px-4 py-3 text-violet-600 font-semibold">100,000원</td>
-                      <td className="border border-gray-300 px-4 py-3">아로마 오일 + 전신 스웨디시</td>
+                      <td className="border border-gray-300 px-4 py-3 font-medium" rowSpan={3}>
+                        타이 마사지
+                      </td>
+                      <td className="border border-gray-300 px-4 py-3">60분</td>
+                      <td className="border border-gray-300 px-4 py-3 text-violet-600 font-semibold">80,000원</td>
+                      <td className="border border-gray-300 px-4 py-3" rowSpan={3}>
+                        전신 타이 마사지 + 스트레칭
+                      </td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 px-4 py-3 font-medium">VIP 패키지</td>
+                      <td className="border border-gray-300 px-4 py-3">90분</td>
+                      <td className="border border-gray-300 px-4 py-3 text-violet-600 font-semibold">100,000원</td>
+                    </tr>
+                    <tr>
                       <td className="border border-gray-300 px-4 py-3">120분</td>
+                      <td className="border border-gray-300 px-4 py-3 text-violet-600 font-semibold">120,000원</td>
+                    </tr>
+                    <tr className="bg-gray-50">
+                      <td className="border border-gray-300 px-4 py-3 font-medium" rowSpan={3}>
+                        힐링스웨디시
+                      </td>
+                      <td className="border border-gray-300 px-4 py-3">60분</td>
+                      <td className="border border-gray-300 px-4 py-3 text-violet-600 font-semibold">90,000원</td>
+                      <td className="border border-gray-300 px-4 py-3" rowSpan={3}>
+                        아로마 오일 + 전신 스웨디시
+                      </td>
+                    </tr>
+                    <tr className="bg-gray-50">
+                      <td className="border border-gray-300 px-4 py-3">90분</td>
+                      <td className="border border-gray-300 px-4 py-3 text-violet-600 font-semibold">110,000원</td>
+                    </tr>
+                    <tr className="bg-gray-50">
+                      <td className="border border-gray-300 px-4 py-3">120분</td>
+                      <td className="border border-gray-300 px-4 py-3 text-violet-600 font-semibold">130,000원</td>
+                    </tr>
+                    <tr>
+                      <td className="border border-gray-300 px-4 py-3 font-medium" rowSpan={4}>
+                        VIP (타이 + 힐링 + 풋)
+                      </td>
+                      <td className="border border-gray-300 px-4 py-3">60분</td>
+                      <td className="border border-gray-300 px-4 py-3 text-purple-600 font-semibold">100,000원</td>
+                      <td className="border border-gray-300 px-4 py-3" rowSpan={4}>
+                        프리미엄 코스 + 개인 맞춤
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="border border-gray-300 px-4 py-3">90분</td>
                       <td className="border border-gray-300 px-4 py-3 text-purple-600 font-semibold">130,000원</td>
-                      <td className="border border-gray-300 px-4 py-3">프리미엄 코스 + 개인 맞춤</td>
+                    </tr>
+                    <tr>
+                      <td className="border border-gray-300 px-4 py-3">120분</td>
+                      <td className="border border-gray-300 px-4 py-3 text-purple-600 font-semibold">160,000원</td>
+                    </tr>
+                    <tr>
+                      <td className="border border-gray-300 px-4 py-3">150분</td>
+                      <td className="border border-gray-300 px-4 py-3 text-purple-600 font-semibold">200,000원</td>
                     </tr>
                   </tbody>
                 </table>

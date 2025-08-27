@@ -25,11 +25,7 @@ const getRegionData = (regionName: string, regionType?: string) => {
   )
 }
 
-export default function RegionalStructuredData({
-  regionName,
-  regionType,
-  serviceAreas = [],
-}: RegionalStructuredDataProps) {
+function RegionalStructuredData({ regionName, regionType, serviceAreas = [] }: RegionalStructuredDataProps) {
   const regionData = getRegionData(regionName, regionType)
   const { korean: regionNameKorean, coordinates } = regionData
 
@@ -199,3 +195,6 @@ export default function RegionalStructuredData({
     />
   )
 }
+
+export { RegionalStructuredData }
+export default RegionalStructuredData
