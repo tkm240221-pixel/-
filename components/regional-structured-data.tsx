@@ -1,19 +1,38 @@
 interface RegionalStructuredDataProps {
   regionName: string
-  regionNameKorean: string
-  serviceAreas: string[]
-  coordinates: {
-    latitude: number
-    longitude: number
+  regionType?: string
+  serviceAreas?: string[]
+}
+
+const getRegionData = (regionName: string, regionType?: string) => {
+  const defaultCoordinates = { latitude: 37.5665, longitude: 126.978 } // Seoul default
+
+  const regionData: Record<string, { korean: string; coordinates: { latitude: number; longitude: number } }> = {
+    강남구: { korean: "강남구", coordinates: { latitude: 37.5173, longitude: 127.0473 } },
+    강서구: { korean: "강서구", coordinates: { latitude: 37.5509, longitude: 126.8495 } },
+    송파구: { korean: "송파구", coordinates: { latitude: 37.5145, longitude: 127.1059 } },
+    서초구: { korean: "서초구", coordinates: { latitude: 37.4837, longitude: 127.0324 } },
+    관악구: { korean: "관악구", coordinates: { latitude: 37.4781, longitude: 126.9515 } },
+    수원시: { korean: "수원시", coordinates: { latitude: 37.2636, longitude: 127.0286 } },
+    김포시: { korean: "김포시", coordinates: { latitude: 37.6158, longitude: 126.7159 } },
   }
+
+  return (
+    regionData[regionName] || {
+      korean: regionName,
+      coordinates: defaultCoordinates,
+    }
+  )
 }
 
 export default function RegionalStructuredData({
   regionName,
-  regionNameKorean,
-  serviceAreas = [], // Added default empty array to prevent undefined map error
-  coordinates,
+  regionType,
+  serviceAreas = [],
 }: RegionalStructuredDataProps) {
+  const regionData = getRegionData(regionName, regionType)
+  const { korean: regionNameKorean, coordinates } = regionData
+
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -52,7 +71,7 @@ export default function RegionalStructuredData({
       },
       geoRadius: "15000",
     },
-    areaServed: (serviceAreas || []).map((area) => ({
+    areaServed: serviceAreas.map((area) => ({
       "@type": "Place",
       name: area,
     })),
