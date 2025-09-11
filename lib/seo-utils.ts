@@ -114,7 +114,7 @@ function getDefaultStructuredData() {
     "@type": "LocalBusiness",
     name: "총알출장마사지",
     description: "서울 경기 인천 전 지역 24시간 출장마사지 서비스",
-    url: "https://총알출장마사지.com",
+    url: "https://www.총알출장마사지.com",
     telephone: "010-2871-2457",
     openingHours: "Mo-Su 00:00-23:59",
     areaServed: ["서울특별시", "경기도", "인천광역시"],
