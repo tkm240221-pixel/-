@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Phone, MessageCircle, Clock, Shield, Users, CreditCard, Star, X } from "lucide-react"
 import RegionalLinks from "@/components/regional-links"
 
-export default function GwanakClientPage() {
+export default function GangdongClientPage() {
   const [showPriceTable, setShowPriceTable] = useState(false)
   const [typewriterText, setTypewriterText] = useState("")
 
@@ -59,7 +59,7 @@ export default function GwanakClientPage() {
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-violet-600 via-purple-600 to-violet-800 text-white py-20">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">관악구 출장마사지 예약문의 가이드</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">강동구 출장마사지 예약문의 가이드</h1>
           <p className="text-xl mb-8 text-violet-100">365일 24시간 문의 & 예약 가능합니다</p>
 
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8">
@@ -165,7 +165,7 @@ export default function GwanakClientPage() {
       {/* Service Features */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-violet-800">관악구 출장마사지 서비스 특징</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-violet-800">강동구 출장마사지 서비스 특징</h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center p-6 rounded-2xl bg-violet-50 border border-violet-100">
@@ -198,9 +198,22 @@ export default function GwanakClientPage() {
       {/* Service Areas */}
       <section className="py-16 bg-gradient-to-br from-violet-50 to-purple-50">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-8 text-violet-800">관악구 서비스 지역</h2>
+          <h2 className="text-3xl font-bold mb-8 text-violet-800">강동구 서비스 지역</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {["신림동", "봉천동", "서원동", "남현동", "청룡동", "행운동", "낙성대동", "인헌동"].map((area) => (
+            {[
+              "천호동",
+              "성내동",
+              "길동",
+              "둔촌동",
+              "암사동",
+              "고덕동",
+              "상일동",
+              "명일동",
+              "강일동",
+              "하일동",
+              "중곡동",
+              "구의동",
+            ].map((area) => (
               <div key={area} className="bg-white p-4 rounded-lg shadow-sm border border-violet-100">
                 <span className="text-violet-700 font-medium">{area}</span>
               </div>
@@ -212,7 +225,7 @@ export default function GwanakClientPage() {
       {/* Customer Reviews */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-violet-800">관악구 고객 후기</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-violet-800">강동구 고객 후기</h2>
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-violet-50 p-6 rounded-2xl border border-violet-100">
@@ -224,9 +237,9 @@ export default function GwanakClientPage() {
                 </div>
               </div>
               <p className="text-violet-700 mb-4">
-                "신림동에서 이용했는데 정말 만족스러웠어요. 전문적인 마사지 실력과 친절한 서비스가 인상적이었습니다."
+                "천호동에서 이용했는데 정말 만족스러웠어요. 전문적인 마사지 실력과 친절한 서비스가 인상적이었습니다."
               </p>
-              <p className="text-violet-600 font-medium">- 신림동 김○○님</p>
+              <p className="text-violet-600 font-medium">- 천호동 김○○님</p>
             </div>
 
             <div className="bg-violet-50 p-6 rounded-2xl border border-violet-100">
@@ -238,10 +251,10 @@ export default function GwanakClientPage() {
                 </div>
               </div>
               <p className="text-violet-700 mb-4">
-                "봉천동에서 VIP 코스 받았는데 정말 시원하고 개운했어요. 24시간 서비스라서 늦은 시간에도 이용할 수 있어서
+                "성내동에서 VIP 코스 받았는데 정말 시원하고 개운했어요. 24시간 서비스라서 늦은 시간에도 이용할 수 있어서
                 좋네요."
               </p>
-              <p className="text-violet-600 font-medium">- 봉천동 박○○님</p>
+              <p className="text-violet-600 font-medium">- 성내동 박○○님</p>
             </div>
 
             <div className="bg-violet-50 p-6 rounded-2xl border border-violet-100">
@@ -253,17 +266,17 @@ export default function GwanakClientPage() {
                 </div>
               </div>
               <p className="text-violet-700 mb-4">
-                "서원동에서 힐링스웨디시 받았는데 스트레스가 확실히 풀렸어요. 관리사분도 매우 전문적이시고
+                "길동에서 힐링스웨디시 받았는데 스트레스가 확실히 풀렸어요. 관리사분도 매우 전문적이시고
                 친절하셨습니다."
               </p>
-              <p className="text-violet-600 font-medium">- 서원동 이○○님</p>
+              <p className="text-violet-600 font-medium">- 길동 이○○님</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Regional Links */}
-      <RegionalLinks currentRegion="관악구" regionType="seoul" />
+      <RegionalLinks currentRegion="강동구" regionType="seoul" />
 
       {/* Footer */}
       <footer className="bg-violet-800 text-white py-12">
@@ -271,7 +284,7 @@ export default function GwanakClientPage() {
           <div className="grid md:grid-cols-3 gap-8">
             <div>
               <h3 className="text-xl font-bold mb-4">총알출장마사지</h3>
-              <p className="text-violet-200">관악구 전지역 24시간 출장마사지 서비스</p>
+              <p className="text-violet-200">강동구 전지역 24시간 출장마사지 서비스</p>
             </div>
 
             <div>
@@ -300,7 +313,7 @@ export default function GwanakClientPage() {
               <h4 className="font-bold mb-4">서비스 안내</h4>
               <ul className="space-y-2 text-violet-200">
                 <li>• 24시간 연중무휴</li>
-                <li>• 관악구 전지역 서비스</li>
+                <li>• 강동구 전지역 서비스</li>
                 <li>• 후불제 결제</li>
                 <li>• 전문 테라피스트</li>
               </ul>
