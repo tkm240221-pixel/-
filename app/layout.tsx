@@ -83,6 +83,18 @@ export default function RootLayout({
   return (
     <html lang="ko" className={`${workSans.variable} ${openSans.variable} antialiased`}>
       <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-YQV7D3DPT6"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-YQV7D3DPT6');
+            `,
+          }}
+        />
+
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
         <meta name="theme-color" content="#7c3aed" />
         <meta name="mobile-web-app-capable" content="yes" />
