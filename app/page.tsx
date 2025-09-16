@@ -1601,7 +1601,7 @@ export default function HomePage() {
               <div className="bg-white rounded-lg p-6 mb-6 text-left max-w-4xl mx-auto shadow-xl">
                 <p className="mb-4 leading-relaxed text-center leading-7 font-bold text-lg text-violet-600 min-h-[3.5rem]">
                   {typewriterText}
-                  {typewriterText.length < fullText.length && <span className="animate-pulse">|</span>}
+                  {typewriterText.length < fullText.length && <span className="animate-pulse text-violet-600">|</span>}
                 </p>
                 <div className="bg-violet-50 rounded-lg p-4 mb-4 border border-violet-200">
                   <p className="text-violet-700 font-semibold text-center">
