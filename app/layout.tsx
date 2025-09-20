@@ -66,7 +66,7 @@ export const metadata: Metadata = {
   verification: {
     google: "google-site-verification-code",
     other: {
-      "naver-site-verification": "naver-verification-code",
+      "naver-site-verification": "caa960ffc52d299ba0c58469c8ca7492218f0b93",
     },
   },
   alternates: {
@@ -94,6 +94,8 @@ export default function RootLayout({
             `,
           }}
         />
+
+        <meta name="naver-site-verification" content="caa960ffc52d299ba0c58469c8ca7492218f0b93" />
 
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
         <meta name="theme-color" content="#7c3aed" />
