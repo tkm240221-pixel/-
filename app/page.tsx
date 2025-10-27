@@ -128,44 +128,1350 @@ export default function HomePage() {
         />
         <link rel="canonical" href="https://총알출장마사지.com" />
       </Head>
-
-      {/* Updated Header */}
-      <section className="bg-gray-400 py-4 border-b border-gray-500">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-xl font-bold text-white">전국 최고의 출장마사지, 출장안마 정보 커뮤니티 마사지뷰</h1>
-          </div>
-        </div>
-      </section>
-
-      {/* Updated Navigation Menu */}
-      <section className="bg-white py-3 border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <nav className="flex justify-center items-center gap-6 text-sm font-medium">
-            <Link href="/" className="text-gray-700 hover:text-gray-900">
-              출장마사지
-            </Link>
-            <span className="text-gray-400">-</span>
-            <Link href="/#services" className="text-gray-700 hover:text-gray-900">
-              출장안마
-            </Link>
-            <span className="text-gray-400">-</span>
-            <Link href="/#regions" className="text-gray-700 hover:text-gray-900">
-              홈타이
-            </Link>
-            <span className="text-gray-400">-</span>
-            <Link href="/blog" className="text-gray-700 hover:text-gray-900">
-              전국출장 마사지뷰
-            </Link>
-          </nav>
-        </div>
-      </section>
-
       <div className="min-h-screen bg-white">
-        {/* Original Header (now replaced by the updated sections above) */}
-        {/* <header className="bg-white shadow-lg border-b border-violet-100 sticky top-0 z-50"> */}
-        {/* ... existing header code ... */}
-        {/* </header> */}
+        {/* Header */}
+        <header className="bg-white shadow-lg border-b border-violet-100 sticky top-0 z-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between items-center h-16">
+              {/* Logo */}
+              <div className="flex-shrink-0">
+                <h1 className="text-2xl font-bold text-violet-600">총알출장마사지</h1>
+              </div>
+
+              {/* Desktop Navigation */}
+              <nav className="hidden md:flex space-x-8 relative justify-center flex-1 font-normal text-xl text-gray-600">
+                <a href="#home" className="hover:text-violet-600 transition-colors text-gray-700">
+                  홈
+                </a>
+                <button
+                  onClick={() => setShowPriceTable(true)}
+                  className="hover:text-violet-600 transition-colors text-gray-700"
+                >
+                  코스표
+                </button>
+                <div className="relative">
+                  <button
+                    onClick={() => setShowRegionalDropdown(!showRegionalDropdown)}
+                    className="hover:text-violet-600 transition-colors flex items-center text-gray-700"
+                  >
+                    지역별
+                    <svg className="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+
+                  {/* Regional Dropdown Menu */}
+                  {showRegionalDropdown && (
+                    <div className="absolute top-full left-0 mt-2 w-96 bg-white border border-violet-200 rounded-lg shadow-2xl z-50">
+                      <div className="p-4">
+                        <div className="flex mb-4 bg-violet-50 rounded-lg p-1">
+                          <button
+                            onClick={() => setActiveRegion("seoul")}
+                            className={`flex-1 py-2 px-3 rounded-md text-sm font-medium transition-colors ${
+                              activeRegion === "seoul"
+                                ? "bg-violet-600 text-white"
+                                : "text-gray-600 hover:text-violet-600"
+                            }`}
+                          >
+                            서울
+                          </button>
+                          <button
+                            onClick={() => setActiveRegion("gyeonggi")}
+                            className={`flex-1 py-2 px-3 rounded-md text-sm font-medium transition-colors ${
+                              activeRegion === "gyeonggi"
+                                ? "bg-violet-500 text-white"
+                                : "text-gray-600 hover:text-violet-600"
+                            }`}
+                          >
+                            경기
+                          </button>
+                          <button
+                            onClick={() => setActiveRegion("incheon")}
+                            className={`flex-1 py-2 px-3 rounded-md text-sm font-medium transition-colors ${
+                              activeRegion === "incheon"
+                                ? "bg-violet-400 text-white"
+                                : "text-gray-600 hover:text-violet-600"
+                            }`}
+                          >
+                            인천
+                          </button>
+                        </div>
+
+                        <div className="grid grid-cols-2 gap-2 text-xs max-h-60 overflow-y-auto">
+                          {/* Seoul Districts */}
+                          {activeRegion === "seoul" && (
+                            <>
+                              <Link
+                                href="/gangnam"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                강남구출장마사지
+                              </Link>
+                              <Link
+                                href="/gangdong"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                강동구출장마사지
+                              </Link>
+                              <Link
+                                href="/gangbuk"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                강북구출장마사지
+                              </Link>
+                              <Link
+                                href="/gangseo"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                강서구출장마사지
+                              </Link>
+                              <Link
+                                href="/gwanak"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                관악구출장마사지
+                              </Link>
+                              <Link
+                                href="/gwangjin"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                광진구출장마사지
+                              </Link>
+                              <Link
+                                href="/guro"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                구로구출장마사지
+                              </Link>
+                              <Link
+                                href="/geumcheon"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                금천구출장마사지
+                              </Link>
+                              <Link
+                                href="/nowon"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                노원구출장마사지
+                              </Link>
+                              <Link
+                                href="/dobong"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                도봉구출장마사지
+                              </Link>
+                              <Link
+                                href="/dongdaemun"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                동대문구출장마사지
+                              </Link>
+                              <Link
+                                href="/dongjak"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                동작구출장마사지
+                              </Link>
+                              <Link
+                                href="/mapo"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                마포구출장마사지
+                              </Link>
+                              <Link
+                                href="/seodaemun"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                서대문구출장마사지
+                              </Link>
+                              <Link
+                                href="/seocho"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                서초구출장마사지
+                              </Link>
+                              <Link
+                                href="/seongdong"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                성동구출장마사지
+                              </Link>
+                              <Link
+                                href="/seongbuk"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                성북구출장마사지
+                              </Link>
+                              <Link
+                                href="/songpa"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                송파구출장마사지
+                              </Link>
+                              <Link
+                                href="/yangcheon"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                양천구출장마사지
+                              </Link>
+                              <Link
+                                href="/yeongdeungpo"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                영등포구출장마사지
+                              </Link>
+                              <Link
+                                href="/yongsan"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                용산구출장마사지
+                              </Link>
+                              <Link
+                                href="/eunpyeong"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                은평구출장마사지
+                              </Link>
+                              <Link
+                                href="/jongno"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                종로구출장마사지
+                              </Link>
+                              <Link
+                                href="/jung"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                중구출장마사지
+                              </Link>
+                              <Link
+                                href="/jungnang"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                중랑구출장마사지
+                              </Link>
+                            </>
+                          )}
+
+                          {/* Gyeonggi Districts */}
+                          {activeRegion === "gyeonggi" && (
+                            <>
+                              <Link
+                                href="/gapyeong"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                가평군출장마사지
+                              </Link>
+                              <Link
+                                href="/goyang"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                고양시출장마사지
+                              </Link>
+                              <Link
+                                href="/gwacheon"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                과천시출장마사지
+                              </Link>
+                              <Link
+                                href="/gwangmyeong"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                광명시출장마사지
+                              </Link>
+                              <Link
+                                href="/gwangju"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                광주시출장마사지
+                              </Link>
+                              <Link
+                                href="/guri"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                구리시출장마사지
+                              </Link>
+                              <Link
+                                href="/gunpo"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                군포시출장마사지
+                              </Link>
+                              <Link
+                                href="/gimpo"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                김포시출장마사지
+                              </Link>
+                              <Link
+                                href="/namyangju"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                남양주시출장마사지
+                              </Link>
+                              <Link
+                                href="/dongducheon"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                동두천시출장마사지
+                              </Link>
+                              <Link
+                                href="/bucheon"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                부천시출장마사지
+                              </Link>
+                              <Link
+                                href="/seongnam"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                성남시출장마사지
+                              </Link>
+                              <Link
+                                href="/suwon"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                수원시출장마사지
+                              </Link>
+                              <Link
+                                href="/siheung"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                시흥시출장마사지
+                              </Link>
+                              <Link
+                                href="/ansan"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                안산시출장마사지
+                              </Link>
+                              <Link
+                                href="/anseong"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                안성시출장마사지
+                              </Link>
+                              <Link
+                                href="/anyang"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                안양시출장마사지
+                              </Link>
+                              <Link
+                                href="/yangju"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                양주시출장마사지
+                              </Link>
+                              <Link
+                                href="/yangpyeong"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                양평군출장마사지
+                              </Link>
+                              <Link
+                                href="/yeoju"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                여주시출장마사지
+                              </Link>
+                              <Link
+                                href="/yeoncheon"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                연천군출장마사지
+                              </Link>
+                              <Link
+                                href="/osan"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                오산시출장마사지
+                              </Link>
+                              <Link
+                                href="/yongin"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                용인시출장마사지
+                              </Link>
+                              <Link
+                                href="/uiwang"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                의왕시출장마사지
+                              </Link>
+                              <Link
+                                href="/uijeongbu"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                의정부시출장마사지
+                              </Link>
+                              <Link
+                                href="/icheon"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                이천시출장마사지
+                              </Link>
+                              <Link
+                                href="/paju"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                파주시출장마사지
+                              </Link>
+                              <Link
+                                href="/pyeongtaek"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                평택시출장마사지
+                              </Link>
+                              <Link
+                                href="/pocheon"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                포천시출장마사지
+                              </Link>
+                              <Link
+                                href="/hanam"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                하남시출장마사지
+                              </Link>
+                              <Link
+                                href="/hwaseong"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                화성시출장마사지
+                              </Link>
+                            </>
+                          )}
+
+                          {/* Incheon Districts */}
+                          {activeRegion === "incheon" && (
+                            <>
+                              <Link
+                                href="/gyeyang"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                계양구출장마사지
+                              </Link>
+                              <Link
+                                href="/namdong"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                남동구출장마사지
+                              </Link>
+                              <Link
+                                href="/dong-gu"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                동구출장마사지
+                              </Link>
+                              <Link
+                                href="/michuhol"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                미추홀구출장마사지
+                              </Link>
+                              <Link
+                                href="/bupyeong"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                부평구출장마사지
+                              </Link>
+                              <Link
+                                href="/seo-gu"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                서구출장마사지
+                              </Link>
+                              <Link
+                                href="/yeonsu"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                연수구출장마사지
+                              </Link>
+                              <Link
+                                href="/jung-gu"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                중구출장마사지
+                              </Link>
+                              <Link
+                                href="/ganghwa"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                강화군출장마사지
+                              </Link>
+                              <Link
+                                href="/ongjin"
+                                className="p-2 text-gray-700 hover:bg-violet-50 hover:text-violet-600 rounded transition-colors"
+                                onClick={() => setShowRegionalDropdown(false)}
+                              >
+                                옹진군출장마사지
+                              </Link>
+                            </>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+                <Link href="/blog" className="hover:text-violet-600 transition-colors text-gray-700">
+                  블로그
+                </Link>
+                <a href="tel:010-2871-2457" className="text-gray-600 hover:text-violet-600 transition-colors">
+                  문의
+                </a>
+              </nav>
+
+              <div className="md:hidden">
+                <button
+                  onClick={() => setShowMobileMenu(!showMobileMenu)}
+                  className="text-gray-600 hover:text-violet-600 transition-colors p-2"
+                >
+                  <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                </button>
+              </div>
+
+              {/* Quick Contact - Desktop only */}
+              <div className="hidden md:flex items-center space-x-3"></div>
+            </div>
+
+            {showMobileMenu && (
+              <div className="md:hidden bg-white border-t border-violet-100 py-4">
+                <div className="space-y-3">
+                  <a
+                    href="#home"
+                    className="block px-4 py-2 text-gray-700 hover:text-violet-600 hover:bg-violet-50 transition-colors"
+                    onClick={() => setShowMobileMenu(false)}
+                  >
+                    홈
+                  </a>
+                  <button
+                    onClick={() => {
+                      setShowPriceTable(true)
+                      setShowMobileMenu(false)
+                    }}
+                    className="block w-full text-left px-4 py-2 text-gray-700 hover:text-violet-600 hover:bg-violet-50 transition-colors"
+                  >
+                    코스표
+                  </button>
+                  <div>
+                    <button
+                      onClick={() => setShowMobileRegionalDropdown(!showMobileRegionalDropdown)}
+                      className="flex items-center justify-between w-full px-4 py-2 text-gray-700 hover:text-violet-600 hover:bg-violet-50 transition-colors"
+                    >
+                      지역별
+                      <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+
+                    {/* Mobile Regional Dropdown */}
+                    {showMobileRegionalDropdown && (
+                      <div className="bg-violet-50 px-4 py-2">
+                        <div className="flex mb-3 bg-white rounded-lg p-1">
+                          <button
+                            onClick={() => setActiveMobileRegion("seoul")}
+                            className={`flex-1 py-2 px-3 rounded-md text-sm font-medium transition-colors ${
+                              activeMobileRegion === "seoul"
+                                ? "bg-violet-600 text-white"
+                                : "text-gray-600 hover:text-violet-600"
+                            }`}
+                          >
+                            서울
+                          </button>
+                          <button
+                            onClick={() => setActiveMobileRegion("gyeonggi")}
+                            className={`flex-1 py-2 px-3 rounded-md text-sm font-medium transition-colors ${
+                              activeMobileRegion === "gyeonggi"
+                                ? "bg-violet-500 text-white"
+                                : "text-gray-600 hover:text-violet-600"
+                            }`}
+                          >
+                            경기
+                          </button>
+                          <button
+                            onClick={() => setActiveMobileRegion("incheon")}
+                            className={`flex-1 py-2 px-3 rounded-md text-sm font-medium transition-colors ${
+                              activeMobileRegion === "incheon"
+                                ? "bg-violet-400 text-white"
+                                : "text-gray-600 hover:text-violet-600"
+                            }`}
+                          >
+                            인천
+                          </button>
+                        </div>
+
+                        <div className="grid grid-cols-1 gap-1 text-sm max-h-48 overflow-y-auto">
+                          {/* Seoul Districts - Mobile */}
+                          {activeMobileRegion === "seoul" && (
+                            <>
+                              <Link
+                                href="/gangnam"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                강남구출장마사지
+                              </Link>
+                              <Link
+                                href="/gangdong"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                강동구출장마사지
+                              </Link>
+                              <Link
+                                href="/gangbuk"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                강북구출장마사지
+                              </Link>
+                              <Link
+                                href="/gangseo"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                강서구출장마사지
+                              </Link>
+                              <Link
+                                href="/gwanak"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                관악구출장마사지
+                              </Link>
+                              <Link
+                                href="/gwangjin"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                광진구출장마사지
+                              </Link>
+                              <Link
+                                href="/guro"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                구로구출장마사지
+                              </Link>
+                              <Link
+                                href="/geumcheon"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                금천구출장마사지
+                              </Link>
+                              <Link
+                                href="/nowon"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                노원구출장마사지
+                              </Link>
+                              <Link
+                                href="/dobong"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                도봉구출장마사지
+                              </Link>
+                              <Link
+                                href="/dongdaemun"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                동대문구출장마사지
+                              </Link>
+                              <Link
+                                href="/dongjak"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                동작구출장마사지
+                              </Link>
+                              <Link
+                                href="/mapo"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                마포구출장마사지
+                              </Link>
+                              <Link
+                                href="/seodaemun"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                서대문구출장마사지
+                              </Link>
+                              <Link
+                                href="/seocho"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                서초구출장마사지
+                              </Link>
+                              <Link
+                                href="/seongdong"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                성동구출장마사지
+                              </Link>
+                              <Link
+                                href="/seongbuk"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                성북구출장마사지
+                              </Link>
+                              <Link
+                                href="/songpa"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                송파구출장마사지
+                              </Link>
+                              <Link
+                                href="/yangcheon"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                양천구출장마사지
+                              </Link>
+                              <Link
+                                href="/yeongdeungpo"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                영등포구출장마사지
+                              </Link>
+                              <Link
+                                href="/yongsan"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                용산구출장마사지
+                              </Link>
+                              <Link
+                                href="/eunpyeong"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                은평구출장마사지
+                              </Link>
+                              <Link
+                                href="/jongno"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                종로구출장마사지
+                              </Link>
+                              <Link
+                                href="/jung"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                중구출장마사지
+                              </Link>
+                              <Link
+                                href="/jungnang"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                중랑구출장마사지
+                              </Link>
+                            </>
+                          )}
+
+                          {/* Gyeonggi Districts - Mobile */}
+                          {activeMobileRegion === "gyeonggi" && (
+                            <>
+                              <Link
+                                href="/gapyeong"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                가평군출장마사지
+                              </Link>
+                              <Link
+                                href="/goyang"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                고양시출장마사지
+                              </Link>
+                              <Link
+                                href="/gwacheon"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                과천시출장마사지
+                              </Link>
+                              <Link
+                                href="/gwangmyeong"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                광명시출장마사지
+                              </Link>
+                              <Link
+                                href="/gwangju"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                광주시출장마사지
+                              </Link>
+                              <Link
+                                href="/guri"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                구리시출장마사지
+                              </Link>
+                              <Link
+                                href="/gunpo"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                군포시출장마사지
+                              </Link>
+                              <Link
+                                href="/gimpo"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                김포시출장마사지
+                              </Link>
+                              <Link
+                                href="/namyangju"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                남양주시출장마사지
+                              </Link>
+                              <Link
+                                href="/dongducheon"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                동두천시출장마사지
+                              </Link>
+                              <Link
+                                href="/bucheon"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                부천시출장마사지
+                              </Link>
+                              <Link
+                                href="/seongnam"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                성남시출장마사지
+                              </Link>
+                              <Link
+                                href="/suwon"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                수원시출장마사지
+                              </Link>
+                              <Link
+                                href="/siheung"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                시흥시출장마사지
+                              </Link>
+                              <Link
+                                href="/ansan"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                안산시출장마사지
+                              </Link>
+                              <Link
+                                href="/anseong"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                안성시출장마사지
+                              </Link>
+                              <Link
+                                href="/anyang"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                안양시출장마사지
+                              </Link>
+                              <Link
+                                href="/yangju"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                양주시출장마사지
+                              </Link>
+                              <Link
+                                href="/yangpyeong"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                양평군출장마사지
+                              </Link>
+                              <Link
+                                href="/yeoju"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                여주시출장마사지
+                              </Link>
+                              <Link
+                                href="/yeoncheon"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                연천군출장마사지
+                              </Link>
+                              <Link
+                                href="/osan"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                오산시출장마사지
+                              </Link>
+                              <Link
+                                href="/yongin"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                용인시출장마사지
+                              </Link>
+                              <Link
+                                href="/uiwang"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                의왕시출장마사지
+                              </Link>
+                              <Link
+                                href="/uijeongbu"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                의정부시출장마사지
+                              </Link>
+                              <Link
+                                href="/icheon"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                이천시출장마사지
+                              </Link>
+                              <Link
+                                href="/paju"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                파주시출장마사지
+                              </Link>
+                              <Link
+                                href="/pyeongtaek"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                평택시출장마사지
+                              </Link>
+                              <Link
+                                href="/pocheon"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                포천시출장마사지
+                              </Link>
+                              <Link
+                                href="/hanam"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                하남시출장마사지
+                              </Link>
+                              <Link
+                                href="/hwaseong"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                화성시출장마사지
+                              </Link>
+                            </>
+                          )}
+
+                          {/* Incheon Districts - Mobile */}
+                          {activeMobileRegion === "incheon" && (
+                            <>
+                              <Link
+                                href="/gyeyang"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                계양구출장마사지
+                              </Link>
+                              <Link
+                                href="/namdong"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                남동구출장마사지
+                              </Link>
+                              <Link
+                                href="/dong-gu"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                동구출장마사지
+                              </Link>
+                              <Link
+                                href="/michuhol"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                미추홀구출장마사지
+                              </Link>
+                              <Link
+                                href="/bupyeong"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                부평구출장마사지
+                              </Link>
+                              <Link
+                                href="/seo-gu"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                서구출장마사지
+                              </Link>
+                              <Link
+                                href="/yeonsu"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                연수구출장마사지
+                              </Link>
+                              <Link
+                                href="/jung-gu"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                중구출장마사지
+                              </Link>
+                              <Link
+                                href="/ganghwa"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                강화군출장마사지
+                              </Link>
+                              <Link
+                                href="/ongjin"
+                                className="p-2 text-gray-700 hover:bg-white hover:text-violet-600 rounded transition-colors"
+                                onClick={() => {
+                                  setShowMobileMenu(false)
+                                  setShowMobileRegionalDropdown(false)
+                                }}
+                              >
+                                옹진군출장마사지
+                              </Link>
+                            </>
+                          )}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                  <Link
+                    href="/blog"
+                    className="block px-4 py-2 text-gray-700 hover:text-violet-600 hover:bg-violet-50 transition-colors"
+                    onClick={() => setShowMobileMenu(false)}
+                  >
+                    블로그
+                  </Link>
+                  <a
+                    href="tel:010-2871-2457"
+                    className="block px-4 py-2 text-gray-700 hover:text-violet-600 hover:bg-violet-50 transition-colors"
+                    onClick={() => setShowMobileMenu(false)}
+                  >
+                    문의
+                  </a>
+                </div>
+              </div>
+            )}
+          </div>
+        </header>
 
         {showRegionalDropdown && (
           <div className="fixed inset-0 z-40" onClick={() => setShowRegionalDropdown(false)}></div>
