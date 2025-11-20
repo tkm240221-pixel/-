@@ -1,7 +1,7 @@
-import Link from "next/link"
-import { regionData } from "@/lib/region-data"
-import { Phone, MessageCircle } from "lucide-react"
-import { notFound } from "next/navigation"
+import Link from 'next/link'
+import { regionData } from '@/lib/region-data'
+import { Phone, MessageCircle } from 'lucide-react'
+import { notFound } from 'next/navigation'
 
 export const dynamicParams = true
 
@@ -11,10 +11,27 @@ export async function generateStaticParams() {
   }))
 }
 
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const region = regionData[slug]
+  
+  if (!region) {
+    return {
+      title: '페이지를 찾을 수 없습니다',
+    }
+  }
+
+  const { areaName } = region
+  return {
+    title: `${areaName}출장안마 | ${areaName}출장마사지 | ${areaName}출장 - 쇼타임 출장안마`,
+    description: `${areaName} 지역 최고의 출장마사지 서비스. 20대 후불제, 한국태국 전문 마사지사 직접 방문. 피로와 스트레스를 완벽하게 해소해드립니다.`,
+  }
+}
+
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const region = regionData[slug]
-
+  
   if (!region) {
     notFound()
   }
@@ -26,11 +43,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       {/* Header */}
       <div className="bg-black/50 backdrop-blur-sm border-b border-gold-500/30 sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
-          <Link
-            href="/blog"
+          <Link 
+            href="/blog" 
             className="text-gold-400 hover:text-gold-300 transition-colors inline-flex items-center gap-2"
           >
-            ← Blog List
+            ← 블로그 목록으로
           </Link>
         </div>
       </div>
@@ -39,8 +56,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       <article className="container mx-auto px-4 py-12 max-w-4xl">
         {/* Title */}
         <header className="mb-12 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">{areaName} Massage Service</h1>
-          <p className="text-2xl text-gold-400 font-medium">Premium massage service for relaxation and stress relief</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
+            {areaName}출장안마 {areaName}출장마사지 {areaName}출장
+          </h1>
+          <p className="text-2xl text-gold-400 font-medium">
+            피로와 스트레스를 한 번에 해소할 최고의 힐링 서비스
+          </p>
         </header>
 
         {/* Contact Buttons */}
@@ -50,7 +71,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             className="flex items-center justify-center gap-3 bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             <Phone className="w-6 h-6" />
-            Call for Consultation
+            전화 상담
           </a>
           <a
             href="https://open.kakao.com/o/sd4IUeEh"
@@ -59,7 +80,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             className="flex items-center justify-center gap-3 bg-yellow-500 hover:bg-yellow-600 text-black px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             <MessageCircle className="w-6 h-6" />
-            Chat on Kakao
+            카톡 상담
           </a>
         </div>
 
@@ -68,56 +89,51 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           {/* Introduction */}
           <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gold-500/20">
             <p className="text-lg leading-relaxed">
-              {regionName} {districtName} {areaName}, this is a dynamic space in the modern world where daily life moves
-              quickly. If you are accumulating physical and mental fatigue in your busy schedule, a professional massage
-              service is needed. That is exactly what {areaName} Massage Service offers.
+              {regionName} {districtName} {areaName}, 이곳은 현대인의 일상이 빠르게 움직이는 역동적인 공간입니다. 
+              바쁜 일상 속에서 몸과 마음의 피로가 쌓인다면, 이를 제대로 풀어줄 전문 마사지 서비스가 필요합니다. 
+              바로 {areaName}출장안마, {areaName}출장마사지, 그리고 {areaName}출장입니다.
             </p>
             <p className="text-lg leading-relaxed mt-4">
-              Mobile massage is a service where massage therapists visit your location directly, making it a convenient
-              and essential healing method for modern people.
+              출장 마사지는 이동 시간을 줄이고 고객이 있는 장소로 직접 찾아가 진행되는 서비스로, 
+              스트레스 해소와 편안한 휴식을 제공하는 현대인의 필수 힐링 방법으로 자리 잡았습니다.
             </p>
           </div>
 
           {/* Section 1 */}
           <section>
             <h2 className="text-3xl font-bold text-gold-400 mb-6 flex items-center gap-2">
-              <span className="text-gold-500">1.</span> What is {areaName} Massage Service?
+              <span className="text-gold-500">1.</span> {areaName}출장안마란?
             </h2>
             <div className="bg-slate-800/30 rounded-xl p-6 space-y-4">
               <p className="leading-relaxed">
-                {areaName} Massage Service is a mobile massage service where therapists visit your location directly to
-                provide professional massage therapy. Unlike traditional massage parlors, customers do not need to move.
-                You can receive massage therapy conveniently at home, office, hotel, or any other desired location.
+                {areaName}출장마사지는 마사지사가 고객이 있는 장소로 직접 방문하여 전문적인 마사지를 제공하는 서비스입니다.
+                기존의 마사지숍과 달리, 고객이 이동할 필요 없이 집, 사무실, 호텔 등 원하는 장소에서 편안하게 서비스를 받을 수 있다는 점에서 큰 차이가 있습니다.
               </p>
-
-              <h3 className="text-2xl font-bold text-white mt-6 mb-4">Features of Mobile Massage</h3>
+              
+              <h3 className="text-2xl font-bold text-white mt-6 mb-4">출장안마의 특징</h3>
               <ul className="space-y-3 list-none">
                 <li className="flex items-start gap-3">
                   <span className="text-gold-500 font-bold">▶</span>
                   <div>
-                    <strong className="text-white">Perfect Convenience:</strong> No traffic jams or waiting time. You
-                    can relax at home while receiving massage therapy.
+                    <strong className="text-white">완벽한 편리함:</strong> 교통 체증이나 대기 시간이 없습니다. 집에서 편안히 휴식하며 마사지를 받을 수 있습니다.
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-gold-500 font-bold">▶</span>
                   <div>
-                    <strong className="text-white">Customized Services:</strong> Services are tailored to your physical
-                    condition and needs.
+                    <strong className="text-white">맞춤형 서비스:</strong> 고객의 몸 상태와 컨디션에 따라 세부 서비스를 맞춤 제공합니다.
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-gold-500 font-bold">▶</span>
                   <div>
-                    <strong className="text-white">Time Management:</strong> Easily schedule your massage therapy within
-                    a busy schedule.
+                    <strong className="text-white">시간 절약:</strong> 바쁜 스케줄 속에서도 쉽게 시간을 조율해 이용 가능합니다.
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-gold-500 font-bold">▶</span>
                   <div>
-                    <strong className="text-white">Professional Care:</strong> Experienced therapists visit you directly
-                    to provide high-quality services.
+                    <strong className="text-white">전문적인 케어:</strong> 숙련된 마사지사들이 직접 방문해 전문성을 갖춘 서비스를 제공합니다.
                   </div>
                 </li>
               </ul>
@@ -127,43 +143,37 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           {/* Section 2 */}
           <section>
             <h2 className="text-3xl font-bold text-gold-400 mb-6 flex items-center gap-2">
-              <span className="text-gold-500">2.</span> Special Effects of {areaName} Massage Service
+              <span className="text-gold-500">2.</span> {areaName}출장마사지가 주는 특별한 효과
             </h2>
             <div className="bg-slate-800/30 rounded-xl p-6 space-y-4">
               <p className="leading-relaxed">
-                Mobile massage goes beyond simply relieving physical fatigue. It also provides significant benefits for
-                mental stability and physical recovery.
+                출장마사지는 단순히 몸의 피로를 푸는 것을 넘어, 심리적 안정과 체력 회복에 큰 도움을 줍니다.
               </p>
-
-              <h3 className="text-2xl font-bold text-white mt-6 mb-4">Key Benefits of Mobile Massage</h3>
+              
+              <h3 className="text-2xl font-bold text-white mt-6 mb-4">출장마사지의 주요 효과</h3>
               <ul className="space-y-3 list-none">
                 <li className="flex items-start gap-3">
                   <span className="text-gold-500 font-bold">▶</span>
                   <div>
-                    <strong className="text-white">Stress Relief:</strong> Instantly alleviate stress accumulated in{" "}
-                    {areaName}.
+                    <strong className="text-white">스트레스 완화:</strong> {areaName}에서 쌓인 스트레스와 긴장을 즉각적으로 해소합니다.
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-gold-500 font-bold">▶</span>
                   <div>
-                    <strong className="text-white">Muscle Relaxation and Improved Circulation:</strong> Loosen up
-                    cramped muscles from long hours of sitting or standing at work. Improved blood circulation
-                    accelerates recovery from fatigue.
+                    <strong className="text-white">근육 이완 및 혈액순환 개선:</strong> 장시간 앉아 있거나 서 있는 업무로 뭉친 근육을 부드럽게 풀어줍니다. 혈액순환이 개선되어 피로 회복 속도가 빨라집니다.
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-gold-500 font-bold">▶</span>
                   <div>
-                    <strong className="text-white">Better Sleep Quality:</strong> Relax after massage therapy, leading
-                    to improved sleep quality.
+                    <strong className="text-white">숙면 유도:</strong> 마사지를 받은 후 몸과 마음이 이완되어 숙면의 질이 크게 향상됩니다.
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-gold-500 font-bold">▶</span>
                   <div>
-                    <strong className="text-white">Enhanced Physical and Immune Health:</strong> Regular massage therapy
-                    not only relieves fatigue but also strengthens physical and immune health.
+                    <strong className="text-white">체력 및 면역력 증진:</strong> 꾸준한 마사지로 피로를 풀고 체력 회복은 물론 면역력까지 강화할 수 있습니다.
                   </div>
                 </li>
               </ul>
@@ -173,56 +183,46 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           {/* Section 3 */}
           <section>
             <h2 className="text-3xl font-bold text-gold-400 mb-6 flex items-center gap-2">
-              <span className="text-gold-500">3.</span> How to Use {areaName} Massage Service
+              <span className="text-gold-500">3.</span> {areaName}출장을 이용하는 방법
             </h2>
             <div className="bg-slate-800/30 rounded-xl p-6 space-y-4">
-              <h3 className="text-2xl font-bold text-white mb-4">Simple and Convenient Reservation Process</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">쉽고 간편한 예약 절차</h3>
               <ol className="space-y-4 list-none">
                 <li className="flex items-start gap-3">
                   <span className="text-gold-500 font-bold text-xl">1</span>
                   <div>
-                    <strong className="text-white text-lg">Choose a Reliable Service:</strong>
-                    <p className="mt-2">
-                      Select a trusted mobile massage service in {areaName}. It is important to choose a place with
-                      certified therapists and a good reputation.
-                    </p>
+                    <strong className="text-white text-lg">업체 선택:</strong>
+                    <p className="mt-2">믿을 수 있는 {areaName} 출장 마사지 업체를 선택하세요. 평판이 좋고 인증된 마사지사들이 있는 곳을 고르는 것이 중요합니다.</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-gold-500 font-bold text-xl">2</span>
                   <div>
-                    <strong className="text-white text-lg">Consult and Reserve:</strong>
-                    <p className="mt-2">
-                      Inform the service of your desired time, location, and massage type (Swedish, Thai, Aromatherapy,
-                      etc.).
-                    </p>
+                    <strong className="text-white text-lg">상담 및 예약:</strong>
+                    <p className="mt-2">원하는 시간과 장소, 그리고 필요한 마사지 유형(스웨디시, 타이, 아로마 등)을 업체에 전달하세요.</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-gold-500 font-bold text-xl">3</span>
                   <div>
-                    <strong className="text-white text-lg">Receive Massage Therapy:</strong>
-                    <p className="mt-2">
-                      Professional therapists will visit you at the reserved time to provide customized massage therapy.
-                    </p>
+                    <strong className="text-white text-lg">마사지 받기:</strong>
+                    <p className="mt-2">예약된 시간에 전문 마사지사가 방문하여 고객 맞춤형 서비스를 제공합니다.</p>
                   </div>
                 </li>
               </ol>
 
-              <h3 className="text-2xl font-bold text-white mt-8 mb-4">Checklist for Mobile Massage Reservation</h3>
+              <h3 className="text-2xl font-bold text-white mt-8 mb-4">출장마사지 예약 시 체크리스트</h3>
               <ul className="space-y-3 list-none">
                 <li className="flex items-start gap-3">
                   <span className="text-gold-500 font-bold">✓</span>
                   <div>
-                    Honestly inform the therapists about your physical condition before receiving massage therapy.
-                    Mentioning specific areas of fatigue will allow for more effective care.
+                    마사지를 받기 전 몸 상태를 솔직히 알리세요. 허리 통증, 근육 뭉침 등 특정 부위의 피로를 미리 말하면 더 효과적인 케어가 가능합니다.
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-gold-500 font-bold">✓</span>
                   <div>
-                    Request the massage intensity and style beforehand. Massage intensity varies among individuals, so
-                    effective communication will lead to the best service for you.
+                    마사지 강도와 스타일을 사전에 요청하세요. 마사지 강도는 개인별로 선호도가 다르니, 소통을 통해 최적의 서비스를 받으세요.
                   </div>
                 </li>
               </ul>
@@ -232,30 +232,29 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           {/* Section 4 */}
           <section>
             <h2 className="text-3xl font-bold text-gold-400 mb-6 flex items-center gap-2">
-              <span className="text-gold-500">4.</span> Main Massage Types Offered by {areaName} Massage Service
+              <span className="text-gold-500">4.</span> {areaName}출장마사지의 주요 마사지 유형
             </h2>
             <div className="bg-slate-800/30 rounded-xl p-6 space-y-4">
               <p className="leading-relaxed">
-                Mobile massage services offer various styles. Choosing the right massage type can lead to greater
-                satisfaction.
+                출장 마사지 서비스는 다양한 스타일로 제공됩니다. 자신에게 맞는 마사지를 선택하면 더 큰 만족을 얻을 수 있습니다.
               </p>
-
+              
               <div className="grid md:grid-cols-2 gap-4 mt-6">
                 <div className="bg-slate-700/30 rounded-lg p-5 border border-gold-500/20">
-                  <h4 className="text-xl font-bold text-gold-300 mb-2">Swedish Massage</h4>
-                  <p>Improves blood and lymph circulation, promoting mental and physical relaxation.</p>
+                  <h4 className="text-xl font-bold text-gold-300 mb-2">스웨디시 마사지</h4>
+                  <p>혈액순환과 림프 순환을 촉진하며, 심신 안정과 부드러운 휴식을 제공합니다.</p>
                 </div>
                 <div className="bg-slate-700/30 rounded-lg p-5 border border-gold-500/20">
-                  <h4 className="text-xl font-bold text-gold-300 mb-2">Thai Massage</h4>
-                  <p>Combines stretching and pressure to increase joint flexibility and improve energy flow.</p>
+                  <h4 className="text-xl font-bold text-gold-300 mb-2">타이 마사지</h4>
+                  <p>스트레칭과 지압을 결합한 마사지로 관절의 유연성을 높이고 에너지 흐름을 개선합니다.</p>
                 </div>
                 <div className="bg-slate-700/30 rounded-lg p-5 border border-gold-500/20">
-                  <h4 className="text-xl font-bold text-gold-300 mb-2">Aromatherapy Massage</h4>
-                  <p>Utilizes essential oils to improve skin health and reduce stress, enhancing your mood.</p>
+                  <h4 className="text-xl font-bold text-gold-300 mb-2">아로마 마사지</h4>
+                  <p>에센셜 오일을 활용하여 피부 개선과 함께 스트레스를 줄이고 기분을 향상시킵니다.</p>
                 </div>
                 <div className="bg-slate-700/30 rounded-lg p-5 border border-gold-500/20">
-                  <h4 className="text-xl font-bold text-gold-300 mb-2">Healing Massage</h4>
-                  <p>Relieves deep muscle tension, making it effective for chronic muscle pain.</p>
+                  <h4 className="text-xl font-bold text-gold-300 mb-2">힐링 마사지</h4>
+                  <p>깊은 근육층의 긴장을 풀어주는 마사지로, 만성적인 근육 통증에 효과적입니다.</p>
                 </div>
               </div>
             </div>
@@ -264,29 +263,26 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           {/* Section 5 */}
           <section>
             <h2 className="text-3xl font-bold text-gold-400 mb-6 flex items-center gap-2">
-              <span className="text-gold-500">5.</span> Tips for More Effective Mobile Massage
+              <span className="text-gold-500">5.</span> 출장마사지를 더 효과적으로 받는 팁
             </h2>
             <div className="bg-slate-800/30 rounded-xl p-6 space-y-4">
               <ul className="space-y-3 list-none">
                 <li className="flex items-start gap-3">
                   <span className="text-gold-500 font-bold">●</span>
                   <div>
-                    <strong className="text-white">Preparation Before Massage:</strong> Taking a warm shower before
-                    massage therapy can help relax your muscles.
+                    <strong className="text-white">마사지 전 준비:</strong> 마사지 전 따뜻한 물로 샤워하면 근육 이완이 더 잘됩니다.
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-gold-500 font-bold">●</span>
                   <div>
-                    <strong className="text-white">Post-Massage Care:</strong> Drink plenty of water to help eliminate
-                    toxins and take some rest to feel the recovery.
+                    <strong className="text-white">마사지 후 관리:</strong> 충분히 물을 마셔 노폐물 배출을 돕고, 휴식 시간을 가져 몸의 회복을 느껴보세요.
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-gold-500 font-bold">●</span>
                   <div>
-                    <strong className="text-white">Regular Use:</strong> Regularly using mobile massage therapy can help
-                    manage fatigue and enhance physical recovery effectively.
+                    <strong className="text-white">정기적인 이용:</strong> 출장마사지를 정기적으로 받으면 지속적인 피로 관리와 체력 회복에 큰 도움이 됩니다.
                   </div>
                 </li>
               </ul>
@@ -296,36 +292,32 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           {/* Section 6 */}
           <section>
             <h2 className="text-3xl font-bold text-gold-400 mb-6 flex items-center gap-2">
-              <span className="text-gold-500">6.</span> Who Needs {areaName} Massage Service?
+              <span className="text-gold-500">6.</span> {areaName}출장, 누가 필요할까요?
             </h2>
             <div className="bg-slate-800/30 rounded-xl p-6">
               <ul className="space-y-3 list-none">
                 <li className="flex items-start gap-3">
                   <span className="text-gold-500 font-bold">✓</span>
                   <div>
-                    <strong className="text-white">Busy Professionals:</strong> Those who want to relieve stress from
-                    daily commuting and work fatigue.
+                    <strong className="text-white">바쁜 직장인:</strong> 출퇴근 시간의 스트레스와 업무로 인한 피로를 해소하고 싶은 분
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-gold-500 font-bold">✓</span>
                   <div>
-                    <strong className="text-white">Long-Hour Workers:</strong> Those suffering from chronic neck and
-                    shoulder pain from long hours in front of a computer.
+                    <strong className="text-white">장시간 근무자:</strong> 컴퓨터 앞에서 장시간 근무로 뭉친 어깨와 목의 통증이 심한 분
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-gold-500 font-bold">✓</span>
                   <div>
-                    <strong className="text-white">Travelers:</strong> Those who want a peaceful recovery at the end of
-                    a long day in a new city.
+                    <strong className="text-white">출장 중인 여행객:</strong> 낯선 도시에서의 긴 하루를 마무리하며 편안한 휴식을 원하는 분
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-gold-500 font-bold">✓</span>
                   <div>
-                    <strong className="text-white">Athletes Needing Recovery:</strong> Those who want to quickly recover
-                    from muscle fatigue after exercise.
+                    <strong className="text-white">운동 후 회복이 필요한 분:</strong> 운동으로 인한 근육 피로를 빠르게 풀고자 하는 분
                   </div>
                 </li>
               </ul>
@@ -335,29 +327,29 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           {/* Conclusion */}
           <section className="bg-gradient-to-r from-gold-500/20 to-gold-600/20 rounded-2xl p-8 border-2 border-gold-500/30">
             <h2 className="text-3xl font-bold text-gold-300 mb-6 flex items-center gap-2">
-              <span className="text-gold-500">7.</span> Enhance Your Day with {areaName} Massage Service!
+              <span className="text-gold-500">7.</span> {areaName}출장안마, {areaName}출장마사지, {areaName}출장으로 완벽한 하루를 만들어보세요!
             </h2>
             <div className="space-y-4">
               <p className="text-lg leading-relaxed">
-                At the end of a tiring day, take some time for yourself. {areaName} Massage Service is more than just a
-                service; it is a valuable experience that recharges your body and mind.
+                지친 하루의 끝, 내 몸을 위한 특별한 시간을 가져보세요. {areaName}출장안마는 단순한 서비스 그 이상입니다. 
+                당신의 일상에 새로운 활력을 불어넣고, 몸과 마음을 재충전할 수 있는 소중한 경험을 제공합니다.
               </p>
               <p className="text-xl font-bold text-gold-300 text-center mt-6">
-                Reserve now! Your perfect relaxation time is waiting for you.
+                지금 바로 예약하세요! 당신의 피로를 풀어줄 최고의 힐링 시간이 기다리고 있습니다.
               </p>
             </div>
           </section>
 
           {/* Contact Section */}
           <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gold-500/30 text-center">
-            <h3 className="text-2xl font-bold text-white mb-4">Reservation and Consultation Inquiry</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">예약 및 상담 문의</h3>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="tel:010-2871-2457"
                 className="flex items-center justify-center gap-3 bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300"
               >
                 <Phone className="w-6 h-6" />
-                Call: 010-2871-2457
+                전화: 010-2871-2457
               </a>
               <a
                 href="https://open.kakao.com/o/sd4IUeEh"
@@ -366,10 +358,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 className="flex items-center justify-center gap-3 bg-yellow-500 hover:bg-yellow-600 text-black px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300"
               >
                 <MessageCircle className="w-6 h-6" />
-                Chat on Kakao
+                카카오톡 상담
               </a>
             </div>
-            <p className="text-gray-300 mt-6">Available 24/7 for inquiries</p>
+            <p className="text-gray-300 mt-6">
+              365일 24시간 언제든지 문의 가능합니다
+            </p>
           </div>
         </div>
       </article>
