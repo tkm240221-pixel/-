@@ -7,63 +7,9 @@ import { regionData } from "@/lib/region-data"
 
 export const dynamicParams = true
 
-export async function generateMetadata({ params }: { params: Promise<{ region: string }> }): Promise<Metadata> {
-  const { region } = await params
-  const data = regionData[region]
-
-  if (!data) {
-    return {
-      title: "Page Not Found",
-    }
-  }
-
-  const { areaName } = data
-  const title = `${areaName} Mobile Massage Service - Show Time Massage`
-  const description = `Premium mobile massage service in ${areaName}. 24/7 service, professional therapists, payment after service, arrives within 30 minutes. Korean, Thai, Swedish, and Aroma massage available.`
-
-  const keywords = [
-    `${areaName} massage`,
-    `${areaName} mobile massage`,
-    `${areaName} outcall massage`,
-    "korean massage",
-    "thai massage",
-    "swedish massage",
-    "aroma massage",
-    "hotel massage",
-    "24 hour massage",
-    "professional massage",
-    "premium massage",
-    "home massage",
-    "mobile spa",
-  ].join(", ")
-
-  return {
-    title,
-    description,
-    keywords,
-    openGraph: {
-      title,
-      description,
-      type: "website",
-      siteName: "Show Time Massage",
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-    },
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        "max-video-preview": -1,
-        "max-image-preview": "large",
-        "max-snippet": -1,
-      },
-    },
-  }
+export const metadata: Metadata = {
+  title: "Massage Service",
+  description: "Premium mobile massage service",
 }
 
 export async function generateStaticParams() {

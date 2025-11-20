@@ -11,23 +11,6 @@ export async function generateStaticParams() {
   }))
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params
-  const region = regionData[slug]
-
-  if (!region) {
-    return {
-      title: "Page Not Found",
-    }
-  }
-
-  const { areaName } = region
-  return {
-    title: `${areaName} Massage Service | Showtime Massage`,
-    description: `Premium massage service in ${areaName}. Professional therapists, 24/7 available, relaxation and stress relief.`,
-  }
-}
-
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const region = regionData[slug]
