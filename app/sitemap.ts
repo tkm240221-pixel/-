@@ -3,10 +3,7 @@ import type { MetadataRoute } from "next"
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://showmassage.xyz"
 
-  console.log("[v0] Generating sitemap with baseUrl:", baseUrl)
-
   if (!baseUrl) {
-    console.error("[v0] NEXT_PUBLIC_SITE_URL environment variable is not set")
     return []
   }
 
@@ -237,8 +234,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...regionUrls,
     ...blogUrls,
   ]
-
-  console.log("[v0] Generated", sitemap.length, "URLs in sitemap")
 
   return sitemap
 }

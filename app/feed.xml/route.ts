@@ -12,8 +12,6 @@ function escapeXml(unsafe: string): string {
 export async function GET() {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://showmassage.xyz"
 
-  console.log("[v0] Generating RSS feed with baseUrl:", baseUrl)
-
   // 환경 변수가 설정되지 않은 경우 에러 응답
   if (!baseUrl) {
     return new Response("Environment variable NEXT_PUBLIC_SITE_URL is required", {
