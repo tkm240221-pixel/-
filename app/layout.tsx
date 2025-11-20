@@ -1,33 +1,23 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Work_Sans, Open_Sans } from "next/font/google"
-import DynamicSEO from "@/components/dynamic-seo"
+import { Geist, Geist_Mono } from "next/font/google"
+import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
+import { FloatingContact } from "@/components/floating-contact"
 
-const workSans = Work_Sans({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-work-sans",
-  preload: true,
-  fallback: ["system-ui", "arial"],
-})
-
-const openSans = Open_Sans({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-open-sans",
-  preload: true,
-  fallback: ["system-ui", "arial"],
-})
+const _geist = Geist({ subsets: ["latin"] })
+const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "총알출장마사지 | 전국 출장안마 | 24시 연중무휴",
+  title: "쇼타임 출장안마 | 프리미엄 출장마사지 후불제 20대 전문 관리사",
   description:
-    "서울 경기 인천 전 지역 24시간 출장마사지 서비스. 30분 내 방문, 숙련된 전문 테라피스트, 타이마사지 스웨디시 힐링마사지 전문. 안전하고 깨끗한 프리미엄 홈케어 서비스.",
-  keywords: "출장마사지, 전국출장마사지, 24시간마사지, 홈케어마사지, 타이마사지, 스웨디시, 힐링마사지, 전문테라피스트",
-  authors: [{ name: "총알출장마사지" }],
-  creator: "총알출장마사지",
-  publisher: "총알출장마사지",
+    "쇼타임 출장안마 - 서울, 경기, 인천, 경상도, 전라도 전지역 24시간 출장마사지 서비스. 20대 전문 관리사, 100% 후불제, 30분 내 도착. 타이마사지, 스웨디시, 아로마마사지 전문. 010-2871-2457",
+  keywords:
+    "쇼타임출장안마, 쇼타임출장마사지, 출장안마, 출장마사지, 출장, 후불제출장, 후불제출장안마, 후불제출장마사지, 20대출장, 20대출장안마, 20대출장마사지, 서울출장안마, 서울출장마사지, 서울출장, 경기출장안마, 경기출장마사지, 경기출장, 인천출장안마, 인천출장마사지, 인천출장, 경상도출장안마, 경상도출장마사지, 전라도출장안마, 전라도출장마사지, 타이마사지, 타이마사지출장, 스웨디시, 스웨디시마사지, 스웨디시출장, 아로마마사지, 아로마출장, 힐링마사지, 감성마사지, 건식마사지, 습식마사지, 홈케어마사지, 방문마사지, 24시간출장, 24시간출장마사지, 프리미엄출장, 프리미엄출장마사지, 여성전용출장, 남성전용출장, 커플마사지, 호텔출장, 모텔출장, 오피스텔출장, 강남출장, 강남출장안마, 강남출장마사지, 서초출장, 역삼출장, 삼성출장, 분당출장, 수원출장, 부산출장안마, 대구출장안마, 광주출장안마, 대전출장안마, 울산출장안마, 전주출장안마, VIP출장, VIP출장마사지, 고급출장, 고급출장마사지, 내상없는출장, 1인샵, 마사지샵, 출장샵, 관리사출장, 테라피, 출장테라피, 힐링출장, 피로회복마사지, 스트레스해소마사지",
+  generator: "v0.app",
+  authors: [{ name: "쇼타임 출장안마" }],
+  creator: "쇼타임 출장안마",
+  publisher: "쇼타임 출장안마",
   robots: {
     index: true,
     follow: true,
@@ -39,40 +29,39 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  alternates: {
+    types: {
+      "application/rss+xml": [
+        {
+          url: "/feed.xml",
+          title: "쇼타임 출장마사지 RSS 피드",
+        },
+      ],
+    },
+  },
   openGraph: {
+    title: "쇼타임 출장안마 | 프리미엄 출장마사지 후불제 20대",
+    description:
+      "24시간 연중무휴, 20대 전문 관리사, 100% 후불제 출장마사지 서비스. 서울, 경기, 인천 전지역 30분 내 도착",
     type: "website",
     locale: "ko_KR",
-    url: "https://총알출장마사지.com",
-    siteName: "총알출장마사지",
-    title: "총알출장마사지 | 전국 출장안마 | 24시 연중무휴",
-    description:
-      "서울 경기 인천 전 지역 24시간 출장마사지 서비스. 30분 내 방문, 전문 테라피스트의 프리미엄 홈케어 마사지.",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "총알출장마사지 - 전문 출장마사지 서비스",
-      },
-    ],
+    siteName: "쇼타임 출장안마",
   },
   twitter: {
     card: "summary_large_image",
-    title: "총알출장마사지 | 전국 출장안마 | 24시 연중무휴",
-    description:
-      "서울 경기 인천 전 지역 24시간 출장마사지 서비스. 30분 내 방문, 전문 테라피스트의 프리미엄 홈케어 마사지.",
-    images: ["/og-image.jpg"],
+    title: "쇼타임 출장안마 | 프리미엄 출장마사지",
+    description: "24시간 연중무휴 후불제 출장마사지 서비스",
   },
   verification: {
-    google: "google-site-verification-code",
+    google: "VGuTJaGsWs5YFoMLha95plREZ5oXzgjocNZ07X987L0",
     other: {
-      "naver-site-verification": "caa960ffc52d299ba0c58469c8ca7492218f0b93",
+      "naver-site-verification": "naver-site-verification",
     },
   },
-  alternates: {
-    canonical: "https://총알출장마사지.com",
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-icon.png",
   },
-    generator: 'v0.app'
 }
 
 export default function RootLayout({
@@ -81,343 +70,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="ko" className={`${workSans.variable} ${openSans.variable} antialiased`}>
-      <head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-YQV7D3DPT6"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-YQV7D3DPT6');
-            `,
-          }}
-        />
-
-        <meta name="naver-site-verification" content="caa960ffc52d299ba0c58469c8ca7492218f0b93" />
-
-        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
-        <meta name="theme-color" content="#7c3aed" />
-        <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="총알출장마사지" />
-        <meta name="format-detection" content="telephone=yes" />
-        <meta name="msapplication-TileColor" content="#7c3aed" />
-        <meta name="msapplication-tap-highlight" content="no" />
-
-        {/* Performance and resource hints */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="//fonts.gstatic.com" />
-
-        {/* Critical image preloads */}
-        <link rel="preload" as="image" href="/happy-korean-customer.png" />
-        <link rel="preload" as="image" href="/satisfied-korean-customer.png" />
-        <link rel="preload" as="image" href="/korean-therapist-smiling.png" />
-
-        {/* Favicon and app icons */}
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/manifest.json" />
-
-        <link rel="alternate" type="application/rss+xml" title="총알출장마사지 RSS Feed" href="/rss.xml" />
-        <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
-
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "LocalBusiness",
-              "@id": "https://총알출장마사지.com/#business",
-              name: "총알출장마사지",
-              alternateName: "총알 출장마사지",
-              description: "서울 경기 인천 전 지역 24시간 출장마사지 서비스. 전문 테라피스트의 프리미엄 홈케어 마사지",
-              url: "https://총알출장마사지.com",
-              telephone: "010-2871-2457",
-              priceRange: "80000-200000",
-              currenciesAccepted: "KRW",
-              paymentAccepted: ["Cash", "Credit Card"],
-              openingHours: "Mo-Su 00:00-23:59",
-              image: [
-                "https://총알출장마사지.com/og-image.jpg",
-                "https://총알출장마사지.com/happy-korean-customer.png",
-                "https://총알출장마사지.com/korean-therapist-smiling.png",
-              ],
-              logo: "https://총알출장마사지.com/icon-512.png",
-              serviceArea: {
-                "@type": "GeoCircle",
-                geoMidpoint: {
-                  "@type": "GeoCoordinates",
-                  latitude: 37.5665,
-                  longitude: 126.978,
-                },
-                geoRadius: "50000",
-              },
-              areaServed: [
-                {
-                  "@type": "City",
-                  name: "서울특별시",
-                  alternateName: "Seoul",
-                },
-                {
-                  "@type": "State",
-                  name: "경기도",
-                  alternateName: "Gyeonggi Province",
-                },
-                {
-                  "@type": "City",
-                  name: "인천광역시",
-                  alternateName: "Incheon",
-                },
-              ],
-              hasOfferCatalog: {
-                "@type": "OfferCatalog",
-                name: "마사지 서비스 메뉴",
-                itemListElement: [
-                  {
-                    "@type": "Offer",
-                    "@id": "https://총알출장마사지.com/#thai-massage",
-                    name: "타이마사지",
-                    description: "전통 타이마사지 기법을 활용한 전신 마사지로 근육 이완과 혈액순환 개선",
-                    category: "Massage Therapy",
-                    priceSpecification: [
-                      {
-                        "@type": "PriceSpecification",
-                        price: "80000",
-                        priceCurrency: "KRW",
-                        name: "60분 타이마사지",
-                      },
-                      {
-                        "@type": "PriceSpecification",
-                        price: "100000",
-                        priceCurrency: "KRW",
-                        name: "90분 타이마사지",
-                      },
-                      {
-                        "@type": "PriceSpecification",
-                        price: "120000",
-                        priceCurrency: "KRW",
-                        name: "120분 타이마사지",
-                      },
-                    ],
-                    itemOffered: {
-                      "@type": "Service",
-                      name: "타이마사지",
-                      description: "전통 타이마사지 기법을 활용한 전신 마사지",
-                      provider: {
-                        "@type": "LocalBusiness",
-                        name: "총알출장마사지",
-                      },
-                    },
-                  },
-                  {
-                    "@type": "Offer",
-                    "@id": "https://총알출장마사지.com/#healing-swedish",
-                    name: "힐링 스웨디시",
-                    description: "스웨덴식 마사지 기법으로 근육 이완과 스트레스 해소에 효과적",
-                    category: "Massage Therapy",
-                    priceSpecification: [
-                      {
-                        "@type": "PriceSpecification",
-                        price: "90000",
-                        priceCurrency: "KRW",
-                        name: "60분 힐링스웨디시",
-                      },
-                      {
-                        "@type": "PriceSpecification",
-                        price: "110000",
-                        priceCurrency: "KRW",
-                        name: "90분 힐링스웨디시",
-                      },
-                      {
-                        "@type": "PriceSpecification",
-                        price: "130000",
-                        priceCurrency: "KRW",
-                        name: "120분 힐링스웨디시",
-                      },
-                    ],
-                    itemOffered: {
-                      "@type": "Service",
-                      name: "힐링 스웨디시",
-                      description: "스웨덴식 마사지 기법으로 근육 이완과 스트레스 해소",
-                      provider: {
-                        "@type": "LocalBusiness",
-                        name: "총알출장마사지",
-                      },
-                    },
-                  },
-                  {
-                    "@type": "Offer",
-                    "@id": "https://총알출장마사지.com/#vip-package",
-                    name: "VIP 패키지 (타이 + 힐링 + 풋)",
-                    description: "타이마사지, 힐링스웨디시, 풋마사지를 결합한 프리미엄 패키지",
-                    category: "Premium Massage Package",
-                    priceSpecification: [
-                      {
-                        "@type": "PriceSpecification",
-                        price: "100000",
-                        priceCurrency: "KRW",
-                        name: "60분 VIP 패키지",
-                      },
-                      {
-                        "@type": "PriceSpecification",
-                        price: "130000",
-                        priceCurrency: "KRW",
-                        name: "90분 VIP 패키지",
-                      },
-                      {
-                        "@type": "PriceSpecification",
-                        price: "160000",
-                        priceCurrency: "KRW",
-                        name: "120분 VIP 패키지",
-                      },
-                      {
-                        "@type": "PriceSpecification",
-                        price: "200000",
-                        priceCurrency: "KRW",
-                        name: "150분 VIP 패키지",
-                      },
-                    ],
-                    itemOffered: {
-                      "@type": "Service",
-                      name: "VIP 패키지",
-                      description: "타이마사지, 힐링스웨디시, 풋마사지를 결합한 프리미엄 패키지",
-                      provider: {
-                        "@type": "LocalBusiness",
-                        name: "총알출장마사지",
-                      },
-                    },
-                  },
-                ],
-              },
-              aggregateRating: {
-                "@type": "AggregateRating",
-                ratingValue: "4.8",
-                reviewCount: "127",
-                bestRating: "5",
-                worstRating: "1",
-              },
-              review: [
-                {
-                  "@type": "Review",
-                  author: {
-                    "@type": "Person",
-                    name: "김○○",
-                  },
-                  reviewRating: {
-                    "@type": "Rating",
-                    ratingValue: "5",
-                    bestRating: "5",
-                  },
-                  reviewBody:
-                    "정말 전문적이고 친절하셨어요. 집에서 편안하게 받을 수 있어서 너무 좋았습니다. 다음에도 꼭 이용할게요!",
-                },
-                {
-                  "@type": "Review",
-                  author: {
-                    "@type": "Person",
-                    name: "박○○",
-                  },
-                  reviewRating: {
-                    "@type": "Rating",
-                    ratingValue: "5",
-                    bestRating: "5",
-                  },
-                  reviewBody:
-                    "스트레스가 많이 쌓여있었는데 한 번에 다 풀렸어요. 테라피스트분이 정말 실력이 좋으시네요!",
-                },
-                {
-                  "@type": "Review",
-                  author: {
-                    "@type": "Person",
-                    name: "이○○",
-                  },
-                  reviewRating: {
-                    "@type": "Rating",
-                    ratingValue: "5",
-                    bestRating: "5",
-                  },
-                  reviewBody: "시간 약속도 정확하고 서비스도 정말 만족스러웠습니다. 다음에 또 예약할게요!",
-                },
-              ],
-              sameAs: ["https://총알출장마사지.com"],
-            }),
-          }}
-        />
-
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              "@id": "https://총알출장마사지.com/#website",
-              url: "https://총알출장마사지.com",
-              name: "총알출장마사지",
-              description: "서울 경기 인천 전 지역 24시간 출장마사지 서비스",
-              publisher: {
-                "@type": "Organization",
-                "@id": "https://총알출장마사지.com/#business",
-              },
-              potentialAction: [
-                {
-                  "@type": "SearchAction",
-                  target: {
-                    "@type": "EntryPoint",
-                    urlTemplate: "https://총알출장마사지.com/?s={search_term_string}",
-                  },
-                  "query-input": "required name=search_term_string",
-                },
-              ],
-              inLanguage: "ko-KR",
-            }),
-          }}
-        />
-
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "BreadcrumbList",
-              itemListElement: [
-                {
-                  "@type": "ListItem",
-                  position: 1,
-                  name: "홈",
-                  item: "https://총알출장마사지.com",
-                },
-                {
-                  "@type": "ListItem",
-                  position: 2,
-                  name: "서울 출장마사지",
-                  item: "https://총알출장마사지.com/seoul",
-                },
-                {
-                  "@type": "ListItem",
-                  position: 3,
-                  name: "경기 출장마사지",
-                  item: "https://총알출장마사지.com/gyeonggi",
-                },
-                {
-                  "@type": "ListItem",
-                  position: 4,
-                  name: "인천 출장마사지",
-                  item: "https://총알출장마사지.com/incheon",
-                },
-              ],
-            }),
-          }}
-        />
-      </head>
-      <body className="safe-top safe-bottom safe-left safe-right touch-manipulation">
-        <DynamicSEO />
+    <html lang="ko" className="scroll-smooth">
+      <body className={`font-sans antialiased`}>
         {children}
+        <FloatingContact />
+        <Analytics />
       </body>
     </html>
   )
