@@ -1,14 +1,7 @@
 import type { MetadataRoute } from "next"
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://showmassage.xyz"
-
-  console.log("[v0] Generating sitemap with baseUrl:", baseUrl)
-
-  if (!baseUrl) {
-    console.error("[v0] NEXT_PUBLIC_SITE_URL environment variable is not set")
-    return []
-  }
+  const baseUrl = "https://showmassage.xyz"
 
   // 모든 지역 slug 목록
   const regions = [
@@ -215,7 +208,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }))
 
-  const sitemap = [
+  return [
     {
       url: baseUrl,
       lastModified: new Date(),
@@ -237,8 +230,4 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...regionUrls,
     ...blogUrls,
   ]
-
-  console.log("[v0] Generated", sitemap.length, "URLs in sitemap")
-
-  return sitemap
 }

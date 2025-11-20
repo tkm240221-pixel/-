@@ -1,9 +1,7 @@
 import type { MetadataRoute } from "next"
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://showmassage.xyz"
-
-  console.log("[v0] Generating robots.txt with baseUrl:", baseUrl)
+  const baseUrl = "https://showmassage.xyz"
 
   return {
     rules: [

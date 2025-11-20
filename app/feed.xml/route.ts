@@ -10,23 +10,10 @@ function escapeXml(unsafe: string): string {
 }
 
 export async function GET() {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://showmassage.xyz"
-
-  console.log("[v0] Generating RSS feed with baseUrl:", baseUrl)
-
-  // 환경 변수가 설정되지 않은 경우 에러 응답
-  if (!baseUrl) {
-    return new Response("Environment variable NEXT_PUBLIC_SITE_URL is required", {
-      status: 500,
-      headers: {
-        "Content-Type": "text/plain",
-      },
-    })
-  }
+  const baseUrl = "https://showmassage.xyz"
 
   const currentDate = new Date().toUTCString()
 
-  // 지역 목록 생성 (일부만 샘플로 포함)
   const sampleRegions = Object.entries(regionSlugMap)
     .slice(0, 50)
     .map(([koreanName, slug]) => ({
@@ -38,7 +25,6 @@ export async function GET() {
       pubDate: currentDate,
     }))
 
-  // RSS 피드 XML 생성
   const rss = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
