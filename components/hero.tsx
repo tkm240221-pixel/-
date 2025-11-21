@@ -1,4 +1,4 @@
-import { Sparkles } from 'lucide-react'
+import { Sparkles } from "lucide-react"
 
 export default function Hero() {
   return (
@@ -26,11 +26,7 @@ export default function Hero() {
           <div className="relative inline-block mb-8">
             <div className="relative w-80 h-80 mx-auto">
               {/* Laurel wreath */}
-              <svg
-                className="absolute inset-0 w-full h-full"
-                viewBox="0 0 320 320"
-                fill="none"
-              >
+              <svg className="absolute inset-0 w-full h-full" viewBox="0 0 320 320" fill="none">
                 <defs>
                   <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" stopColor="#FFD700" />
@@ -93,7 +89,7 @@ export default function Hero() {
               <p>
                 출장마사지 쇼타임 출장안마 서비스는
                 <br />
-                <span className="text-yellow-400 font-semibold">신용출장</span> 고퀄리티{' '}
+                <span className="text-yellow-400 font-semibold">신용출장</span> 고퀄리티{" "}
                 <span className="text-yellow-400 font-semibold">태국 현지 전문 라이센스</span> 등
                 <br />
                 지역에서 30분 이내 도착하는
@@ -126,10 +122,11 @@ export default function Hero() {
               </p>
 
               <div className="mt-8 pt-8 border-t border-yellow-500/30">
-                <p className="text-yellow-400 font-bold text-2xl md:text-3xl mb-2">
-                  예약 문의
-                </p>
-                <a href="tel:010-2871-2457" className="text-white font-bold text-3xl md:text-5xl hover:text-yellow-400 transition-colors">
+                <p className="text-yellow-400 font-bold text-2xl md:text-3xl mb-2">예약 문의</p>
+                <a
+                  href="tel:010-2871-2457"
+                  className="text-white font-bold text-3xl md:text-5xl hover:scale-105 transition-transform inline-block animate-rgb-led"
+                >
                   010-2871-2457
                 </a>
                 <p className="text-gray-400 text-sm mt-2">24시간 연중무휴 상담 가능</p>
