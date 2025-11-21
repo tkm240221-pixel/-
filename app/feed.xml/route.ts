@@ -10,17 +10,7 @@ function escapeXml(unsafe: string): string {
 }
 
 export async function GET() {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://showmassage.xyz"
-
-  // 환경 변수가 설정되지 않은 경우 에러 응답
-  if (!baseUrl) {
-    return new Response("Environment variable NEXT_PUBLIC_SITE_URL is required", {
-      status: 500,
-      headers: {
-        "Content-Type": "text/plain",
-      },
-    })
-  }
+  const baseUrl = "https://showmassage.xyz"
 
   const currentDate = new Date().toUTCString()
 
