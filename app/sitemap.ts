@@ -3,10 +3,6 @@ import type { MetadataRoute } from "next"
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://showmassage.xyz"
 
-  if (!baseUrl) {
-    return []
-  }
-
   // 모든 지역 slug 목록
   const regions = [
     // 서울 - 강남구
@@ -132,7 +128,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "nowon-dong",
     "sanggye-dong",
     "junggye-dong",
-
     // 경기 - 성남시
     "sujeong-gu-dandae-dong",
     "sujeong-gu-sinheung-dong",
@@ -143,7 +138,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "bundang-gu-jeongja-dong",
     "bundang-gu-sunae-dong",
     "bundang-gu-pangyo-dong",
-
     // 경기 - 수원시
     "jangan-gu-yeongtong-dong",
     "jangan-gu-maetan-dong",
@@ -151,7 +145,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "yeongtong-gu-gwanggyo-dong",
     "paldal-gu-suwon-dong",
     "gwonseon-gu-seodun-dong",
-
     // 경기 - 기타 시
     "anyang",
     "bucheon",
@@ -161,7 +154,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "gwangju-si",
     "icheon",
     "janggi-dong",
-
     // 인천
     "namdong-gu",
     "yeonsu-gu",
@@ -172,7 +164,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "jung-gu-incheon",
     "dong-gu-incheon",
     "juan-dong",
-
     // 경상도
     "busan",
     "haeundae",
@@ -186,7 +177,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "pohang",
     "gyeongju",
     "gyeongsan",
-
     // 전라도
     "gwangju",
     "jeonju",
@@ -198,42 +188,44 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "gwangyang",
   ]
 
-  const regionUrls = regions.map((slug) => ({
-    url: `${baseUrl}/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: "weekly" as const,
-    priority: 0.7,
-  }))
-
-  const blogUrls = regions.map((slug) => ({
-    url: `${baseUrl}/blog/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: "weekly" as const,
-    priority: 0.6,
-  }))
-
-  const sitemap = [
+  const sitemap: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: "daily" as const,
-      priority: 1,
+      lastModified: new Date().toISOString(),
+      changeFrequency: "daily",
+      priority: 1.0,
     },
     {
       url: `${baseUrl}/blog`,
-      lastModified: new Date(),
-      changeFrequency: "weekly" as const,
+      lastModified: new Date().toISOString(),
+      changeFrequency: "weekly",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/course`,
-      lastModified: new Date(),
-      changeFrequency: "monthly" as const,
+      lastModified: new Date().toISOString(),
+      changeFrequency: "monthly",
       priority: 0.8,
     },
-    ...regionUrls,
-    ...blogUrls,
   ]
+
+  regions.forEach((slug) => {
+    sitemap.push({
+      url: `${baseUrl}/${slug}`,
+      lastModified: new Date().toISOString(),
+      changeFrequency: "weekly",
+      priority: 0.7,
+    })
+  })
+
+  regions.forEach((slug) => {
+    sitemap.push({
+      url: `${baseUrl}/blog/${slug}`,
+      lastModified: new Date().toISOString(),
+      changeFrequency: "weekly",
+      priority: 0.6,
+    })
+  })
 
   return sitemap
 }
