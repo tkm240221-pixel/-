@@ -14,17 +14,14 @@ export async function GET() {
 
   const currentDate = new Date().toUTCString()
 
-  // 지역 목록 생성 (일부만 샘플로 포함)
-  const sampleRegions = Object.entries(regionSlugMap)
-    .slice(0, 50)
-    .map(([koreanName, slug]) => ({
-      title: escapeXml(`${koreanName} 출장마사지 - 쇼타임 출장`),
-      description: escapeXml(
-        `${koreanName} 지역 최고의 프리미엄 출장마사지 서비스를 경험해보세요. 100% 후불제 시스템으로 진행되며 퀄리티 높은 매니저들에게 힐링하는 하루가 되시길 바랍니다.`,
-      ),
-      link: `${baseUrl}/${slug}`,
-      pubDate: currentDate,
-    }))
+  const allRegions = Object.entries(regionSlugMap).map(([koreanName, slug]) => ({
+    title: escapeXml(`${koreanName} 출장마사지 - 쇼타임 출장`),
+    description: escapeXml(
+      `${koreanName} 지역 최고의 프리미엄 출장마사지 서비스를 경험해보세요. 100% 후불제 시스템으로 진행되며 퀄리티 높은 매니저들에게 힐링하는 하루가 되시길 바랍니다.`,
+    ),
+    link: `${baseUrl}/${slug}`,
+    pubDate: currentDate,
+  }))
 
   // RSS 피드 XML 생성
   const rss = `<?xml version="1.0" encoding="UTF-8"?>
@@ -37,7 +34,7 @@ export async function GET() {
     <lastBuildDate>${currentDate}</lastBuildDate>
     <atom:link href="${baseUrl}/rss.xml" rel="self" type="application/rss+xml"/>
     
-    ${sampleRegions
+    ${allRegions
       .map(
         (region) => `
     <item>
