@@ -1,73 +1,88 @@
-import { regionSlugMap } from "@/lib/region-mapping"
-
-function escapeXml(unsafe: string): string {
-  return unsafe
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&apos;")
-}
+import { NextResponse } from "next/server"
 
 export async function GET() {
-  const baseUrl = "https://showmassage.xyz"
+  const baseUrl = "https://총알출장마사지.com"
+  const currentDate = new Date().toISOString()
 
-  const currentDate = new Date().toUTCString()
-
-  const allRegions = Object.entries(regionSlugMap).map(([koreanName, slug]) => ({
-    title: escapeXml(`${koreanName} 출장마사지 - 쇼타임 출장`),
-    description: escapeXml(
-      `${koreanName} 지역 최고의 프리미엄 출장마사지 서비스를 경험해보세요. 100% 후불제 시스템으로 진행되며 퀄리티 높은 매니저들에게 힐링하는 하루가 되시길 바랍니다.`,
-    ),
-    link: `${baseUrl}/${slug}`,
-    pubDate: currentDate,
-  }))
-
-  // RSS 피드 XML 생성
   const rss = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>${escapeXml("쇼타임 출장마사지 - 전국 출장안마 서비스")}</title>
+    <title>총알출장마사지 - 서울 경기 인천 24시간 전문 출장마사지</title>
+    <description>서울 경기 인천 전 지역 24시간 출장마사지 서비스. 30분 내 방문, 숙련된 전문 테라피스트의 타이마사지, 스웨디시, 힐링마사지.</description>
     <link>${baseUrl}</link>
-    <description>${escapeXml("20대 후반대 매니저 / 100% 후불제 시스템 / 퀄리티 높은 매니저들에게 힐링하는 하루가 되시길 바랍니다.")}</description>
-    <language>ko</language>
-    <lastBuildDate>${currentDate}</lastBuildDate>
     <atom:link href="${baseUrl}/rss.xml" rel="self" type="application/rss+xml"/>
-    
-    ${allRegions
-      .map(
-        (region) => `
-    <item>
-      <title>${region.title}</title>
-      <link>${region.link}</link>
-      <description>${region.description}</description>
-      <pubDate>${region.pubDate}</pubDate>
-      <guid isPermaLink="true">${region.link}</guid>
-    </item>`,
-      )
-      .join("")}
+    <language>ko-KR</language>
+    <lastBuildDate>${currentDate}</lastBuildDate>
+    <pubDate>${currentDate}</pubDate>
+    <ttl>60</ttl>
+    <managingEditor>info@총알출장마사지.com (총알출장마사지)</managingEditor>
+    <webMaster>info@총알출장마사지.com (총알출장마사지)</webMaster>
     
     <item>
-      <title>${escapeXml("쇼타임 출장마사지 코스 및 가격표")}</title>
-      <link>${baseUrl}/course</link>
-      <description>${escapeXml("스웨디시, 타이마사지, 아로마마사지, VIP 믹스코스 등 다양한 마사지 코스와 가격 정보를 확인하세요.")}</description>
+      <title>서울 전 지역 24시간 출장마사지 서비스</title>
+      <description>강남구, 강서구, 송파구 등 서울 25개 구 전체 지역에서 24시간 전문 출장마사지 서비스를 제공합니다. 타이마사지, 힐링스웨디시, VIP 패키지 등 다양한 코스를 합리적인 가격으로 만나보세요.</description>
+      <link>${baseUrl}</link>
+      <guid>${baseUrl}/seoul-massage-service</guid>
       <pubDate>${currentDate}</pubDate>
-      <guid isPermaLink="true">${baseUrl}/course</guid>
+      <category>출장마사지</category>
+      <category>서울마사지</category>
     </item>
     
     <item>
-      <title>${escapeXml("쇼타임 출장마사지 블로그 - 지역별 서비스 정보")}</title>
-      <link>${baseUrl}/blog</link>
-      <description>${escapeXml("전국 각 지역별 출장마사지 서비스 정보와 후기를 확인하세요.")}</description>
+      <title>경기도 전 지역 출장마사지 - 수원, 성남, 고양, 부천</title>
+      <description>경기도 31개 시군 전체 지역에서 전문 출장마사지 서비스를 제공합니다. 수원시, 성남시, 고양시, 부천시 등 주요 도시 30분 내 방문 가능합니다.</description>
+      <link>${baseUrl}/suwon</link>
+      <guid>${baseUrl}/gyeonggi-massage-service</guid>
       <pubDate>${currentDate}</pubDate>
-      <guid isPermaLink="true">${baseUrl}/blog</guid>
+      <category>출장마사지</category>
+      <category>경기마사지</category>
+    </item>
+    
+    <item>
+      <title>인천 전 지역 출장마사지 - 부평구, 남동구, 연수구</title>
+      <description>인천광역시 10개 구군 전체 지역에서 24시간 출장마사지 서비스를 제공합니다. 부평구, 남동구, 연수구 등 주요 지역 빠른 방문 서비스.</description>
+      <link>${baseUrl}/bupyeong</link>
+      <guid>${baseUrl}/incheon-massage-service</guid>
+      <pubDate>${currentDate}</pubDate>
+      <category>출장마사지</category>
+      <category>인천마사지</category>
+    </item>
+    
+    <item>
+      <title>24시간 전문 타이마사지 서비스</title>
+      <description>전문 테라피스트가 제공하는 정통 타이마사지 서비스. 60분 8만원, 90분 10만원, 120분 12만원의 합리적인 가격으로 최고의 힐링을 경험하세요.</description>
+      <link>${baseUrl}#thai-massage</link>
+      <guid>${baseUrl}/thai-massage-service</guid>
+      <pubDate>${currentDate}</pubDate>
+      <category>타이마사지</category>
+      <category>전문마사지</category>
+    </item>
+    
+    <item>
+      <title>힐링스웨디시 마사지 - 스트레스 해소 전문</title>
+      <description>스트레스 해소와 근육 이완에 특화된 힐링스웨디시 마사지. 60분 9만원부터 시작하는 프리미엄 홈케어 서비스를 경험해보세요.</description>
+      <link>${baseUrl}#swedish-massage</link>
+      <guid>${baseUrl}/swedish-massage-service</guid>
+      <pubDate>${currentDate}</pubDate>
+      <category>스웨디시</category>
+      <category>힐링마사지</category>
+    </item>
+    
+    <item>
+      <title>VIP 프리미엄 마사지 패키지</title>
+      <description>타이마사지 + 힐링스웨디시 + 풋마사지가 결합된 VIP 프리미엄 패키지. 60분부터 150분까지 다양한 시간 옵션으로 최고의 힐링을 제공합니다.</description>
+      <link>${baseUrl}#vip-package</link>
+      <guid>${baseUrl}/vip-massage-package</guid>
+      <pubDate>${currentDate}</pubDate>
+      <category>VIP마사지</category>
+      <category>프리미엄서비스</category>
     </item>
   </channel>
 </rss>`
 
-  return new Response(rss, {
+  return new NextResponse(rss, {
     headers: {
-      "Content-Type": "application/xml; charset=utf-8",
+      "Content-Type": "application/xml",
       "Cache-Control": "public, max-age=3600, s-maxage=3600",
     },
   })

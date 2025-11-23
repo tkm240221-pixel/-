@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://showmassage.xyz/sitemap.xml",
+    sitemap: "https://총알출장마사지.com/sitemap.xml",
   }
 }
